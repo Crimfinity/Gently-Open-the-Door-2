@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/doors.rpy", line 629: end of line expected.
+    show layer master with hpunch 
+                      ^
+
+Ren'Py Version: Ren'Py 7.3.5.606
+Fri Apr 23 01:55:02 2021
