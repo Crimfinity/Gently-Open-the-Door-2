@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/doors.rpy", line 629: end of line expected.
-    show layer master with hpunch 
-                      ^
+File "game/definitions.rpy", line 44: 'return' outside function
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Fri Apr 23 01:55:02 2021
+Mon Apr 26 14:58:18 2021

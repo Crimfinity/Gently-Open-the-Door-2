@@ -172,6 +172,7 @@ label neckrope:
     show sayori at h11 
     pause .1 
     hide sayori 
+    play music td 
     call skz 
     #*sayori hangs herself*
 
@@ -540,7 +541,7 @@ label method: #still need the waving sayori
 
     show sayori at h11 
     pause .1 
-    #play music td 
+    play sound sting  
     hide sayori 
     call skz 
     #show s_kill2 
@@ -727,7 +728,193 @@ label pregnancy:
 
     mc "..."
     mc "Phew, that was close!"
+label psa:
 
+    stop music 
+    play music "mod_assets/6b.ogg"
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show sayori 1a at t11 zorder 5 
+    show vhs zorder 10 onlayer front 
+    show aspect zorder 20 onlayer front 
+    with wipeleft_door 
+    #Pedo PSA
+
+    show sayori 2r at f11 
+    s "Hey, kids!"
+    show sayori 2a at t11 
+    mc "Hiya, Sayori!"
+    show sayori 2b at f11 
+    s "Look, there's nothing cooler than talking and being with someone you like."
+    s 1b "But when someone older than you tries to talk to you or touch you in a way that makes you feel uncomfortable…"
+    s 1j "That's no good!"
+    s 1b "If you're ever in that situation, first: you gotta say no!"
+    s 1r "Then, you gotta get out of there and stop talking to that person!"
+    s 1c "Most importantly, you have to tell a person you trust!"
+    s 1b"Like your parents and a trusted adult!"
+    show sayori 1a at t11 
+    mc "Thanks Sayori!"
+    show sayori 1i at f11 
+    s "And remember adults…"
+    show sayori 1c
+    s "If you ever think about a child in a sexual context..."
+    show sayori 1x at f11 
+    show noise zorder 1:
+        alpha .4
+    show layer master:
+        truecenter
+        ease .4 zoom 1.7 yoffset 250
+    stop music
+    hide vhs onlayer front 
+    hide aspect onlayer front 
+    s "Don't!" 
+    #call dclose 
+    #stop music 
+    play sound closed 
+    scene black
+    with wipeleft_scene  
+    return 
+
+label dyslexia:
+    #Dyslexia
+    "I genlty opnen the door.{w=2.0}"
+    "I...{w=1.0}"
+    "I open gnetly the door.{w=2.0}"
+    "Door gtenly the oepn I. {w=2.0}"
+    "I braeknodwn itno teras."
+    show sayori turned om sad at l11 
+    #sayori walks into frame looking sad
+
+    s "[player]...?"
+    s "Cmoe hree."
+
+    
+    show sayori turned cm sad at i11 onlayer front 
+    play sound opend 
+    scene bg sroom with wipeleft_scene 
+    show sayori turned cm neut at i11 
+    hide sayori onlayer front  
+
+    "She opens the gently door."
+    "I did it."
+    "knid of."
+
+    show sayori worr om rup at f11 
+    s "Are you oaky?"
+    show sayori cm at t11 
+    "I nod my haed."
+
+    show sayori neut om at f11 
+    s "Do uoy wnat me to klil msylef?"
+    show sayori rdown cm at t11 
+    mc "Kill mylsef?"
+    show sayori sad ce om at f11 
+    s "I'll tkae taht as a sey."
+    show sayori cm at t11 
+    mc "Huh?"
+
+    hide sayori 
+    play sound sting 
+    call skz 
+    #s_kill
+    pause 1 
+    "..."
+    "..."
+    "I berkarwnodn otni treas."
+
+    call dclose 
+    return 
+label ava:
+    stop music 
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show ava ngelion at i11 
+    with wipeleft_door 
+    mc "Wow, Sayori!"
+    mc "You look different!"
+    mc "Did you get a haircut?"
+    play sound "mod_assets/glitch_scream.ogg"
+    show layer master at anxiety 
+    show vignette zorder 5 
+    show noise zorder 1:
+        alpha .4 
+    show ava at f11 zorder 3
+    show n_rects_ghost1 zorder 3 
+    show n_rects_ghost2 zorder 3 
+    show n_rects_ghost3 zorder 3
+    
+
+    a "Our fates intertwined forever and ever by a string so thin and so fragile-{nw}"
+    a "He loved me and I loved him, but a tragic fate befell us-{nw}"
+    a "His dread overtook him, yet I will still forever love him and my limited time with him-{nw}"
+ 
+    a "My only wish was to tell him-{nw}"
+    a "Do not dread a horrible future, or it will become your fate.{w=.2}{nw}"
+    show black onlayer front
+    pause 99999999999999999999999999999999999
+    hide black onlayer front
+    scene bg sroom
+    mc "Ahaha!"
+    mc "Relatable."
+    call dclose  
+    
+    return 
+
+
+label db2:
+
+    #Sayori has Diabetes 2
+
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show sayori turned dist cm e0a n2 ldown rdown at t11 
+    with wipeleft_door
+   
+    mc "Hey Sayori, did you eat the cupcakes?"
+
+    "I look to the ground and see three empty trays and crumbs all over the place."
+    show sayori om lup at s11 
+    s "Gurr...hurr…"
+    show sayori cm 
+    "Sayori seems so sluggish."
+
+    mc "Are you okay, Sayori?"
+    show sayori ldown om 
+    s "[player]...the...i-ins-"
+    show sayori cm 
+    s "..."
+    mc "Do you need more cupcakes?"
+    play sound fall 
+    show sayori at falldown 
+    hide sayori 
+    
+
+    "Sayori's on the ground, spazzing out."
+    show sayori turned:
+        rotate 90 yoffset 200
+        ypos .3
+        dizzy(1.5, 0.01) 
+     
+        
+    "White foam is being produced from her mouth."
+    
+    "She must be really excited for more cupcakes."
+
+    play music td 
+    show sayori at falldown 
+    hide sayori 
+    #s_kill sfx
+    mc "Sayori, don't be so dramatic, I'll go get you more cupcakes."
+
+    "I pat her head as the foam starts leaking out of her mouth."
+    "She should really clean herself up."
+    "What a slob."
+    call dclose 
+#close door
+    return 
 label dopen:
     "I gently open the door."
     play sound opend 
@@ -741,14 +928,9 @@ label dclose:
     scene black with wipeleft_scene  
     return 
 label skz:
-    play music td
-    #show s_kill_bg2
-    #show s_kill as s_kill at s_kill_start
-    #show s_kill_bg #as s_kill_bg at s_kill_bg_start
-    #show s_kill2 as s_kill at s_kill_start
+   
+
     show s_kill2:
-        #xcenter math.ceil(((1280/5)*3) - (1280/(2*5))) ycenter 0 rotate -7 zoom 1.2 yoffset -25
-        #rotate -7 zoom 1.2 xcenter 640
         zoom 1.1 rotate -7 xcenter 640
         yoffset -1700
         yanchor 0
@@ -757,8 +939,7 @@ label skz:
             ease 2.0 rotate 7
             ease 2.0 rotate -7
             repeat
-        #parallel:
-           # easeout .2 zoom 1 
+      
 
     return 
 label sk:

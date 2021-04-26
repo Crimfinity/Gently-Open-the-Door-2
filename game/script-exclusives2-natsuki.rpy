@@ -29,31 +29,26 @@ init python:
 
 image n_rects_ghost1:
     RectCluster(Solid("#000"), 4, 15, 5).sm
-    pos (580, 270)
-    size (20, 25)
-    alpha 0.0
-    8.0
-    easeout 12 alpha 1.0
+    pos (660, 195)
+    size (24, 32)
+   
+    
+   
 
 image n_rects_ghost2:
     RectCluster(Solid("#000"), 4, 15, 5).sm
-    pos (652, 264)
-    size (20, 25)
-    alpha 0.0
-    8.0
-    easeout 12 alpha 1.0
-
+    pos (752, 184)
+    size (24, 30)
+ 
 image n_rects_ghost3:
     RectCluster(Solid("#000"), 4, 15, 5).sm
-    pos (616, 310)
-    size (25, 15)
-    alpha 0.0
-    8.0
-    easeout 12 alpha 1.0
+    pos (720, 290)
+    size (43, 26)
+   
 
 image n_rects_ghost4:
     RectCluster(Solid("#000"), 4, 15, 5).sm
-    pos (735, 310)
+    pos (735, 610)
     size (25, 20)
     0.5
     easeout 0.25 zoom 4.5 xoffset 250 yoffset -250

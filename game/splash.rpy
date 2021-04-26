@@ -360,11 +360,11 @@ label splashscreen:
         pause 1.0
         # You can edit this message but you MUST have say it's not affiliated with Team Salvato
         # must finish the official game and has spoilers, and where to get DDLC from."
-        "[config.name] is a Doki Doki Literature Club fan mod that is not affiliated in anyway with Team Salvato."
-        "It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
-        "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: https://ddlc.moe or on Steam."
+        "I Gently Open the Door (Vol. 2) is a Doki Doki Literature Club fan mod that has nothing to due with Team Salvato (Yeah fuck those guys)."
+        "Play the original game first, or father Dan will be mildly dissappointed with you."
+        "Get the files here: https://ddlc.moe (or on Steam)."
         menu:
-            "By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."
+            "By playing [config.name] you agree that you read what was just shown to you."
             "I agree.":
                  pass
         $ persistent.first_run = True
