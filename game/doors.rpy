@@ -728,6 +728,7 @@ label pregnancy:
 
     mc "..."
     mc "Phew, that was close!"
+    return 
 label psa:
 
     stop music 

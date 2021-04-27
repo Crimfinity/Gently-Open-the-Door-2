@@ -48,7 +48,7 @@ label start:
     
     #call neckrope
     #call nc1 
-    #call sans 
+    call sans 
     #call gta 
     #call dmc  
     #call nude 
@@ -57,11 +57,11 @@ label start:
     #call db1 
     #call db2 
     #call schizo 
-    #call bread 
-    #call pregnancy #THIS ONE IS UNFINISHED     
-    #call psa 
+    call bread 
+    call pregnancy #THIS ONE IS UNFINISHED     
+    call psa 
     call dyslexia 
-    #call ava 
+    call ava 
     return 
     # Start of the script
     # 'persistent.playthrough' controls the playthrough number the player is on
