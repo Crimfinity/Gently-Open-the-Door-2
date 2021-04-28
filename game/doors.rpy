@@ -916,6 +916,187 @@ label db2:
     call dclose 
 #close door
     return 
+label dg:
+    stop music 
+    "I gently open the door."
+    play music t4 fadein 2
+    play sound opend  
+    show sayori turned casual cm oe happ at t11 zorder 2 
+    show natsuki turned neut lhip rdown casual at t31 zorder 2 
+    show yuri turned cm dist casual at t33 zorder 2 
+    show sroomz zorder 1 
+    with wipeleft_door 
+    show sayori ce om lup at f11 zorder 3 
+    s "Hello and welcome to the first meeting of the Dead Girls' Society." 
+    s oe "Everyone introduce yoursel--{nw}"
+    show sayori lsur cm at h11 zorder 2 
+    mc "Uh, what's going on?"
+    show sayori happ ldown om at f11 
+    s "Oh hey, [player]!"
+    s rup "This is just the first meeting of the DGS!"
+    s ce "You're welcome to watch."
+    show sayori cm oe at t11 zorder 2
+    mc "Cool."
+
+    "I take a seat at the corner of the room."
+    show sayori om neut at f11 zorder 3 
+    s "Okay everyone, let's introduce ourselves."
+    show sayori cm at t11 zorder 2
+    show yuri shy om at s33 zorder 3 
+    y "Uuu…"
+    show yuri turned dist cm oe rup at t33
+    show sayori happ om at f11 zorder 3 
+    s "Okay, I'll start."
+    show natsuki sad 
+    s rdown "My name is Sayori and I hung myself."
+    show sayori cm at t11 
+    y "..."
+    show sayori neut 
+    show yuri dist om lup rup at f33 zorder 3 
+    y "My name is Yuri and I stabbed myself."
+    show yuri cm at t33 zorder 2
+    show natsuki cross dist 
+    n "..."
+    show yuri neut 
+    show sayuri curi 
+    n "..."
+    show sayori anno om at f11 zorder 3 
+    show natsuki neut  
+    s "C'mon, Natsuki!"
+    show sayori cm neut at t11 zorder 2
+    show natsuki turned lhip curi om at f31 zorder 3  
+    n "Sayori, do I even count?"
+    n doub ce "I never actually died! I was just deleted."
+    show natsuki cm at t31 zorder 2
+    show sayori rup om at f11 zorder 3 
+    s "Well you were sent to the void just like the rest of us, so I think you count."
+    show sayori cm happ oe at t11 zorder 2
+    show natsuki anno om ldown rdown at f31 zorder 3 
+    n "Okay fine…"
+    n dist "My name is Natsuki and I got deleted."
+    show natsuki cm oe curi at t31 zorder 2
+    show sayori lsur 
+    show yuri curi 
+    play sound knock 
+
+    pause 2.0
+    show sayori angr at t43 
+    show natsuki angr at t42 
+    show yuri angr at t44
+    show monika forward nerv om n2 lpoint at l41 zorder 3 
+    m "H-hey..."
+    show monika happ at f41 
+    m "I overheard you guys talking and I was wondering if I could…"
+    m laug "Join you guys?"
+
+    show monika nerv cm ldown at s41 zorder 2
+    "The girls all stare holes into the wretched one."
+    show sayori vang at f43 zorder 3 
+    s "{b}{cps=1} N o . {/b}"
+    show monika sad om zorder 3 
+    m "Oh..." 
+    show monika at lhide 
+    hide monika 
+
+    "Monika scurries off."
+    show sayori at t11 
+    show natsuki at t31 
+    show yuri neut at t43 
+    show sayori anno om at f42 
+    s "{i}Anyway...{/i}" 
+    show sayori happ 
+    show natsuki neut  
+    s "Now that we got rid of the pest..."
+    show sayori cm neut at t42 zorder 2
+    mc "Um, actually, I have a question."
+    mc "What do you guys actually do here?"
+    show sayori om lup at f42 zorder 3 
+    s "We talk about the trauma of dying."
+    show sayori cm at t42 zorder 2
+    show natsuki happ om ldown at f31 zorder 3 
+    n "But mostly we just chill out and hang."
+    show natsuki ce cm at t31 zorder 2
+    show sayori dist 
+    s "..."
+    show natsuki om at f31 zorder 3 
+    show yuri happ ldown rdown  
+    n "Pun entirely intended."
+    show natsuki cm oe rdown at t31 
+    show sayori om happ at f42 zorder 3  
+    s "Thanks, Nat..."
+    show sayori cm at t42 zorder 2
+    "I shake my head at the shenanigans."
+    "Ah girls, never chang--"
+    "Wait, is that..."
+    stop music fadeout 3 
+    window hide 
+    show yuri:
+        4
+        linear 5 alpha 0
+    show noose zorder 11 :
+        truecenter 
+        xoffset 1000 yoffset -400
+    show layer master:
+        subpixel True 
+        truecenter 
+        linear 3 xoffset -1015
+    show pink zorder 10:
+        alpha 0 xoffset 1015
+        3
+        linear .4 alpha .6 
+    #camera pans to the left
+    pause 3 
+    mc "Ropu-Kun!"
+    mc "You're alive!"
+    mc "Oh I missed you so much!"
+    mc "I thought I lost you!"
+    play music t10 
+    "I grab Ropu-Kun and hug him tight!"
+
+    mc "I won't let you go this time, I swear!"
+    y "Sayori, what is going on..?"
+    s "If I knew, I'd tell you."
+    mc "Oh my god, we have to make up for so much lost time."
+    mc "Let me take you out to dinner."
+    mc "How does that sound?"
+    window hide 
+    show layer master:
+        subpixel True 
+        #truecenter 
+        right
+        xoffset -1015
+        linear 10 zoom 1.4 yoffset 200 xoffset -1100
+    pause 10
+    show layer master:
+        subpixel True 
+        truecenter 
+        xoffset -1015  
+    n "I am beyond confused."
+    y "Isn't that the rope we glued a set of comedic eyes to, so that you could cope with your trauma better?"
+    s "I think???"
+    scene bg sroom 
+    show sayori turned casual lup cm oe worr at t11
+    show natsuki turned casual curi lhip rdown cm oe at t31 
+    show yuri turned casual lup rdown curi oe cm at t33 
+    show noose zorder 10 at floating:
+        yoffset -400 xoffset -150  
+    mc "Girls, I can't tell you how grateful I am for you bringing him back to me."
+
+    "I hug Sayori to show my appreciation."
+
+    mc "Thank you so much."
+    show sayori curi om at f11 zorder 2 
+    s "You're welcome???"
+    show sayori cm at t11 
+    mc "Okay, Ropu-Kun, there's a steak with your name on it!"
+    mc "Let's go!"
+    stop music 
+    play sound closed 
+    scene black with wipeleft_door 
+    return 
+    #close door
+    
+
 label dopen:
     "I gently open the door."
     play sound opend 

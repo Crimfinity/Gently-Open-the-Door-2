@@ -9,6 +9,7 @@ define audio.baby = "mod_assets/baby.mp3"
 define audio.sizzle = "mod_assets/sizzle.ogg"
 define audio.birds = "mod_assets/birds.ogg"
 define audio.phones = "mod_assets/phones.mp3"
+define audio.knock = "mod_assets/knock.ogg"
 define close_eye = ImageDissolve("mod_assets/close_eye.png", 0.15, ramplen=64)
 
 
@@ -34,7 +35,13 @@ image logoback = "mod_assets/logoback.png"
 image logotext = "mod_assets/logotext.png"
 image bump = "mod_assets/bump.png"
 image baguette = "mod_assets/baguette.png"
-
+image sroomz:
+    "bg/sayori_bedroom.png"
+    truecenter
+    zoom 1.8 
+    xoffset 500  
+image noose = "mod_assets/noose.png"
+image pink = "#b59"
 
 transform shake:
     dizzy(1.5, 0.01) 
