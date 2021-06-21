@@ -42,7 +42,7 @@ image n_rects_ghost2:
  
 image n_rects_ghost3:
     RectCluster(Solid("#000"), 4, 15, 5).sm
-    pos (720, 290)
+    pos (700, 290)
     size (43, 26)
    
 

@@ -293,7 +293,7 @@ layeredimage natsuki turned:
     group outfit:
         attribute uniform default null
         attribute casual null
-
+        attribute mib null
 
 
     group mood: #Mood determines what the defaults images are for the following attributes:
@@ -349,6 +349,8 @@ layeredimage natsuki turned:
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_left_point.png"
         attribute lpoint if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_left_point.png"
+        attribute ldown default if_any(["mib"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_mib_left_down.png"
 
 
 
@@ -363,7 +365,8 @@ layeredimage natsuki turned:
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_right_hip.png"
         attribute rhip if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_right_hip.png"
-
+        attribute rdown default if_any(["mib"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_mib_right_down.png"
 
 
     group head: #This needs to render above her body for her "turned" pose.
@@ -664,6 +667,10 @@ layeredimage natsuki turned:
 
         attribute s_scream:
             "mod_assets/MPT/natsuki/natsuki_face_special_scream.png"
+    group mib_shades if_any(["mib"]):
+
+        attribute the_cool_fukin_shades default:
+            "mod_assets/MPT/natsuki/natsuki_turned_eyes_shades.png"
 
 
 

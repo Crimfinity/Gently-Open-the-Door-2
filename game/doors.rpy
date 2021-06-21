@@ -49,7 +49,7 @@ label neckrope:
     "I can't even hear a breath."
     "She couldn't have…?"
     "No, no, there's no way."
-    "Is there?"
+    #"Is there?"
     "I shake my head and chuckle to myself."
     "Don't be paranoid, [player]."
     "Don't baby her. Be there for her."
@@ -137,11 +137,11 @@ label neckrope:
     "She was okay just a second ago."
     "Why is she crying about breakfast?"
     "Unless…"
-    "No."
-    "No, no, no."
-    "Not this."
-    "Not this again."
-    "I thought it was over!"
+    #"No."
+    #"No, no, no."
+    #"Not this."
+    #"Not this again."
+    #"I thought it was over!"
     show sayori turned cry oe cm at t11 
     "Sayori stands up, her tears dried up and looks me dead in the eye."
 
@@ -153,14 +153,15 @@ label neckrope:
     s "But, [player]."
     show sayori lup 
     s "You didn't get me breakfast."
-    show sayori cm at t11 
-    mc "That's not a reason to do it."
-    show sayori doub om at f11 
-    s "[player]."
-    show sayori angr 
     s "I wanted my breakfast and you didn't get me it."
-    s neut "Cause and Effect."
-    s "Setup and Punchline."
+    show sayori cm at t11 
+    #mc "That's not a reason to do it."
+    #show sayori doub om at f11 
+    #s "[player]."
+    #show sayori angr 
+    #s "I wanted my breakfast and you didn't get me it."
+    #s neut "Cause and Effect."
+    #s "Setup and Punchline."
     show sayori cm neut rnoose at t11 
     mc "No."
     mc "Don't do it."
@@ -275,9 +276,9 @@ label nc1:
     show layer master:
         truecenter
         subpixel True 
-        linear 2 zoom 1.2 
+        linear 60 zoom 3 yoffset 1000 
     show sayori neut oe cm ldown rdown at t11
-    pause 2 
+    pause 60
     show layer master  
     #Sayori looks directly at the player for a second
 
@@ -330,12 +331,12 @@ label nc1:
     show sayori om 
     "I walk up to the ringing phone and pick up."
 
-    mc "Hello, hello, [player] from NooseCorp, where we'll uhh…"
+    mc "Hello, hello, [player] from NooseCorp, where we'll uhh..."
     show sayori -e2b om at hf41 
     s "Never ever leave you hanging!"
-    show sayori cm e2b at t41 
-    mc "Where we'll never ever leave you hanging."
-    mc "How can I help?"
+    #show sayori cm e2b at t41 
+    #mc "Where we'll never ever leave you hanging."
+    #mc "How can I help?"
     stop ambient 
 
     play sound closed 
@@ -418,9 +419,11 @@ label dmc:
     "Five bumps."
     "Six bumps."
     window hide 
-    pause 3 
+     
 
-    #fade to black…"
+    scene black with fade 
+    pause 3
+    show bump 
     #return
 
     "Sixty four thousand three hundred and sixty five bumps."
@@ -626,7 +629,7 @@ label schizo:
     hide black onlayer front 
     play sound opend 
     pause .15 
-    m "Hey, Sayori, do you want to play some Truth or --{nw}"
+    m "Hey, Sayori, do you want to play some Truth or--"
     show layer master at hpunch 
     s "OF COURSE YOU'RE THE ONLY ONE WHO'S REAL!"
     s "Just my luck."
@@ -671,6 +674,7 @@ label bread:
     show monika at lhide 
     hide monika 
     pause 3.5 
+    show sayori neut 
     "Baguette" "\"Baguette.\""
     call dclose 
     return 
@@ -679,55 +683,84 @@ label bread:
 
     #close door
 label pregnancy:
-    #Pregnancy
-
+    stop music 
+    scene black 
+    "I gently open the door."
+ 
     play sound opend 
     scene bg sroom 
-    show sayori turned casual dist oe cm at t11 
+    show sayori turned dist oe cm at t11 
     with wipeleft_door
 
     mc "Sayori, why'd you call me here?"
-    show sayori sad om at f11
+    show sayori sad om n3 at f11
     s "[player], we need to talk."
     show sayori cm at t11 
     mc "What is it?"
     show layer master:
         truecenter 
         subpixel True 
-        linear 1.7 zoom 1.4
+        linear 1.4 zoom 2.7 yoffset 300 xoffset 100
     #slow zoom in on sayori's face
     #pregnancy test meme
-    
+    pause 2 
+    show sayori nerv om oe
+    show preg with dissolve:
+        truecenter 
+        zoom .20
+        yoffset -50 xoffset 75
     s "I'm pregnant."
+    show sayori cm 
     mc "B-but how!?"
-    s "Remember when we out to the park a couple days ago?"
-    mc "Yeah…?"
+    scene bg sroom 
+    show sayori turned nerv om rup n3 ldown at i11 
+    with dissolve
+    s "Remember when we went out to the park a couple days ago?"
+    show sayori cm 
+    mc "Yeah..?"
+    show sayori om laug at f11 
     s "And we were getting warm and fuzzy?"
-    mc "Yeeeeaaahhhh…?"
+    show sayori -n3 n4 flus cm at t11  
+    mc "Yeeeeaaahhhh..?"
+    show sayori sad om ldown at f11 
     s "And then we hid in the bushes and you uhh…"
-
+    show sayori cm at t11 
     "Sayori swallows nervously."
-
+    show sayori om at f11 
     s "And you held my hand?"
+    show sayori cm at t11 
     mc "Oh no…"
-    s "I guess we held hands a bit too hard…"
+    show sayori rup nerv om at f11 
+    s "I guess we held hands a bit too hard..."
+    show sayori cm at t11 
     mc "Damn it!"
     mc "My mom always said I should use protection!"
     mc "I should've worn my gloves!"
+    show sayori worr om at hf11
     s "It's not your fault!"
+    show sayori sad 
     s "I wanted to feel your hands too, you know."
-    mc "Yeah…"
-    s "Yeah…"
+    show sayori cm at t11 
+    mc "Yeah..."
+    show sayori ce om at s11 
+    s "Yeah..."
+    show sayori cm 
 
     pause 10.0
-
-    mc "So, abortion or…?"
-
+    show sayori oe -n4 at t11 
+    mc "So, abortion or..?"
+    show sayori happ om lup at f11 
     s "Nah I've got it covered, two for one!"
-    #s_kill
-
+    show sayori at h11 
+    pause .15 
+    hide sayori 
+    stop music 
+    play sound sting 
+    call skz
+    #show s_kill2 
     mc "..."
     mc "Phew, that was close!"
+    call dclose 
     return 
 label psa:
 
@@ -735,7 +768,7 @@ label psa:
     play music "mod_assets/6b.ogg"
     "I gently open the door."
     play sound opend 
-    scene bg sroom 
+    scene bg sroomw 
     show sayori 1a at t11 zorder 5 
     show vhs zorder 10 onlayer front 
     show aspect zorder 20 onlayer front 
@@ -841,10 +874,16 @@ label ava:
     show vignette zorder 5 
     show noise zorder 1:
         alpha .4 
-    show ava at f11 zorder 3
-    show n_rects_ghost1 zorder 3 
-    show n_rects_ghost2 zorder 3 
-    show n_rects_ghost3 zorder 3
+    show ava zorder 2: #at f11 zorder 3:#3:
+        yanchor 1.0 ypos 1.03 subpixel True
+        dizzy(1.5,.01)
+    show n_rects_ghost1 zorder 3:
+        dizzy(1.5,.01)
+    show n_rects_ghost2 zorder 3:
+        dizzy(1.5,.01) 
+    show n_rects_ghost3 zorder 3:
+        #xoffset -80
+        dizzy(1.5,.01)
     
 
     a "Our fates intertwined forever and ever by a string so thin and so fragile-{nw}"
@@ -904,15 +943,16 @@ label db2:
     
     "She must be really excited for more cupcakes."
 
-    play music td 
+    #play sound sting
     show sayori at falldown 
     hide sayori 
-    #s_kill sfx
-    mc "Sayori, don't be so dramatic, I'll go get you more cupcakes."
+
+    #mc "Sayori, don't be so dramatic, I'll go get you more cupcakes."
 
     "I pat her head as the foam starts leaking out of her mouth."
-    "She should really clean herself up."
-    "What a slob."
+    mc "Sayori, don't be so dramatic, I'll go get you more cupcakes."
+    #"She should really clean herself up."
+    #"What a slob."
     call dclose 
 #close door
     return 
@@ -948,7 +988,7 @@ label dg:
     show sayori happ om at f11 zorder 3 
     s "Okay, I'll start."
     show natsuki sad 
-    s rdown "My name is Sayori and I hung myself."
+    s rdown "My name is Sayori and I hanged myself."
     show sayori cm at t11 
     y "..."
     show sayori neut 
@@ -986,10 +1026,11 @@ label dg:
     show monika forward nerv om n2 lpoint at l41 zorder 3 
     m "H-hey..."
     show monika happ at f41 
-    m "I overheard you guys talking and I was wondering if I could…"
-    m laug "Join you guys?"
+    m "I overheard you guys talking and I was wondering if I could..."
+    m laug "...Join you guys?"
 
     show monika nerv cm ldown at s41 zorder 2
+    stop music fadeout 4
     "The girls all stare holes into the wretched one."
     show sayori vang at f43 zorder 3 
     s "{b}{cps=1} N o . {/b}"
@@ -1075,13 +1116,13 @@ label dg:
     y "Isn't that the rope we glued a set of comedic eyes to, so that you could cope with your trauma better?"
     s "I think???"
     scene bg sroom 
-    show sayori turned casual lup cm oe worr at t11
+    show sayori turned casual lup cm oe worr at t11 #at face zorder 11 
     show natsuki turned casual curi lhip rdown cm oe at t31 
     show yuri turned casual lup rdown curi oe cm at t33 
     show noose zorder 10 at floating:
         yoffset -400 xoffset -150  
-    mc "Girls, I can't tell you how grateful I am for you bringing him back to me."
-
+    mc "Girls, I can't tell you how grateful I am for you bringing it back to me."
+    show sayori at face zorder 11 
     "I hug Sayori to show my appreciation."
 
     mc "Thank you so much."
@@ -1095,7 +1136,852 @@ label dg:
     scene black with wipeleft_door 
     return 
     #close door
+label infinity:
+    scene black 
+    stop music 
+    "I gently open the door."
+    play sound opend
+    pause .15 
+    "There's another door."
+    "Huh."
+    "I gently open the door again."
+    play sound opend
+    pause .15 
+    "And another door."
+    "Okay."
+    "I gently open the door once more."
+    play sound opend
+    pause .15 
+    "More doors??"
+    play sound opend
+    pause .15 
+    "How many doors are there!?"
+    "I gently open the door another time."
+    play sound opend
+    pause .15 
+    "Phew! A hallway!"
+    "It's dark, but that should be okay."
+    "I walk forward into the dark abyss."
+    "Okay and there should be-"
+
+    play sound "sfx/smack.ogg"
+
+    "ANOTHER DOOR!?"
+    "Ugh."
+    "I open the door, not very gently this time."
+    play sound opend
+    pause .15 
+    "Oh my God."
+    "It's another door."
+    "Fuck this."
+    "I try to kick the door down."
+
+    play sound "sfx/fall2.ogg"
+    mc "AH FUCK!"
+
+    "I break my leg."
+    "Ouchie. That hurtie my stumpy wumpy."
+    "I crawl to the doorknob and open it."
+    window hide 
+    scene white with dissolve_scene_full 
+    pause .3 
+    show white onlayer front:
+        .1
+        linear 3 alpha 0 
+    scene black 
+    show noose at floating:
+        yoffset -200
+    #blinded by light
+    #dark room with noose in it
+
+    mc "What the…?"
+    show sayori turned om neut e3a at l41 
+    s "You know what you must do."
+    show sayori cm 
+    mc "..."
+    mc "Yes."
+
+    show layer master:
+        truecenter 
+        linear 1 zoom 1.15
+    "I crawl up to the noose, barely standing on my two feet."
+    "Looking through it, I see my future reflected within the noose."
+    "I know what I must do."
+    scene black 
+    show noose at floating:
+        truecenter 
+        zoom 1.8
+        yoffset -300
+    with dissolve
+
+    "I take the noose and stare at it longingly."
+
+    mc "I'm sorry, Ropu-Kun."
+
+    "I get it closer to my head."
+    "Clearing my throat, time to make my move."
+    "I make out with the noose."
+    #pause 1.3 
+    play sound "mod_assets/kiss.wav" #its a small wav ok?
+    pause 1.3
+    #mc "Blegh, why is it so soggy?"
+    #show sayori turned neut oe om rup at l31 
+    #s "The rope's a slut."
+    #show sayori cm 
+    #mc "..."
+    call dclose 
+    #close door
+label madden:
+    "I gently open the door."
+
+    play sound opend 
+    show black zorder 3:
+        yoffset -720
+    show sroom base zorder 1
+    show s_kill2 zorder 5:
+        zoom 1.1 rotate -7 xcenter 640
+        yoffset -1700
+        yanchor 0
+    with wipeleft_door 
+    play sound sting
+    mc "Sayori!"
+
+    "No…"
+    "I approach the hanging body of my best friend."
+    "I should've seen this coming…"
+    "I look up to see Sayori's lifeless face."
+    "Oh Sayori, what did you do…-{nw}"
+    "Wait a minute."
+    show layer master:
+        ease 1 yoffset 100 
+    pause 1 
+    "I look further up only to be met with an endless void."
+
+    mc "Where the hell is the rope attached to…?"
+
+    "I move up the chair that's been thrown carelessly on the ground and jump on."
+    "Okay, so I need to climb that rope..."
+    hide s_kill2
+    show s_kill3 zorder 5:
+        zoom 1.1 xcenter 640 rotate -7
+        yoffset -1230
+        yanchor 0
+        parallel:
+            rotate 0
+            ease .2 rotate 15 
+            ease .2 rotate 0
+
+    "I jump from the chair and use Sayori's limp head for another boost."
+    "That jump should do it."
+    "And..."
+    "Catch!"
+    "I'm gripping the rope."
+    show layer master:
+        yoffset 100 
+        ease 1.4 yoffset 300
+    "Now it's time to climb."
+    "Let's see where this void takes us."
+    show layer master:
+        yoffset 300 
+        ease 1.4 yoffset 400
+    "Using all my upper body strength, I begin to climb the endless rope."
+    "At first, the void is a simple blackness, while terrifying, it is at the very least comprehensible."
+    show layer master:
+        yoffset 400 
+        ease .7 yoffset 450
+    "So, I climb."
+    show layer master:
+        yoffset 450 
+        ease 1.4 yoffset 500
+    "I climb, I climb and I climb."
+    "My arms shake."
+    "My face melts."
+    show layer master:
+        yoffset 500 
+        ease 1.4 yoffset 600
+    "I feel like I'm losing myself."
+    "The void gets ever darker."
+    "Ever deeper."
+    "All the light touches..."
+    play sound "mod_assets/lk.mp3"
+    show lionking zorder 6:
+        alpha 0 
+        yoffset -600
+        linear 1 alpha 1 
+    extend "is our kingdom."
+    "Mufasa" "\"A king's time as ruler rises and falls like the sun. One day, Simba, the sun will set on my time here, and will rise with you as the new king.\""
+    "Simba" "\"And this will all be mine?\""
+    "Mufasa" "\"Everything.\""
+    "Simba" "\"Everything the light touches.  What about that shadowy place?\""
+    "Mufasa" "\"That's beyond our borders. You must never go there, Simba.\""
+    "Simba" "\"But I thought a king can do whatever he wants.\""
+    "Mufasa" "\"Oh, there's more to being king than... getting your way all the time.\""
+
+  
+
+    "Simba" "\"There's more?\""
+    "Mufasa" "\"Simba...\""
+
     
+
+    "Mufasa" "\"Everything you see exists together, in a delicate balance. As king, you need to understand that balance, and respect all the creatures-- from the crawling ant to the leaping antelope.\""
+    "Simba" "\"But, Dad, don't we eat the antelope?\""
+    "Mufasa" "\"Yes, Simba, but let me explain. When we die, our bodies become the grass. And the antelope eat the grass. And so we are all connected in the great Circle of Life.\""
+    show monika forward happ om lpoint casual ce at l31 zorder 30:
+        yoffset -600
+    m "Good morning, sire!"
+    show monika sad cm 
+    "Mufasa" "GOD, FUCK OFF, MONIKA!"
+    call dclose 
+
+    show layer master:
+        yoffset 100 
+        ease 1.4 yoffset 300
+    "Is a rope."
+    "A singular rope."
+    "And so I climb."
+    "Every ounce of my strength is attributed to pulling myself up."
+    "At first, I'm going at a decent pace."
+    "But eventually, I slow to a crawl."
+    "My body can't take it."
+    "But I must."
+    "I must push on!"
+    "I climb and I climb, the never ending struggle!"
+    "My entire body is just a puddle of implications and suggestions!"
+    "Am I here?"
+    "Is here even real?"
+    "Am I real?"
+    "My surroundings warp around, shades of colour so extravagant, that we have no words for it."
+    "It's like I can see a whole new spectrum of light!"
+    "The colours!"
+    show veins onlayer front 
+    "My retinas bleed in, my eye sockets bulge out."
+    "I can't feel my body."
+    "I can't see the rope!"
+    "The weight of the entire world is on me!"
+    "The pain!"
+    "The suffering!"
+    "AAAAAAAAAAAAAAAAAAAAAAAAAA--{nw}"
+    show white onlayer master zorder 3:
+        alpha 0
+        linear 1 alpha 1
+    #flash of white light
+    #blinking animation
+    pause 1.5 
+    scene white 
+    window hide 
+    hide white onlayer front 
+    scene black with close_eye 
+    pause .15 
+    scene black 
+    show madden happ based at i11 
+    with open_eyes 
+    "Wh-what…?"
+    "Where am I?"
+    show madden at f11 
+    jm "Hello, child."
+    show madden at t11 
+    mc "Who are you?"
+    show madden at f11 
+    jm "I am The Master of football strategy."
+    show layer master:
+        ease 3 zoom 1.15 rotate 25 
+    jm "Arbiter of all things pigskin."
+    jm "I see you have found my realm."
+    show madden at t11 
+    mc "Are you…"
+    mc "Are you God?"
+    show madden at f11 zorder 2 
+    jm "Hahahaha!"
+    jm "So, child…"
+    jm "In the name of the hall of fame, would you like to join me in my never ending battle for all things football?"
+    jm "Follow my teachings and you shall become a football man."
+    mc "I'm honestly more of a soccer guy."
+    show madden mad 
+    pause 5.0
+    window hide 
+    show layer master at anxiety 
+    show noise zorder 1 
+    show white onlayer front:
+        alpha 0
+        linear 5 alpha 1 
+    show madden:
+        dizzy(1.5,.01)
+        1
+        dizzy(3,.01)
+        1 
+        dizzy(5,.01)
+    pause 5 
+    stop sound 
+    stop music 
+    scene bg sroom 
+    hide white onlayer front 
+    #madden shakes
+    #mc disintegrates
+    #screams of the damned
+    #white flash
+    #madden jumpscare
+    #back to black screen
+    play ambient birds 
+    "What!?"
+    "Huh!?"
+    "What just…"
+    "Ugh."
+    "Must've been a dream."
+    "..."
+    "For some reason, I want to play some Madden 08."
+    "Vince Young is calling to me."
+    "Anyway..."
+    hide veins onlayer front
+    stop ambient 
+    call dclose 
+    return
+
+    #transition to next skit
+label dib:
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show yuri turned mib neut at t33 
+    show natsuki turned mib doub cm at t31
+    show sayori turned casual lup cm oe ldown rdown at t11 
+    with wipeleft_door 
+    #DiB and Sayori
+
+    show natsuki om at f31 
+    n "Okay, where's the baby!?"
+    show natsuki angr cm at t31
+    show sayori om rup at f11
+    s "I-I don't know, I swear!"
+    show sayori cm neut at t11
+    show yuri om at f33  
+    y "Look, Sayori, I'm a nice, shy, quiet girl."
+    y "I'd let you relax, maybe have a nice sip of tea-"
+    show yuri anno cm at t33 
+    show sayori neut om at f11 
+    s "I prefer juice."
+    show sayori cm at t11
+    show yuri om at f11 
+    y "{i}Tea{/i}, while you got more cooperative, but my partner here..."
+    show natsuki neut om at f31 
+    show yuri cm neut at t33 
+    n "S'up."
+    show natsuki cm at t31 
+    show yuri dist om at f33 
+    y "She's a bit more chaotic."
+    show yuri cm neut at t33 
+    show natsuki om happ at f31 
+    n "I once bit off a suspect's ear."
+    show natsuki cm neut at t31
+    show yuri om at f33  
+    y "I was there. I can confirm."
+    show natsuki cm at t31 
+    show yuri neut cm at t33 
+    mc "Uh, what's going on!?"
+    show yuri om lsur at hf33 
+    show natsuki om lsur at hf31 
+    ny "Huh!?"
+    show natsuki cm at t31 
+    y "How did he get in here!?"
+    show yuri cm at t33 
+    n "..."
+    show yuri curi om at f33  
+    y "Did you leave the door unlocked?"
+    show yuri neut at t33 
+    n "..."
+    mc "Natsuki, Yuri, why are you dressed up like this?"
+    show natsuki doub om at f31 
+    n "We ain't the Nat and Yuri you know."
+    n sedu "We're the DiB."
+    show natsuki cm at t31 
+    show yuri om neut at f33 
+    y "The Dokis in Black."
+    show yuri cm at t33 
+    show natsuki neut om at f31 
+    n "Not the Black Dokis. We get confused a lot."
+    show sayori neut om at f11 
+    show natsuki anno cm at t31 
+    s "That sounds racist."
+    show natsuki doub om at f31 
+    n "It is racist. Have you seen Tiffa--{nw}"
+    stop music 
+    show yt onlayer front 
+    pause 1  
+    #DMCA Copyright notice
+    #snap back to reality
+    hide yt onlayer front 
+    mc "Okay then, DiB, why are you here?"
+    show natsuki neut om at f31 
+    n "We're here looking for a baby."
+    show natsuki cm at t31
+    mc "A baby?"
+    show yuri neut om at f33 
+    y "Yes. This baby is the centre of a time anomaly that needs to be fixed before the entire timestream collapses in on itself."
+    show yuri cm at t33 
+    show sayori curi om lup at f11 
+    s "I don't have a baby!"
+    show yuri flus n3 
+    show natsuki anno 
+    show sayori cm at t11 
+    mc "Yet."
+    show lsur om at f11 
+    s "...oh!"
+
+    show sayori laug n3 cm at t11
+    "Sayori seductively looks at me."
+    "I wink."
+    show sayori lsur 
+    show yuri -n3 
+    show natsuki om ce at f31 
+    n "Leave the flirting for the bedroom, fellas."
+    show sayori curi om at f11 
+    show natsuki cm at t31 
+    s "But you're in my bedroom."
+    show yuri om at f33 
+    show sayori cm neut ldown rdown at t11 
+    y "We're looking for this baby in particular."
+    show yuri cm at t33 
+    "Yuri shows me a picture of a particularly cute baby that has pink eyes."
+
+    mc "Oh yeah, I threw it in the garbage."
+    show natsuki angr om oe at f31 
+    n "You threw me in the--"
+    show natsuki ce doub at f31 
+    n "Nevermind. Okay listen, [player], you're going to need to grab the baby from the trash and wear this."
+    show natsuki at d31 
+    "Natsuki holds up the attire of a Garapagalos delivery-person."
+
+    mc "Why?"
+    show yuri om at f33 
+    y "To seal the time loop that this baby is the centre off."
+    show yuri cm at t33 
+    mc "Will you stop bothering us if I do it?"
+    show yuri om at f33 
+    y "Yes."
+    show yuri cm at t33 
+    mc "Fine, I guess."
+    show yuri dist 
+    show natsuki dist 
+    show sayori e2d 
+    "I start to switch into my delivery attire."
+    show sayori n4 
+    "Natsuki and Yuri look away, while Sayori keeps looking at me."
+    show sayori worr -e2d at f11 
+    s "Come quick, okay?"
+    show sayori cm at t11 
+    mc "I sure hope not."
+    show sayori -n4 happ 
+    "We chuckle to ourselves."
+    show yuri neut 
+    show natsuki neut 
+    "I finally get dressed and tell the girls that they can look again."
+    show natsuki om at f31 
+    n "Anyway, we're going to have to stop by Guam on the way, so we can time travel back."
+    show natsuki cm at t31 
+    mc "What's Guam?"
+    show yuri happ om at f33 
+    show sayori lsur 
+    y "It's a sidespace dimensional city where DiB headquarters are centred at."
+    show yuri cm at t33 
+    mc "Sidespace dimensional city..?"
+    show sayori om rup at f11 
+    s "Big words make me go boom boom."
+    show sayori cm at t11
+    show natsuki om curi at f31 
+    n "You ready, [player]?"
+    show natsuki cm neut at t31 
+    "I shrug my shoulders."
+    show natsuki om at f31 
+    n "Good enough."
+    show natsuki cm at t31 
+    call dclose 
+    return
+    #close door
+label rank:
+    "I gently open the door."
+    play sound opend 
+    scene sroom 
+    show sayori turned happ cm casual at t11 
+    show natsuki cross nuet cm at t33  
+    show yuri turned cm neut ldown rdown at t31 
+    with wipeleft_door 
+    #sayori, natsuki, yuri
+    show sayori happ om at f11 
+    s "Okay, guys, welcome to the Friend Ranking Competition!!!"
+
+    #applause
+
+    s ce "Today on Friend Ranking, I'll be ranking my best-ever friendies..."
+    show sayori at hf11 
+    s oe "The Literature Club!"
+    show sayori cm at t11 
+    "I lean over to Yuri and Natsuki."
+
+    show yuri lsur 
+    show natsuki curi 
+    mc "So, you guys nervous?"
+
+    show natsuki turned curi om rhup at f33 
+    n "Dude, I've been pampering her for an entire month trying to win this!"
+    n ce "Of course I'm nervous."
+    show natsuki dist cm at t33 
+    show yuri neut om rup at f31 
+    y "I would like to think Sayori and I are very close."
+    show yuri cm at t31 
+    mc "I'm her childhood friend, so I'm pretty sure I'll win."
+    #show natsuki doub om at f33  
+    #n "Yeah, but you're a boy."
+    #show natsuki cm curi at t33 
+    #mc "Exactly."
+    #show natsuki om at f33 
+    # "What does that mean?"
+    #how natsuki vsur cm at t33 
+    #"I wink at Natsuki."
+    #show natsuki rdown ce om at f33  
+    #n "Ew, ew, ew, ew."
+    show natsuki worr at t33 
+    s "Okay, buddies, are you ready?"
+    show natsuki flus om ce lhip at f33 
+    n "Just tell us the rankings."
+    show natsuki cm 
+    show sayori nerv om at f11 
+    s "Alright, alright."
+    show sayori happ 
+    s "So, at third place, we have..."
+    show yuri shy n3
+    show natsuki worr n3 
+    show layer master:
+        truecenter 
+        linear 4.201 zoom 1.35
+    play sound "mod_assets/dr1.mp3"
+    pause 4.201
+    #drum roll
+    play sound "mod_assets/dr2.mp3"
+    show sayori lup neut om at f11   
+    show natsuki dist -n3 n2 
+    show yuri turned sad -n3  
+    s "Yuri."
+    show sayori cm at t11 
+    show yuri om at f31 
+    show sayori sad 
+    y "Oh."
+    y ce "Expected, but still disappointing."
+    show sayori om at f11 
+    show natsuki neut 
+    s "Don't be sad Yuri!"
+    show sayori happ rup 
+    s "Your big boobies always have a place in my heart!"
+    show sayori ce cm ldown rdown at t11 
+    show yuri dist om at f31 
+    y "I appreciate the sentiment, Sayori."
+    show sayori neut om oe at f21 
+    show yuri cm neut at lhide 
+    hide yuri 
+    show natsuki at t22  
+    s "Now for second place..."
+    show natsuki sedu om rhip at f22 
+    n "Are you ready to eat my dust, [player]?"
+    show natsuki anno at t22 
+    mc "I doubt she'll pick you before me."
+    show natsuki lsur 
+    show sayori happ om ce rup at f21 
+    show natsuki shoc 
+    s "Mr. Cow!"
+    show natsuki angr om at f22 
+    show sayori cm neut at t21  
+    mcn "Mr. Cow!?"
+    show sayori happ om rup at f21
+    show natsuki cm at t22 
+    s "Mr. Cow is always with me."
+    s ce "Plus he also has big udders!"
+
+    show sayori cm at t21 
+    "Wouldn't that make him a she???"
+    "Questions for later."
+
+    show sayori neut oe rdown om ldown at f21
+    s "Now for first place..."
+    show natsuki laug ce lhip  om at f22 
+    n "This is gonna be me."
+    show natsuki angr cm rdown ldown at t22 
+    mc "C'mon Natsuki, don't get your hopes up."
+    show natsuki pout om at f22 
+    n "I have a feeling, though."
+    show natsuki anno cm at t22 
+    mc "I'm surprised your dad didn't beat all the feeling out of you."
+    show natsuki om at f22 
+    n "Low blow, [player]."
+    show natsuki cm vang at t22 
+    mc "Like the ones your dad gave to you?"
+    show natsuki om at f22 
+    n "You son of a--"
+    show natsuki shoc cm at h22 
+    show sayori angr om lup at hf21 
+    s "Natsuki!"
+    show sayori cm at t21 
+    show natsuki happ 
+    mc "What?"
+    show natsuki om e3a at f22 
+    n "HAHA EAT MY SHORTS, [player]!"
+    show natsuki -e3a cm at t22 
+    mc "I thought..."
+    show natsuki at t21 zorder 1 
+    show sayori happ 
+    pause .3 
+    show natsuki at t22 
+    "Natsuki goes over and hugs Sayori super tightly."
+    show natsuki at thide 
+    hide natsuki 
+    show sayori happ at t11  
+    "I limp over."
+    "Huh. This is how rejection feels like."
+
+    show sayori worr om rdown lup at f11 
+    s "[player], are you sad?"
+    show sayori cm at t11 
+    mc "N-no…"
+    mc "Yes."
+    mc "Yes, I'm very sad."
+    mc "We're childhood friends, Sayori."
+    mc "I thought I was your best buddy."
+    show sayori sad om at f11
+    s "Well, we're not buddies."
+    show sayori cm at t11 
+    mc "We're not!?"
+    show sayori om at f11 
+    s "No, because I..."
+    show sayori cm at t11 
+    n "Oh god, I don't like where this is going."
+    mc "Where what is going?"
+    show sayori om at f11 
+    s "Because I love you."
+    show sayori n3 cm ldown rdown dist at t11 
+    mc "..."
+
+    "I'm stunned."
+
+    mc "Sayori, are you for real?"
+    show sayori cry 
+    "She nods her head repeatedly."
+
+    mc "Wow, I..."
+    mc "Well Sayori, I love y--{nw}"
+    show monika forward om lpoint happ ce at l31 
+    show sayori angr 
+    m "Hey guys, I heard you were doing a friend ranking competition!"
+    show monika cm lsur 
+    mc "OH MY GOD, FUCK OFF MONIKA!"
+    show monika sad 
+    show natsuki turned vang om at r33
+    n "SERIOUSLY, FUCKIN' BITCH!"
+    show natsuki cm 
+    show sayori vang om lup at f11 
+    s "LIKE WOW, I DIDN'T INVITE YOU FOR A REASON!"
+    s ce "YOU'RE NOT EVEN MY FRIEND!"
+    show monika cry om at l31 
+    show sayori cm at t11 
+    m "I thought..."
+    show monika cm 
+    show sayori om at f11 
+    s "YEAH WELL, THINK OUTSIDE!"
+    s doub "Dumb skank."
+    show sayori cm at t11 
+    show monika ce 
+    pause .5 
+    show monika at lhide 
+    hide monika 
+    call dclose 
+    return 
+    #monika crying
+
+    #y "That was absolutely deserved."
+    ##s "Obviously."
+    #n "Yeah fuck her."
+
+    #close door
+label baby:
+    "I gently open the door."
+    "Were you worried I was going to try and call you out again FiT?"
+    play sound opend 
+    scene bg sroom 
+    show sayori turned casual vsur cm oe at t22:
+        dizzy(.15, .01)
+
+    "I see a Garapagalos package in the middle of the room."
+    "Sayori is cowering in fear, poking it with a stick."
+
+    mc "Uhh, Sayori, why are you poking a cardboard box with a stick?"
+    show sayori pani om at hf22 
+    s "It's crying, [player]."
+    show sayori cm at t11 
+    mc "The box is crying?"
+    show sayori om at f11 
+    s "It's crying!"
+    show sayori cm at t11 
+    mc "Uh huh."
+    mc "I don't hear anythin--{nw}"
+    play sound baby 
+    #play cry sfx
+    pause 2 
+    "Shocked, I cower behind Sayori."
+
+    mc "Why is the box crying!?!?"
+    show sayori cry om lup at f11 
+    s "I don't know!"
+    show sayori cm at t11 
+    mc "Did you order it!?"
+    show sayori angr om at f11 
+    s "No! Some guy just gave it to me!"
+    s neut ldown rdown "Kinda looked like you, actually."
+    show sayori cm at t11
+    mc "Did you open it?"
+    show sayori worr om at f11
+    s "N-no!"
+    show sayori cm at t11 
+    mc "Then go open it!"
+    show sayori doub om at f11
+    s "You do it!"
+    show sayori cm at t11 
+    mc "No, you!"
+    #show sayori angr om at f11
+    #s "You're the man!"
+    #show sayori cm at t11 
+    #mc "That's sexist."
+    show sayori angr om at f11
+    s "Just do it, [player] or I'll kill myself!"
+    show sayori cm at t11 
+    mc "Oh wow, so killing yourself is so worthless now that we're using it as an ultimatum in an unrelated situation."
+    show sayori at thide 
+    hide sayori 
+    "Sayori, tired of my whining, pushes me towards the crying box."
+    show vignette with dissolve 
+    "I gulp and proceed to slowly tear it open."
+    "Leaning in, I take a glimpse of what's inside."
+    hide vignette with dissolve 
+    mc "Huh..."
+    show sayori turned worr om casual at f11 
+    s "So? What's inside?"
+    show sayori cm 
+    mc "A baby."
+    show sayori curi rup om at f11 
+    s "A what?"
+    show sayori neut cm at t11 
+    mc "A baby."
+    mc "There is a baby inside the package."
+    show sayori curi rup om at f11 
+    s "Why is there a baby inside the package?"
+    show sayori anno cm at t11 
+    mc "It's your package, why would I know?"
+    mc "Did you order a baby in a package?"
+    show sayori ce om rdown at f11 
+    s "No, [player], I did not order a baby in a package."
+    show sayori cm att11 
+    mc "Then why is there a baby inside this package?"
+    show sayori angr om oe at hf11 
+    s "I don't know!"
+    show sayori anno ce at d11 
+    "Sayori sighs, obviously fed up with the situation."
+    show sayori oe neut
+    "She leans in and looks at the now calm baby."
+
+    mc "Hey, it stopped crying."
+    show sayori neut om at f11 
+    s "Yeah, it..."
+    show sayori happ 
+    s "It did."
+
+    show sayori lsur cm at t11 
+    "Sayori's eyes dilate, her hands shake and her lips are left ajar."
+    "She doesn't want to admit it, but it seems that Sayori has found love."
+    show sayori om at f11 
+    s "Wow..."
+    show sayori cm at t11 
+    mc "Please don't have a maternal moment, Sayori."
+    show sayori happ rup lup at f11 
+    s "But it's so cute!"
+    show sayori cm at t11 
+    pause 1.0
+    play sound baby 
+
+    mc "Great, now it's crying."
+    mc "Thanks Sayori."
+    show sayori worr om at f11
+    s "Do you think it did a poopie?"
+    show sayori cm neut at t11
+    mc "It doesn't smell like it, so I would guess not."
+    show sayori dist om at f11 
+    s "Hm…"
+    s curi "Then why is it crying?"
+
+    show sayori cm at t11 
+    "Sayori starts to gently shake the baby."
+
+    show sayori sad om rup at f11 
+    s "C'mon little baby, why're you crying?"
+    show sayori cm at t11 
+    mc "Here, lemme try."
+    show sayori neut at t22 
+
+    show nbaby with dissolve:
+        truecenter 
+        zoom .5
+    "Sayori hands me the crying abomination."
+    "I grab it from below its armpits."
+    show layer master:
+        truecenter 
+        ease 2 zoom 1.3
+    "I look deep into its odd pink eyes."
+
+    mc "So…"
+    show sayori vsur rup at h22 
+
+    show nbaby:
+        truecenter 
+        zoom .5
+        dizzy(1.5,.01)
+    "I start to violently shake the eldritch being."
+    
+    mc "TELL ME YOUR SECRETS, CHILD!"
+    show sayori cry om at f22 
+    s "STOP, [player] YOU'RE HURTING THE CUTE BABY!"
+    show sayori vsur cm at h22
+    style.say_dialogue = style.edited
+    n "DON'T CALL ME CUTE!"
+    style.say_dialogue = style.normal
+    show layer master 
+    mc "AHH!"
+    s "AHH!"
+    show nbaby;
+    truecenter
+    zoom .5 
+    alpha 1 
+    yoffset 0
+    parallel:
+        ease 1 rotate 1000 zoom 0 yoffest -400 
+    parllel:
+        .6
+        linear .4 alpha 0 
+    #baby natsuki gets thrown out of the window transform
+    pause .6
+    play sound "mod_assets/glass.mp3"
+    pause .4 
+
+    play sound "mod_assets/alarm.mp3"
+    pause 2 
+    #show sayori neut om at f22  
+    #s "So we just killed a baby."
+    #show sayori cm at t22 
+
+    #pause 15
+
+    #mc "Cool."
+    call dclose 
+    #close door
+label nvm:
+    call dopen 
+    "On second thought, I'd rather not."
+    "I gently close the door."
+    call dclose 
 
 label dopen:
     "I gently open the door."

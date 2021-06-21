@@ -13,6 +13,9 @@ define audio.knock = "mod_assets/knock.ogg"
 define close_eye = ImageDissolve("mod_assets/close_eye.png", 0.15, ramplen=64)
 
 
+image nbaby = "mod_assets/nbaby.png"
+image yt = "mod_assets/yt.png"
+image preg = "mod_assets/preg.png" 
 image aspect = "mod_assets/fitsfetish.png"
 image vhs:
     alpha .35
@@ -40,9 +43,27 @@ image sroomz:
     truecenter
     zoom 1.8 
     xoffset 500  
+image sroom base = "bg/sayori_bedroom.png"
+image bg sroomw = "mod_assets/sroomw.jpg"
 image noose = "mod_assets/noose.png"
 image pink = "#b59"
+image lionking = "mod_assets/lk.png"
 
+#layeredimage ava:
+#    always "ava_ngelion"#
+
+#    group e:
+#        attribute fucke default null# = "n_rects_ghost1"
+#        attribute ey:
+#            "n_rects_ghost1"
+#    group ee:
+#        attribute fuckee default null# = "n_rects_ghost1"
+##        attribute eyy:
+#            "n_rects_ghost2"
+#    group eee:
+#        attribute fuckeee default null# = "n_rects_ghost1"
+##        attribute eyyy:
+ #           "n_rects_ghost3"
 transform shake:
     dizzy(1.5, 0.01) 
 

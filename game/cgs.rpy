@@ -178,8 +178,8 @@ image n_rects2:
 
 image n_rects3:
     RectCluster(Solid("#000"), 4, 15, 5).sm
-    pos (764, 490)
-    size (30, 20)
+    pos (144, 490)
+    size (35, 25)
 
 # Natsuki Closet CG
 
@@ -281,7 +281,10 @@ image s_kill_bg:
 # Sayori Hanging Sprite
 image s_kill:
     subpixel True
-    "images/cg/s_kill.png"
+    "images/cg/s_kill2.png"
+    zoom 1.1 rotate -7 xcenter 640
+    yoffset -1700
+    yanchor 0
 
 # Glitch Lighting
 image s_kill_bg2:
@@ -297,7 +300,10 @@ image s_kill2:
         ease 2.0 rotate 7
         ease 2.0 rotate -7
         repeat
-
+image s_kill3:
+    subpixel True
+    "images/cg/s_kill2.png"
+    
 # Yuri Stab CG
 # This is displayed using a ConditionSwitch to switch between
 # different Yuri stab images

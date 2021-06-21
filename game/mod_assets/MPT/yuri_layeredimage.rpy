@@ -107,7 +107,7 @@ layeredimage yuri turned:
     group outfit: #These attributes are here only to determine which set of "body" sprites to use later.  "null" is what lets us just use these attributes as logic and nothing else.
         attribute uniform default null
         attribute casual null
-
+        attribute mib null
 
 
     group mood: #Mood determines what the defaults images are for the following attributes:
@@ -164,6 +164,8 @@ layeredimage yuri turned:
             "mod_assets/MPT/yuri/yuri_turned_casual_left_down.png"
         attribute lup if_any(["rup","rcut"]) if_all(["casual"]):
             "mod_assets/MPT/yuri/yuri_turned_casual_left_up.png"
+        attribute ldown default if_any(["mib"]):
+            "mod_assets/MPT/yuri/yuri_turned_mib.png"
 
 
 
@@ -183,6 +185,7 @@ layeredimage yuri turned:
             "mod_assets/MPT/yuri/yuri_turned_casual_right_down.png"
         attribute rup if_any(["casual"]):
             "mod_assets/MPT/yuri/yuri_turned_casual_right_up.png"
+        attribute rdown default if_any(["mib"]) null
 
 
 
@@ -484,7 +487,10 @@ layeredimage yuri turned:
         attribute s_scream:
             "mod_assets/MPT/yuri/yuri_turned_special_scream.png"
 
+    group glasses:
 
+        attribute mib_shades default if_any(["mib"]):
+            "mod_assets/MPT/yuri/yuri_turned_eyes_shades.png"
 
 layeredimage yuri shy:
 

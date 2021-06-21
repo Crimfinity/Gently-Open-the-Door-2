@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/doors.rpy", line 1006: end of line expected.
-    s "{i}Anyway...{/i}" zorder 3 
-                         ^
+File "game/doors.rpy", line 702: expected 'image_name_component' not found.
+    show "mod_assets/preg.png" 
+         ^
+
+File "game/doors.rpy", line 1426: expected 'label_name_declare' not found.
+    label 
+         ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Wed Apr 28 00:20:37 2021
+Wed May 05 17:23:51 2021
