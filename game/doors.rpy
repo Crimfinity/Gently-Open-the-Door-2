@@ -130,9 +130,7 @@ label neckrope:
     hide sayori 
     #"She falls to the floor and starts crying."
 
-    mc "Sayori..."
-
-    "She sobs into the carpet."
+   
     "I'm so confused."
     "She was okay just a second ago."
     "Why is she crying about breakfast?"
@@ -147,7 +145,7 @@ label neckrope:
 
     mc "Sayori."
     mc "I know the voices are telling you to do it, but don't."
-    mc "It's not worth it."
+    #mc "It's not worth it."
     mc "You are not just a puppet dancing to their whims."
     show sayori neut om at f11 
     s "But, [player]."
@@ -183,7 +181,6 @@ label neckrope:
     show layer master
     #scene bg sroom 
     #show sk
-    "I sigh."
 
     mc "Well,{w=.4} shi--{nw}"
     scene black 
@@ -870,7 +867,10 @@ label ava:
     mc "You look different!"
     mc "Did you get a haircut?"
     play sound "mod_assets/glitch_scream.ogg"
-    show layer master at anxiety 
+    show layer screens at anxiety:
+        ease 10 zoom 1.3
+    show layer master at anxiety:
+        ease 10 zoom 1.5 
     show vignette zorder 5 
     show noise zorder 1:
         alpha .4 
@@ -894,6 +894,7 @@ label ava:
     a "Do not dread a horrible future, or it will become your fate.{w=.2}{nw}"
     show black onlayer front
     pause 99999999999999999999999999999999999
+    show layer screens 
     hide black onlayer front
     scene bg sroom
     mc "Ahaha!"
@@ -1945,22 +1946,22 @@ label baby:
     show sayori cry om at f22 
     s "STOP, [player] YOU'RE HURTING THE CUTE BABY!"
     show sayori vsur cm at h22
-    style.say_dialogue = style.edited
+    $ style.say_dialogue = style.edited
     n "DON'T CALL ME CUTE!"
-    style.say_dialogue = style.normal
+    $ style.say_dialogue = style.normal
     show layer master 
     mc "AHH!"
     s "AHH!"
-    show nbaby;
-    truecenter
-    zoom .5 
-    alpha 1 
-    yoffset 0
-    parallel:
-        ease 1 rotate 1000 zoom 0 yoffest -400 
-    parllel:
-        .6
-        linear .4 alpha 0 
+    show nbaby:
+        truecenter
+        zoom .5 
+        alpha 1 
+        yoffset 0
+        parallel:
+            ease 1 rotate 1000 zoom 0 yoffest -400 
+        parallel:
+            .6
+            linear .4 alpha 0 
     #baby natsuki gets thrown out of the window transform
     pause .6
     play sound "mod_assets/glass.mp3"
@@ -1982,6 +1983,16 @@ label nvm:
     "On second thought, I'd rather not."
     "I gently close the door."
     call dclose 
+label sdrip:
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    with wipeleft_door
+    play sound "mod_assets/drip.mp3"
+    show sdrip at i11  
+    pause .2 
+    scene black 
+    stop sound 
 
 label dopen:
     "I gently open the door."

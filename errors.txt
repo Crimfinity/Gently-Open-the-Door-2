@@ -2,13 +2,41 @@
 errors listed below, and try again.
 
 
-File "game/doors.rpy", line 702: expected 'image_name_component' not found.
-    show "mod_assets/preg.png" 
+File "game/doors.rpy", line 1948: expected 'word' not found.
+    style.say_dialogue = style.edited
          ^
 
-File "game/doors.rpy", line 1426: expected 'label_name_declare' not found.
-    label 
+File "game/doors.rpy", line 1950: expected 'word' not found.
+    style.say_dialogue = style.normal
          ^
 
-Ren'Py Version: Ren'Py 7.3.5.606
-Wed May 05 17:23:51 2021
+File "game/doors.rpy", line 1954: end of line expected.
+    show nbaby;
+              ^
+
+File "game/doors.rpy", line 1955: expected statement.
+    truecenter
+              ^
+
+File "game/doors.rpy", line 1956: expecting name after dot.
+    zoom .5 
+          ^
+
+File "game/doors.rpy", line 1957: expected statement.
+    alpha 1 
+            ^
+
+File "game/doors.rpy", line 1958: expected statement.
+    yoffset 0
+             ^
+
+File "game/doors.rpy", line 1959: expected statement.
+    parallel:
+            ^
+
+File "game/doors.rpy", line 1961: expected statement.
+    parllel:
+           ^
+
+Ren'Py Version: Ren'Py 7.4.5.1648
+Sun Sep  5 19:42:39 2021

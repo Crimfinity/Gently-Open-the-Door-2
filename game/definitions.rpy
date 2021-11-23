@@ -48,7 +48,7 @@ image bg sroomw = "mod_assets/sroomw.jpg"
 image noose = "mod_assets/noose.png"
 image pink = "#b59"
 image lionking = "mod_assets/lk.png"
-
+image sdrip = "mod_assets/sayori/sdrip.png"
 #layeredimage ava:
 #    always "ava_ngelion"#
 
