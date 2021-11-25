@@ -2,41 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/doors.rpy", line 1948: expected 'word' not found.
-    style.say_dialogue = style.edited
-         ^
+File "game/doors.rpy", line 2183: indentation mismatch.
 
-File "game/doors.rpy", line 1950: expected 'word' not found.
-    style.say_dialogue = style.normal
-         ^
-
-File "game/doors.rpy", line 1954: end of line expected.
-    show nbaby;
-              ^
-
-File "game/doors.rpy", line 1955: expected statement.
-    truecenter
-              ^
-
-File "game/doors.rpy", line 1956: expecting name after dot.
-    zoom .5 
-          ^
-
-File "game/doors.rpy", line 1957: expected statement.
-    alpha 1 
-            ^
-
-File "game/doors.rpy", line 1958: expected statement.
-    yoffset 0
-             ^
-
-File "game/doors.rpy", line 1959: expected statement.
-    parallel:
-            ^
-
-File "game/doors.rpy", line 1961: expected statement.
-    parllel:
-           ^
-
-Ren'Py Version: Ren'Py 7.4.5.1648
-Sun Sep  5 19:42:39 2021
+Ren'Py Version: Ren'Py 7.3.5.606
+Thu Nov 25 01:37:53 2021

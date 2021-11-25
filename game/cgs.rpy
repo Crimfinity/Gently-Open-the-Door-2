@@ -285,6 +285,19 @@ image s_kill:
     zoom 1.1 rotate -7 xcenter 640
     yoffset -1700
     yanchor 0
+image s_killb:
+    subpixel True
+    truecenter
+    ypos 0
+    yoffset -20
+    "images/cg/s_kill.png"
+    zoom .8 xcenter 360
+  
+    yanchor 0
+transform skillr:
+    subpixel True
+    truecenter
+    ypos 0 yoffset -20 zoom .8 xcenter 360
 
 # Glitch Lighting
 image s_kill_bg2:

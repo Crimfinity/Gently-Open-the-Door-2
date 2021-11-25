@@ -46,25 +46,32 @@ label start:
     
     
     
-    call neckrope
-    call nc1 
-    call sans 
+    #call neckrope
+    #call nc1 
+    #call sans 
     #call gta 
     #call dmc  
     #call nude 
     #call delivery
     #call method 
-    call db1 
-    call db2 
+    #call db1 
+    #call db2 
     #call schizo 
     #call bread 
     #call pregnancy      
     #call psa 
     #call dyslexia 
-    call ava 
+    #call ava 
     #call dg
     #call infinity 
-    call madden 
+    #call madden 
+    call sdrip 
+    call lights 
+    call comedy 
+    call dad
+    call lmao 
+    call flying 
+    call higher 
     return 
     # Start of the script
     # 'persistent.playthrough' controls the playthrough number the player is on

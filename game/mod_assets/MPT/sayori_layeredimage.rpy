@@ -89,7 +89,50 @@ image _say_blink_t_a:
         "mod_assets/MPT/sayori/_blink_t_am.png"
         0.015
     repeat
+layeredimage sayori hang:
+    always "mod_assets/hangyori/shangbase.png"
+    group mood:
+        attribute neut default null
+        attribute pout null
+        attribute anno null 
+        attribute dist null 
+        attribute lsur null
+        attribute angr null  
+    group eyes:
+        attribute oe default if_any(["neut","lsur"]):
+            "mod_assets/hangyori/e1.png"
+        attribute oe default if_any(["angr","pout"]):
+            "mod_assets/hangyori/e2.png"
+        attribute oe default if_any(["anno","dist"]):
+            "mod_assets/hangyori/e3.png"
+        attribute e1:
+            "mod_assets/hangyori/e1.png"
+        attribute e2:
+            "mod_assets/hangyori/e2.png"
+        attribute e3:
+            "mod_assets/hangyori/e3.png"
 
+        
+    group mouth:
+        attribute cm default if_any(["neut","dist","pout"]):
+            "mod_assets/hangyori/m0.png"
+        attribute cm default if_any(["lsur"]):
+            "mod_assets/hangyori/m2.png"
+        attribute cm default if_any(["angr","anno"]):
+            "mod_assets/hangyori/m3.png"
+        
+        attribute om if_any(["neut","pout","anno","dist"]):
+            "mod_assets/hangyori/m2.png"
+        attribute om if_any(["lsur","angr"]):
+            "mod_assets/hangyori/m1.png"
+        attribute m0:
+            "mod_assets/hangyori/m0.png"
+        attribute m1:
+            "mod_assets/hangyori/m1.png"
+        attribute m2:
+            "mod_assets/hangyori/m2.png"
+        attribute m3:
+            "mod_assets/hangyori/m3.png"
 layeredimage sayori turned: #turned definitions.
 
     #This makes the sprite one single texture, instead of multiple textures on top of each other.
@@ -438,7 +481,10 @@ layeredimage sayori turned: #turned definitions.
         attribute b3c if_any(["e1d","e4a","e4b","e4c","e4d","e4e","ce"]):
             "mod_assets/MPT/sayori/sayori_turned_eyebrows_b3c.png"
 
-
+    group gun:
+        attribute nogun default null 
+        attribute lgun:
+            "mod_assets/MPT/sayori/sgun.png"
 
     #This group is intentionally last on this list, so it will render over top of every other thing on the face.
     group special:

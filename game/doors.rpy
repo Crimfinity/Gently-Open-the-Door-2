@@ -1993,12 +1993,273 @@ label sdrip:
     pause .2 
     scene black 
     stop sound 
+    return 
+label lights:
+    scene black 
+    "I gently open the door."
+    play sound opend 
+    "It's dark and cold."
+    "I can't make out a single shape of figure."
+    "I'm lost in a silent, empty yet vast void."
+    "Where am I?"
+    "Wait..."
+    "Did I forget to turn the lights on?"
+    scene sroomn
+    show s_killb
+    play sound "gui/sfx/select.ogg" 
 
+    #nighttime sayori bg with her hanging.
+    "Phew. That's better."
+    call dclose 
+    return
+label comedy:
+    call dopen 
+    mc "Hi."
+    show sayori happ om oe lup rdown at f11 
+    s "Heyaaa!"
+    show sayori cm at t11 
+    pause 1 
+    show sayori neut 
+    pause 1
+
+    mc "I can’t think of anything funny to say."
+    show sayori om at f11 
+    s "Yeah me neither."
+    show sayori cm at t11 
+    mc "..."
+    s dist "..."
+    show sayori neut 
+    mc "Being funny is hard."
+    show sayori happ om at h11 
+    s "Oh I got it!"
+    show sayori cm at h11 
+    pause .15 
+    hide sayori 
+    call skz 
+    play sound sting 
+
+    mc "Oh yeah! That should be funny!"
+    mc "..."
+    mc "Eh, it was funnier the first time around."
+
+    call dclose 
+    return 
+label dad:
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show sayori hang lsur om at skillr:
+        yoffset 350 zoom .82
+    with wipeleft_door 
+    s "[player], I’m dying!"
+    show sayori cm 
+    mc "Hi dying, I’m [player]!"
+    show sayori neut m1
+    s "Please help me!"
+    show sayori -m1 cm angr 
+    mc "I would, but I don’t see {i}me{/i} anywhere around here!"
+    show sayori angr om
+    s "I…hate…you…"
+    show sayori cm 
+    mc "I’ll pass the message onto you when I see him."
+    call dclose 
+    return 
+label immortal:
+    "I gently open the door."
+    play sound opend
+    scene bg sroom 
+    show s_kill at skillr 
+    with wipeleft_door 
+
+    show vignette with dissolve 
+    "Oh no!"
+    "Sayori…"
+    "She's…"
+    "She's dead--{nw}"
+    hide s_kill 
+    hide vignette 
+    show sayori hang om oe at skillr 
+    s "[player], help me get down!"
+    show sayori cm 
+    mc "Huh!?!?"
+    mc "You're alive?"
+    show sayori om 
+    s "Yes, now help me get out of this noose!"
+    show sayori cm 
+    mc "I don't understand."
+    mc "How does that work?"
+    s dist om "Well I tried to kill myself…"
+    s lsur "But I guess I'm immortal?"
+    show sayori cm 
+    mc "Huh. Neat."
+    s neut om "So, will you help me get down?"
+    show sayori anno cm 
+    mc "I don't know, I kinda have some eggs to attend to..."
+    mc "I'll go check up on that and I'll come back."
+    s pout om "I'm literally suffocating."
+    show sayori cm 
+    mc "You'll live."
+    s om "I-"
+    show sayori cm 
+    call dclose 
+    return
+label lmao:
+    call dopen 
+    show sayori om dist at f11 
+    s "I’m depressed."
+    show sayori cm at t11 
+    "I don’t know how to feel. The burden of someone’s feeling is so great…"
+    show sayori lsur 
+    mc "Lmao ok."
+    show sayori angr om ldown rdown at f11 
+    s "You’re mean."
+    show sayori cm at t11 
+    mc "Okay lmao."
+
+    "Oh my God, what’s happening, did I forget..?"
+    show sayori anno ce om at f11 
+    s "Stop saying lmao out loud, it’s really weird and stupid."
+    show sayori cm at t11 
+    mc "Lmao it’s a condition."
+    show sayori neut om oe at f11 
+    s "Why are you crying?"
+    show sayori worr cm at t11 
+    "My feet become weak and I fall to my knees."
+
+    mc "My medicine, lmao, I lost my medicine lmao."
+
+    "Lmao it’s invading my thoughts."
+    show sayori shoc 
+    mc "I can’t stop lmao lmao."
+    mc "Help lmao lmao lmao."
+
+    "Lmao Lmao LMao Lmao Lmao Lmao..."
+    show sayori vang om lup lgun e1g at f11 
+    #you see her raise the gun into her hands
+    s "[player]!"
+    show sayori cm e1h at t11 
+    mc "Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao {nw}"
+    window hide 
+    play sound shot
+    scene black 
+    pause 2
+    play sound fall 
+    pause 1.5 
+    play sound closed  
+    #close door
+    #mc "Why do you have a gun in your hand?"
+    #s "Oh, it’s a Chekov’s gun!"
+    #mc "I feel like someone else would appreciate that more than I would."
+    window hide 
+    pause 2 
+    return 
+
+label flying:
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show sayori hang neut om at skillr:
+        yoffset 350 zoom .82
+    with wipeleft_door 
+    #sayori hanging by the noose
+
+    s "Look, [player], I’m flying!"
+    show sayori cm 
+    mc "You’re hanging."
+    s pout om "I’m {i}flying{/i}."
+    show sayori angr cm 
+    mc "You’re going to die."
+    s neut om "We all die eventually."
+    s anno "You’re just jealous I’m going to die flying."
+    show sayori cm neut 
+    call dclose
+label higher:
+    
+    "I gently open the door."
+    play sound opend 
+    scene black 
+    show mooncrawl zorder 0:
+        truecenter
+        zoom .86 
+        xoffset 5 yoffset -1166 
+    show s_kill zorder 1:
+        zoom .26  
+        truecenter 
+        subpixel True  
+        xoffset 100 yoffset -350 zoom .8 
+    show windowcut zorder 2:
+        subpixel True  
+    show sayori hang dist cm at skillr zorder 3:
+        subpixel True  
+        yoffset 350 zoom .82
+    with wipeleft_door 
+
+    s om "No... It's too low."
+    s neut "We need to go higher."
+    window hide  
+    show sayori cm zorder 99:
+        subpixel True 
+        block: 
+            ease 1 zoom 14 xoffset -5400 yoffset -900
+    show windowcut zorder 2:
+        truecenter 
+        subpixel True
+        parallel:
+            ease 1 zoom 10.42 xoffset -4000 yoffset -642
+        parallel:
+            .7 
+            ease .3 alpha 0
+    show mooncrawl zorder 0:
+        truecenter 
+        zoom .86 xoffset 5 yoffset -1166
+        subpixel True 
+        block:
+            ease 1 zoom 1.07 yoffset -1746 xoffset 0 
+    show s_killb zorder 1:
+        subpixel True
+        truecenter  
+        zoom .16 yoffset 120  xoffset -320 alpha 0 
+        ease 1 zoom .192 yoffset 142-300  xoffset -359 alpha 1 
+    pause 1 
+    "I gently leave the house."
+    hide windowcut 
+    hide sayori 
+    hide s_killb
+    #sayori hanging from the roof
+    show sayori hang neut om:
+        truecenter 
+        zoom .153 yoffset 142-319 xoffset -359
+    s "No... Higher..."
+    show sayori cm 
+    mc "sayori, stop."
+    show sayori om 
+    s "Higher."
+    show sayori cm anno 
+    mc "sayori jesus fuck."
+    show sayori angr om 
+    s "I WANT TO GO HIGHER, VARIOUS ARTISTS!!!"
+    show sayori cm 
+    mc "sigh"
+    window hide  
+    "... I gently go to the moon."
+    #sayori hanging from the moon.
+    #{wait for 2 seconds}
+
+    s "..."
+    s "Higher."
+    return  
 label dopen:
     "I gently open the door."
     play sound opend 
     scene bg sroom 
     show sayori turned neut cm oe ldown rdown at t11 
+    with wipeleft_door 
+    return 
+label dopenh:
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show s_kill
     with wipeleft_door 
     return 
 label dclose:
