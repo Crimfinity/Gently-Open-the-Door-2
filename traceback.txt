@@ -1,34 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 72, in script call
-    call lmao
-  File "game/doors.rpy", line 2107, in script call
-    call opend
-  File "game/script.rpy", line 72, in script call
-    call lmao
-  File "game/doors.rpy", line 2107, in script call
-    call opend
-ScriptError: could not find label 'opend'.
+  File "game/doors.rpy", line 2547, in script
+    ease 2.0 rotate -7
+Exception: Could not find return label (u'game/doors.rpy', 1638095277, 167).
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 72, in script call
-    call lmao
-  File "game/doors.rpy", line 2107, in script call
-    call opend
-  File "C:\Users\decla\Downloads\dmodding\renpy-7.3.5-sdk\renpy\ast.py", line 1436, in execute
-    rv = renpy.game.context().call(label, return_site=self.next.name)
-  File "game/script.rpy", line 72, in script call
-    call lmao
-  File "game/doors.rpy", line 2107, in script call
-    call opend
-  File "C:\Users\decla\Downloads\dmodding\renpy-7.3.5-sdk\renpy\script.py", line 898, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'opend'.
+  File "game/doors.rpy", line 2547, in script
+    ease 2.0 rotate -7
+  File "C:\Users\decla\Downloads\dmodding\renpy-7.3.5-sdk\renpy\ast.py", line 1507, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "C:\Users\decla\Downloads\dmodding\renpy-7.3.5-sdk\renpy\execution.py", line 696, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label (u'game/doors.rpy', 1638095277, 167).
 
 Windows-8-6.2.9200
 Ren'Py 7.3.5.606
 I Gently Open the Door: Now with more door! 2.4.2
-Thu Nov 25 01:20:56 2021
+Sun Nov 28 03:54:42 2021

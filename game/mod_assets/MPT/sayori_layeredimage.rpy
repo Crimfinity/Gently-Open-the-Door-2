@@ -133,6 +133,10 @@ layeredimage sayori hang:
             "mod_assets/hangyori/m2.png"
         attribute m3:
             "mod_assets/hangyori/m3.png"
+    group kill: 
+        attribute alive default null
+        attribute dead:
+            "cg/s_kill.png"
 layeredimage sayori turned: #turned definitions.
 
     #This makes the sprite one single texture, instead of multiple textures on top of each other.

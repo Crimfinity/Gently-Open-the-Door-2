@@ -962,94 +962,22 @@ label dg:
     "I gently open the door."
     play music t4 fadein 2
     play sound opend  
-    show sayori turned casual cm oe happ at t11 zorder 2 
+    show sayori turned casual cm oe happ at t42 zorder 2 
     show natsuki turned neut lhip rdown casual at t31 zorder 2 
     show yuri turned cm dist casual at t33 zorder 2 
     show sroomz zorder 1 
     with wipeleft_door 
-    show sayori ce om lup at f11 zorder 3 
+    show sayori ce om lup at f42 zorder 3 
     s "Hello and welcome to the first meeting of the Dead Girls' Society." 
     s oe "Everyone introduce yoursel--{nw}"
-    show sayori lsur cm at h11 zorder 2 
+    show sayori lsur cm at h42 zorder 2 
     mc "Uh, what's going on?"
-    show sayori happ ldown om at f11 
+    show sayori happ ldown om at f42 
     s "Oh hey, [player]!"
     s rup "This is just the first meeting of the DGS!"
     s ce "You're welcome to watch."
-    show sayori cm oe at t11 zorder 2
-    mc "Cool."
+    show sayori cm oe at t42 zorder 2
 
-    "I take a seat at the corner of the room."
-    show sayori om neut at f11 zorder 3 
-    s "Okay everyone, let's introduce ourselves."
-    show sayori cm at t11 zorder 2
-    show yuri shy om at s33 zorder 3 
-    y "Uuu…"
-    show yuri turned dist cm oe rup at t33
-    show sayori happ om at f11 zorder 3 
-    s "Okay, I'll start."
-    show natsuki sad 
-    s rdown "My name is Sayori and I hanged myself."
-    show sayori cm at t11 
-    y "..."
-    show sayori neut 
-    show yuri dist om lup rup at f33 zorder 3 
-    y "My name is Yuri and I stabbed myself."
-    show yuri cm at t33 zorder 2
-    show natsuki cross dist 
-    n "..."
-    show yuri neut 
-    show sayuri curi 
-    n "..."
-    show sayori anno om at f11 zorder 3 
-    show natsuki neut  
-    s "C'mon, Natsuki!"
-    show sayori cm neut at t11 zorder 2
-    show natsuki turned lhip curi om at f31 zorder 3  
-    n "Sayori, do I even count?"
-    n doub ce "I never actually died! I was just deleted."
-    show natsuki cm at t31 zorder 2
-    show sayori rup om at f11 zorder 3 
-    s "Well you were sent to the void just like the rest of us, so I think you count."
-    show sayori cm happ oe at t11 zorder 2
-    show natsuki anno om ldown rdown at f31 zorder 3 
-    n "Okay fine…"
-    n dist "My name is Natsuki and I got deleted."
-    show natsuki cm oe curi at t31 zorder 2
-    show sayori lsur 
-    show yuri curi 
-    play sound knock 
-
-    pause 2.0
-    show sayori angr at t43 
-    show natsuki angr at t42 
-    show yuri angr at t44
-    show monika forward nerv om n2 lpoint at l41 zorder 3 
-    m "H-hey..."
-    show monika happ at f41 
-    m "I overheard you guys talking and I was wondering if I could..."
-    m laug "...Join you guys?"
-
-    show monika nerv cm ldown at s41 zorder 2
-    stop music fadeout 4
-    "The girls all stare holes into the wretched one."
-    show sayori vang at f43 zorder 3 
-    s "{b}{cps=1} N o . {/b}"
-    show monika sad om zorder 3 
-    m "Oh..." 
-    show monika at lhide 
-    hide monika 
-
-    "Monika scurries off."
-    show sayori at t11 
-    show natsuki at t31 
-    show yuri neut at t43 
-    show sayori anno om at f42 
-    s "{i}Anyway...{/i}" 
-    show sayori happ 
-    show natsuki neut  
-    s "Now that we got rid of the pest..."
-    show sayori cm neut at t42 zorder 2
     mc "Um, actually, I have a question."
     mc "What do you guys actually do here?"
     show sayori om lup at f42 zorder 3 
@@ -1999,7 +1927,7 @@ label lights:
     "I gently open the door."
     play sound opend 
     "It's dark and cold."
-    "I can't make out a single shape of figure."
+    "I can't make out a single shape or figure."
     "I'm lost in a silent, empty yet vast void."
     "Where am I?"
     "Wait..."
@@ -2061,7 +1989,7 @@ label dad:
     show sayori angr om
     s "I…hate…you…"
     show sayori cm 
-    mc "I’ll pass the message onto you when I see him."
+    mc "I’ll pass the message onto 'you' when I see him."
     call dclose 
     return 
 label immortal:
@@ -2105,10 +2033,12 @@ label immortal:
     return
 label lmao:
     call dopen 
+    play music t9 
     show sayori om dist at f11 
     s "I’m depressed."
     show sayori cm at t11 
     "I don’t know how to feel. The burden of someone’s feeling is so great…"
+    stop music 
     show sayori lsur 
     mc "Lmao ok."
     show sayori angr om ldown rdown at f11 
@@ -2124,6 +2054,9 @@ label lmao:
     show sayori neut om oe at f11 
     s "Why are you crying?"
     show sayori worr cm at t11 
+    show layer master at anxiety 
+    play music hb fadein 1 
+    show vignette at vignetteflicker
     "My feet become weak and I fall to my knees."
 
     mc "My medicine, lmao, I lost my medicine lmao."
@@ -2140,6 +2073,7 @@ label lmao:
     show sayori cm e1h at t11 
     mc "Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao Lmao {nw}"
     window hide 
+    stop music 
     play sound shot
     scene black 
     pause 2
@@ -2173,6 +2107,7 @@ label flying:
     s anno "You’re just jealous I’m going to die flying."
     show sayori cm neut 
     call dclose
+    return 
 label higher:
     
     "I gently open the door."
@@ -2197,8 +2132,9 @@ label higher:
     s om "No... It's too low."
     s neut "We need to go higher."
     window hide  
-    show sayori cm zorder 99:
+    show sayori cm at skillr zorder 3:
         subpixel True 
+        zoom .82 yoffset 350
         block: 
             ease 1 zoom 14 xoffset -5400 yoffset -900
     show windowcut zorder 2:
@@ -2229,25 +2165,393 @@ label higher:
     show sayori hang neut om:
         truecenter 
         zoom .153 yoffset 142-319 xoffset -359
+    #29.139433551 ratio for movement
     s "No... Higher..."
     show sayori cm 
-    mc "sayori, stop."
+    mc "Sayori, stop."
     show sayori om 
     s "Higher."
     show sayori cm anno 
-    mc "sayori jesus fuck."
+    mc "Sayori jesus fuck."
     show sayori angr om 
     s "I WANT TO GO HIGHER, VARIOUS ARTISTS!!!"
     show sayori cm 
-    mc "sigh"
-    window hide  
-    "... I gently go to the moon."
+    mc "*sigh*"
+    window hide
+    show mooncrawl:
+        truecenter 
+        zoom 1.07 yoffset -1746 xoffset 0  
+        block:
+            ease 1.5 yoffset 1000
+    show sayori:
+        ease 1.5 yoffset -177+3000 #I don't feel like making this look pretty    
+    show moon zorder 10:
+        truecenter 
+        zoom .5 yoffset -600 
+        1
+        ease .5 yoffset -200 
+    pause 1 
+    hide sayori 
+    show sayori hang neut cm zorder 9:
+        truecenter
+        subpixel True
+        zoom .2 yoffset -500 
+        block:
+            ease .5 yoffset 75  
+    pause 1  
+    "...I gently go to the moon."
     #sayori hanging from the moon.
     #{wait for 2 seconds}
 
     s "..."
-    s "Higher."
+    s om "Higher."
+    show black zorder -1:
+        zoom 10
+    show layer master:
+        ease 1 xoffset 2000
+    pause 1 
+    scene black  
+    pause .5 
     return  
+label closet:
+    scene black 
+    "I gently open the door."
+    scene sroom  
+    show sayori turned shoc cm oe at i11 
+    with wipeleft_door 
+    show sayori pani om rup at f11 
+    s "[player]! There's a monster in my closet!"
+    show sayori cm at t11 
+    "I look at Sayori in total disbelief."
+
+    mc "Aren't you a bit old for this, Sayori?"
+    show sayori at f11 
+    s worr om "I'm serious! It's in there and it's sccccaaaarrrrrryyyyy!"
+    show sayori cm at t11 
+    mc "Alright, fine."
+    scene closetc with dissolve 
+    "I walk up to the closet and roll my eyes."
+    "This is so silly."
+    scene closeto  
+    play sound opend 
+    #open closet
+
+    m "Hey, [player]! I was wondering if--{nw}"
+    play sound closed 
+    scene sroom 
+    show sayori turned doub cm oe at i11 
+    with hpunch 
+    mc "Oh my god!"
+    show sayori angr om at f11 
+    s "I told you so!"
+    show sayori cm at t11 
+    mc "Lock and never open that closet ever again, Sayori!"
+    mc "The world isn't ready for the monster within."
+    mc "Think of all the damage it would cause!"
+    mc "The people it would kill."
+
+    pause 3.0
+
+    m "You guys suck."
+    call dclose 
+    return 
+label sayonara:
+    "I gently open the door."
+    scene sroom 
+    show sayori hang dead at skillr:
+        
+        yoffset 350 zoom .82 xoffset 50
+        block: 
+            ease 2 xoffset 54 
+            ease 2 xoffset 46 
+            repeat
+    play sound opend  
+    with wipeleft_door 
+    play music td  
+    mc "..."
+    pause 1.5 
+    #show vignette zorder 1 onlayer screens with dissolve
+    "I didn't know how long I spent in her room."
+    "I felt numb for what seemed to be eternity."
+    #scene sroom 
+    #show sayori hang at skillr 
+    show layer master:
+        zoom 4 
+        truecenter 
+        xoffset 800 yoffset 100 
+        block:
+            ease 3 yoffset 600    
+        
+    with dissolve 
+    "I just saw Sayori hang there for… God, I don’t know how long."
+    "Eventually, I began to feel something. "
+    show layer master:
+        zoom 4 
+        truecenter 
+        xoffset 800 yoffset 600 
+        ease 2 yoffset 100
+    
+    "I looked at Sayori’s pajamas."
+    show layer master:
+        zoom 4 
+        truecenter 
+        xoffset 800 yoffset 100
+        ease 2 yoffset 450 
+    "Her shirt was slightly unbuttoned at the top."
+    show layer master:
+        zoom 4 
+        truecenter 
+        xoffset 800 yoffset 450 
+        ease 2 zoom 5 xoffset 1000 yoffset 562.5
+    "I remembered how I had to button her top."
+    show s_cg1 onlayer screens:
+        alpha 0
+        ease 1 alpha .4
+    "Her cute little giggles as I struggled with her top, my fingers pretty much tickling her shirt." 
+    show s_cg1 onlayer screens:
+        alpha .4 truecenter 
+        ease 1.5 zoom 1.7 yoffset 100 xoffset -350
+    "Then there was her smile as I adjusted her buttons."
+    hide s_cg1 onlayer screens with dissolve 
+    "I felt slight throb in my groin. Was I… Was I getting hard? I looked down and noticed my penis beginning to rise." 
+    show sayori -dead pout cm
+    "I looked back to Sayori."
+    show layer master: 
+        zoom 5 xoffset 1000 yoffset 562.5 
+        truecenter 
+       
+        ease 4 yoffset 700 
+    #hide vignette onlayer screens with dissolve 
+    "And...{w=3} she's looking at me?"
+    show layer master:
+        zoom 6.5 yoffset 1400 xoffset 1400 
+        truecenter 
+    stop music 
+    hide vignette onlayer screens 
+    "Wait what?"
+    
+    mc "Sayori?"
+    mc "You're... alive?"
+    s om "You sound disappointed."
+    show sayori cm 
+    mc "I... Nooooooo..."
+    s om "[player], were you going to rape my corpse?"
+    show sayori cm 
+    mc "Nooooooooooooo?"
+    s angr om "Why do you have a boner?"
+    show sayori cm 
+    mc "The wind…?"
+    show sayori neut om 
+    s "Honesty is the key to a healthy relationship, [player]."
+    show sayori cm 
+    "I sigh."
+
+    mc "I may have tried to rape your corpse…."
+    s anno om "It’s okay, [player]."
+    s neut "Just..."
+    s dist "Next time..."
+    s neut "I wanna be alive when we have sex, okay?"
+    show sayori cm 
+    show layer master 
+    mc "What!?"
+    mc "Wanna be alive when we have sex!?"
+    mc "Boner gone."
+
+    call dclose 
+    show text "Sorry for any flashbacks to those of you who read the scrolling text in the first door mod"
+    pause .00005 
+    hide text 
+    return 
+label ending:
+    "I gently open the door."
+    scene sroom 
+    show sayori hang dead at skillr:        
+        yoffset 350 zoom .82 xoffset 0
+        block: 
+            ease 2 xoffset 54 
+            ease 2 xoffset 46 
+            repeat
+    show natsuki turned mib neut cm at i11 
+    show yuri turned mib neut cm at i33
+ 
+    show layer master:
+        zoom 4 
+        truecenter 
+        xoffset 1150 yoffset 100 
+        block:
+            ease 3 yoffset 600 
+    with wipeleft_door 
+    #sayori hanging zoomed in 
+    "Unsurprisingly, Sayori is hanging."
+    show layer master:
+        subpixel True 
+        truecenter 
+        zoom 4 yoffset 600 xoffset 1150 
+        ease 1.2 zoom 1 xoffset 0 yoffset 0 
+    window hide 
+    pause 1 
+    mc "Oh, it's you two."
+    show natsuki curi om at f11 
+    n "Sup?"
+    show natsuki cm neut at t11 
+    mc "Nothing much, just watching my friend hang I guess."
+    "Wow, I am very desensitized to what was once a life changing event."
+    mc "So what brings you here?"
+    show yuri om rup at f33 
+    y "We're here to revert this world to its original state."
+    show yuri cm at t33 
+    mc "Oh. Cool?"
+    show natsuki happ om at f11 
+    n "Very cool."
+    show natsuki cm at t11 
+    mc "I'll take your word for it."
+    show natsuki om at f11 
+    n "Now [player], all we need you to do is stare at th--"
+    n ldown curi "Hey Yuri, you have the pen, right?"
+    show natsuki cm at t11 
+    show yuri om at f33 
+    y "Yes. One moment please."
+    "She… reaches down her pants?"
+    show yuri n3 at d33 
+    y "Mmmmnnnhhh."
+    y "Soahhry, the pen is lodged very deep."
+    show yuri cm at t33 
+    show natsuki doub om at f11 
+    n "Uhh… Yuri, this wasn't part of the plan."
+    show yuri rdown at f33 
+    show natsuki cm ce at t11 
+    y "S-sorry…"
+    scene black with close_eyes 
+    "I close my eyes, no longer wanting to bask in the sight."
+    y "It's just that every break between scenes made me feel a little… understimulated."
+    y "They really toned down the sex jokes this time around."
+    n "Well hurry up! We have to make him forget everything he saw here for the world to turn back to normal."
+    mc "No, don't worry. I'm already burning every memory I can."
+    n "Great. In that case, just keep your eyes closed for about… two minutes and we should have everything back to normal."
+    $ renpy.pause(120,hard=False) 
+    "That should be about two minutes, yeah?"
+    "I open my eyes."
+    scene bg kitchen
+    play ambient birds fadein 4 
+    with open_eyes
+    #kitchen bg
+    "What was I doing?"
+    "Right, eggs and bacon."
+    "Sayori was having an off day so I decided to make her breakfast."
+    "The sun is starting to set. By now the festival is probably long over."
+    "Maybe I could get the club members to come over here if Sayori is interested."
+    "But more importantly, I have to deliver Sayori her breakfast."
+    "Turning off the stove, I shovel the mostly black eggs and room temperature bacon off of their respective pans and onto a plate, which I haul upstairs."
+    scene black with wipeleft 
+    "I gently open the door."
+    play sound opend 
+    scene sroomf 
+    show sayori turned neut cm oe ldown rdown at t11 
+    with wipeleft_door 
+    show sayori lsur lup rup at hf11 
+    s "My breakfast!"
+    s sedu mb "Took ya long enough~"
+    show sayori happ cm -mb 
+    mc "I make you breakfast and this is the repayment I get?"
+    show sayori ce om at f11 
+    s "Ehehe. I'm just messing with you, [player]!"
+    s neut om e3a ldown rdown "Now hand it over." #stare here
+    show sayori cm at t11 
+    "I hand over the plate."
+    show sayori om:
+        parallel:
+                linear .75 zoom .85
+        parallel:
+            easein .75 yoffset 50
+    pause .75 
+    show sayori cm ce -e0a:
+        parallel:
+                .15
+                linear .15 zoom .76
+        parallel:
+            ease .15 yoffset -20
+            ease .15 yoffset 0
+    pause .75
+    show sayori om happ oe -e3a 
+    "She shovels a mouthful of food into her mouth."
+    show sayori om ce rup ldown at f11 
+    s "It's delicious!"
+    show sayori neut cm oe at t11 
+    mc "It was shit, wasn't it?"
+    show sayori nerv om at f11 
+    s "Yeah."
+    s happ "But I still like it!"
+    show sayori cm at t11 
+    mc "Because you're stupid?"
+    show sayori happ om at f11 
+    s "Because you made it for me!"
+    show sayori cm at t11 
+    "I giggle."
+    mc "Thanks, Sayori."
+    show sayori neut ldown rdown om at f11 
+    s "So, next time will you make me dinner?"
+    show sayori cm at t11 
+    mc "There won't be a next time."
+    window hide 
+    play sound "mod_assets/cock.ogg"
+    pause 1 
+    play sound shot
+    show white zorder 100:
+        alpha 0 
+        ease .2 alpha 1 
+    pause .2 
+    scene black 
+    show white:
+        alpha 1 
+        ease .6 alpha 0 
+    stop ambient 
+    
+    #sayori's shot
+    pause 3 
+    mc "Ah, finally. Peace."
+    window hide 
+    pause 1     
+    play sound "mod_assets/boom.mp3"
+    show text "A mod by the Various Artists"
+    pause 3 
+    hide text 
+    pause 1 
+    play sound "mod_assets/boom.mp3"
+    show text "Writing\n FiT, Crim, cemsthetic, and Rose"
+    pause 3 
+    hide text 
+    pause 1 
+    play sound "mod_assets/boom.mp3"
+    show text "Coding\n Crim"
+    pause 3 
+    hide text 
+    pause 1 
+    play sound "mod_assets/boom.mp3"
+    show text "Art\n FiT"
+    pause 3 
+    hide text 
+    pause 1 
+    play sound "mod_assets/boom.mp3"
+    show text "Music\n Flasium"
+    pause 3 
+    hide text 
+    pause 1 
+    play sound "mod_assets/boom.mp3"
+    show text "Thanks for playing" with dissolve 
+    pause 5 
+    hide text with dissolve  
+    #post credit scene
+    pause 2 
+    s "I'm still alive you dingus!"
+    mc "Damn it!"
+    window hide 
+    play sound "mod_assets/boom.mp3"
+    show text "Eat a bag of dicks."
+    pause 4
+    hide text with fade 
+    return 
+    #Eat a bag of dicks
+
 label dopen:
     "I gently open the door."
     play sound opend 
