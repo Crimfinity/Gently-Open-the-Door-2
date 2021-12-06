@@ -671,6 +671,7 @@ layeredimage natsuki turned:
 
         attribute the_cool_fukin_shades default:
             "mod_assets/MPT/natsuki/natsuki_turned_eyes_shades.png"
+        attribute noshade null
 
 
 

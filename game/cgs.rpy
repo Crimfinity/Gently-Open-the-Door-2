@@ -292,7 +292,7 @@ image s_killb:
     yoffset -20
     "images/cg/s_kill.png"
     zoom .8 xcenter 360
-  
+
     yanchor 0
 transform skillr:
     subpixel True

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/definitions.rpy", line 104: expected statement.
-    -
-     ^
+File "game/doors.rpy", line 1337: end of line expected.
+    show madden at f11 f
+                       ^
 
 Ren'Py Version: Ren'Py 7.3.5.606
-Sun Nov 28 04:21:52 2021
+Sun Dec 05 22:48:51 2021

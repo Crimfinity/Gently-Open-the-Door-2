@@ -47,33 +47,38 @@ label start:
     
     
     call neckrope
-    call nc1 
-    call sans 
-    call gta 
-    call dmc  
-    call nude 
-    call delivery
-    call method 
-    call db1 
-    call db2 
+    #call nc1 
     call schizo 
-    call bread 
-    call pregnancy      
-    call psa 
+    call lmao
+    call gta 
+    call nude 
     call dyslexia 
-    call ava 
-    call dg
-    call infinity 
-    call madden 
-    call sdrip 
+    call pregnancy      
+    call sans 
+    call dmc  
+    call db1
+    call psa 
+    #call delivery
     call lights 
-    call comedy 
-    call dad
-    call lmao 
-    call flying 
-    call higher
+    #call method 
+    call dg
     call sayonara 
-    call closet 
+    call bread 
+    call higher 
+    call infinity 
+    call sdrip
+    call ava 
+    call db2 
+    #call baby 
+    #call rank 
+    #call dib
+    call nvm 
+    call madden 
+    call flying   
+    call dad 
+    call comedy
+    call pinata
+    #call closet 
     jump ending 
     return 
     # Start of the script

@@ -571,13 +571,21 @@ screen main_menu():
             hover "mod_assets/mb2.png"
             action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
             activate_sound gui.activate_sound
-        imagebutton:
-            yoffset 50 
-            idle "mod_assets/mb1.png"
-            hover "mod_assets/mb2.png"
-            action [Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
-            activate_sound gui.activate_sound
+        if persistent.finished == False:
+            imagebutton:
+                yoffset 50 
+                idle "mod_assets/mb1.png"
+                hover "mod_assets/mb2.png"
+                action OpenURL("http://www.wikihow.com/Tie-a-Noose")#[Help("README.html"), Show(screen="dialog", message="The help file has been opened in your browser.", ok_action=Hide("dialog"))]
+                activate_sound gui.activate_sound
             #xoffset 500
+        else:
+            imagebutton:
+                yoffset 50 
+                idle "mod_assets/mb1.png"
+                hover "mod_assets/mb2.png"
+                action Call(label="extras")
+                activate_sound gui.activate_sound
     hbox:
         xoffset 2
         yoffset 100
@@ -603,9 +611,15 @@ screen main_menu():
         text "{font=mod_assets/minecraftia.ttf}{size=22}Load Game":
             yoffset 8
             xoffset 10
-        text "{font=mod_assets/minecraftia.ttf}{size=22}Help":
-            yoffset 16
-            xoffset -30
+        if persistent.finished == False:
+            text "{font=mod_assets/minecraftia.ttf}{size=22}Help":
+                yoffset 16
+                xoffset -30
+        else:
+            text "{font=mod_assets/minecraftia.ttf}{size=22}Extra":
+                yoffset 16
+                xoffset -26
+
     hbox:
         xoffset 15
         yalign 0.71 

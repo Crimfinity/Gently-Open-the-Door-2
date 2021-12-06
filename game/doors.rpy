@@ -58,7 +58,7 @@ label neckrope:
     pause 1.5 
     show s_kill at face:
         zoom 2.5
-        yoffset 2400
+        yoffset 4600
 
     
     play music td 
@@ -273,7 +273,7 @@ label nc1:
     show layer master:
         truecenter
         subpixel True 
-        linear 60 zoom 3 yoffset 1000 
+        linear 60 zoom 3 yoffset 500 
     show sayori neut oe cm ldown rdown at t11
     pause 60
     show layer master  
@@ -464,6 +464,7 @@ label delivery:
     "I gently open the door."
     stop music 
     play sound opend
+    play music t6 fadein 2 
     scene bg sroom 
     show sayori turned casual neut cm oe at i11 
     with wipeleft_door 
@@ -491,7 +492,7 @@ label delivery:
     show sayori neut cm at t11 
 
     pause .5 
-    
+    stop music 
     play sound baby 
     pause .4 
     show sayori lsur lup rup at h11
@@ -559,7 +560,7 @@ label method: #still need the waving sayori
 label db1:
     #"I gently open the door."
     call dopen 
-
+    play music "bgm/5_sayori.ogg"
     mc "Hey, Sayori! Natsuki made cupcakes, do you want some?"
     show sayori anno om lup at f11 
     s "[player], I have diabetes."
@@ -568,6 +569,7 @@ label db1:
     mc "I'll take that as a yes."
 
     "I leave the three trays of cupcakes and leave."
+    stop music 
     call dclose 
     return 
 label schizo:
@@ -575,10 +577,11 @@ label schizo:
 
     "I gently open the door."
     play sound opend 
+    play music t3 fadein 4 
     scene bg sroom 
     show sayori turned casual neut cm oe ldown rdown at t11 
-    show natsuki turned happ casual cm oe at t31 
-    show yuri turned casual happ cm at t33 
+    show natsuki turned happ casual cm oe no_blink at t31 
+    show yuri turned casual happ cm no_blink at t33 
     with wipeleft_door 
     #the entire gang is here! except monika
     show sayori happ lup rup om at hf11 
@@ -602,6 +605,7 @@ label schizo:
     show sayori cm ce sad at t11 
     mc "Yes, Sayori, you have to."
     show sayori neut at d11 
+    stop music fadeout 9
     "She takes the pills and with one gulp, swallows them both down."
     show sayori oe 
     window hide 
@@ -688,7 +692,7 @@ label pregnancy:
     scene bg sroom 
     show sayori turned dist oe cm at t11 
     with wipeleft_door
-
+    play music t9 
     mc "Sayori, why'd you call me here?"
     show sayori sad om n3 at f11
     s "[player], we need to talk."
@@ -907,7 +911,7 @@ label ava:
 label db2:
 
     #Sayori has Diabetes 2
-
+    play music t8 
     "I gently open the door."
     play sound opend 
     scene bg sroom 
@@ -953,36 +957,38 @@ label db2:
     "I pat her head as the foam starts leaking out of her mouth."
     mc "Sayori, don't be so dramatic, I'll go get you more cupcakes."
     #"She should really clean herself up."
+    stop music 
     #"What a slob."
     call dclose 
-#close door
+
     return 
 label dg:
     stop music 
     "I gently open the door."
     play music t4 fadein 2
     play sound opend  
-    show sayori turned casual cm oe happ at t42 zorder 2 
+    show sayori turned casual cm oe happ at t11 zorder 2 
     show natsuki turned neut lhip rdown casual at t31 zorder 2 
-    show yuri turned cm dist casual at t33 zorder 2 
+    show yuri turned cm dist casual at t33 zorder 2:
+        xoffset -200
     show sroomz zorder 1 
     with wipeleft_door 
-    show sayori ce om lup at f42 zorder 3 
+    show sayori ce om lup at f11 zorder 3 
     s "Hello and welcome to the first meeting of the Dead Girls' Society." 
     s oe "Everyone introduce yoursel--{nw}"
-    show sayori lsur cm at h42 zorder 2 
+    show sayori lsur cm at h11 zorder 2 
     mc "Uh, what's going on?"
-    show sayori happ ldown om at f42 
+    show sayori happ ldown om at f11
     s "Oh hey, [player]!"
     s rup "This is just the first meeting of the DGS!"
     s ce "You're welcome to watch."
-    show sayori cm oe at t42 zorder 2
+    show sayori cm oe at t11 zorder 2
 
     mc "Um, actually, I have a question."
     mc "What do you guys actually do here?"
-    show sayori om lup at f42 zorder 3 
+    show sayori om lup at f11 zorder 3 
     s "We talk about the trauma of dying."
-    show sayori cm at t42 zorder 2
+    show sayori cm at t11 zorder 2
     show natsuki happ om ldown at f31 zorder 3 
     n "But mostly we just chill out and hang."
     show natsuki ce cm at t31 zorder 2
@@ -992,17 +998,14 @@ label dg:
     show yuri happ ldown rdown  
     n "Pun entirely intended."
     show natsuki cm oe rdown at t31 
-    show sayori om happ at f42 zorder 3  
+    show sayori om happ at f11 zorder 3  
     s "Thanks, Nat..."
-    show sayori cm at t42 zorder 2
+    show sayori cm at t11 zorder 2
     "I shake my head at the shenanigans."
     "Ah girls, never chang--"
     "Wait, is that..."
     stop music fadeout 3 
     window hide 
-    show yuri:
-        4
-        linear 5 alpha 0
     show noose zorder 11 :
         truecenter 
         xoffset 1000 yoffset -400
@@ -1041,6 +1044,7 @@ label dg:
         subpixel True 
         truecenter 
         xoffset -1015  
+    hide yuri 
     n "I am beyond confused."
     y "Isn't that the rope we glued a set of comedic eyes to, so that you could cope with your trauma better?"
     s "I think???"
@@ -1122,7 +1126,7 @@ label infinity:
         yoffset -200
     #blinded by light
     #dark room with noose in it
-
+    play music mend fadein 1.5
     mc "What the…?"
     show sayori turned om neut e3a at l41 
     s "You know what you must do."
@@ -1149,23 +1153,27 @@ label infinity:
 
     "I get it closer to my head."
     "Clearing my throat, time to make my move."
+    stop music 
+    play sound "mod_assets/kiss.wav" #its a small wav ok?
     "I make out with the noose."
     #pause 1.3 
-    play sound "mod_assets/kiss.wav" #its a small wav ok?
-    pause 1.3
+    
+    #pause 1.3
     #mc "Blegh, why is it so soggy?"
     #show sayori turned neut oe om rup at l31 
     #s "The rope's a slut."
     #show sayori cm 
     #mc "..."
     call dclose 
+    return
     #close door
 label madden:
     "I gently open the door."
 
     play sound opend 
-    show black zorder 3:
-        yoffset -720
+    show black zorder 0:
+        yoffset -520
+        zoom 20
     show sroom base zorder 1
     show s_kill2 zorder 5:
         zoom 1.1 rotate -7 xcenter 640
@@ -1177,20 +1185,23 @@ label madden:
 
     "No…"
     "I approach the hanging body of my best friend."
-    "I should've seen this coming…"
+    "I should've seen this coming..."
     "I look up to see Sayori's lifeless face."
-    "Oh Sayori, what did you do…-{nw}"
+    "Oh Sayori, what did you do..-{nw}"
     "Wait a minute."
+    show sroom base zorder 1:
+        ease 1 yoffset 15
     show layer master:
         ease 1 yoffset 100 
     pause 1 
     "I look further up only to be met with an endless void."
 
-    mc "Where the hell is the rope attached to…?"
+    mc "Where the hell is the rope attached to..?"
 
     "I move up the chair that's been thrown carelessly on the ground and jump on."
     "Okay, so I need to climb that rope..."
     hide s_kill2
+    play sound fall 
     show s_kill3 zorder 5:
         zoom 1.1 xcenter 640 rotate -7
         yoffset -1230
@@ -1205,6 +1216,9 @@ label madden:
     "And..."
     "Catch!"
     "I'm gripping the rope."
+    show sroom base zorder 1:
+        yoffset 15 
+        ease 1.4 yoffset 45
     show layer master:
         yoffset 100 
         ease 1.4 yoffset 300
@@ -1212,66 +1226,71 @@ label madden:
     "Let's see where this void takes us."
     show layer master:
         yoffset 300 
-        ease 1.4 yoffset 400
+        ease 1.4 yoffset 800
+    show sroom base zorder 1:
+        yoffset 45 
+        ease 1.4 yoffset 110
+    show blackzoom zorder -1
     "Using all my upper body strength, I begin to climb the endless rope."
     "At first, the void is a simple blackness, while terrifying, it is at the very least comprehensible."
     show layer master:
-        yoffset 400 
-        ease .7 yoffset 450
+        yoffset 800
+        ease .7 yoffset 850
     "So, I climb."
     show layer master:
-        yoffset 450 
-        ease 1.4 yoffset 500
+        yoffset 850 
+        ease 1.4 yoffset 900
     "I climb, I climb and I climb."
     "My arms shake."
     "My face melts."
     show layer master:
-        yoffset 500 
-        ease 1.4 yoffset 600
+        yoffset 900 
+        ease 1.4 yoffset 950
     "I feel like I'm losing myself."
     "The void gets ever darker."
     "Ever deeper."
     "All the light touches..."
-    play sound "mod_assets/lk.mp3"
-    show lionking zorder 6:
-        alpha 0 
-        yoffset -600
-        linear 1 alpha 1 
-    extend "is our kingdom."
-    "Mufasa" "\"A king's time as ruler rises and falls like the sun. One day, Simba, the sun will set on my time here, and will rise with you as the new king.\""
-    "Simba" "\"And this will all be mine?\""
-    "Mufasa" "\"Everything.\""
-    "Simba" "\"Everything the light touches.  What about that shadowy place?\""
-    "Mufasa" "\"That's beyond our borders. You must never go there, Simba.\""
-    "Simba" "\"But I thought a king can do whatever he wants.\""
-    "Mufasa" "\"Oh, there's more to being king than... getting your way all the time.\""
+    #play sound "mod_assets/lk.mp3"
+    #show lionking zorder 6:
+    #    alpha 0 
+    #    yoffset -600
+    #    linear 1 alpha 1 
+    #extend "is our kingdom."
+    #"Mufasa" "\"A king's time as ruler rises and falls like the sun. One day, Simba, the sun will set on my time here, and will rise with you as the new king.\""
+    #"Simba" "\"And this will all be mine?\""
+    #"Mufasa" "\"Everything.\""
+    #"Simba" "\"Everything the light touches.  What about that shadowy place?\""
+    #"Mufasa" "\"That's beyond our borders. You must never go there, Simba.\""
+    #"Simba" "\"But I thought a king can do whatever he wants.\""
+    #"Mufasa" "\"Oh, there's more to being king than... getting your way all the time.\""
 
   
 
-    "Simba" "\"There's more?\""
-    "Mufasa" "\"Simba...\""
+    #"Simba" "\"There's more?\""
+    #"Mufasa" "\"Simba...\""
 
     
 
-    "Mufasa" "\"Everything you see exists together, in a delicate balance. As king, you need to understand that balance, and respect all the creatures-- from the crawling ant to the leaping antelope.\""
-    "Simba" "\"But, Dad, don't we eat the antelope?\""
-    "Mufasa" "\"Yes, Simba, but let me explain. When we die, our bodies become the grass. And the antelope eat the grass. And so we are all connected in the great Circle of Life.\""
-    show monika forward happ om lpoint casual ce at l31 zorder 30:
-        yoffset -600
-    m "Good morning, sire!"
-    show monika sad cm 
-    "Mufasa" "GOD, FUCK OFF, MONIKA!"
-    call dclose 
+    #"Mufasa" "\"Everything you see exists together, in a delicate balance. As king, you need to understand that balance, and respect all the creatures-- from the crawling ant to the leaping antelope.\""
+    #"Simba" "\"But, Dad, don't we eat the antelope?\""
+    #"Mufasa" "\"Yes, Simba, but let me explain. When we die, our bodies become the grass. And the antelope eat the grass. And so we are all connected in the great Circle of Life.\""
+    #show monika forward happ om lpoint casual ce at l31 zorder 30:
+    #    yoffset -600
+    #m "Good morning, sire!"
+    #show monika sad cm 
+    #"Mufasa" "GOD, FUCK OFF, MONIKA!"
+    #call dclose 
 
-    show layer master:
-        yoffset 100 
-        ease 1.4 yoffset 300
     "Is a rope."
     "A singular rope."
+    show layer master:
+        yoffset 950
+        ease 30 yoffset 1100
     "And so I climb."
     "Every ounce of my strength is attributed to pulling myself up."
     "At first, I'm going at a decent pace."
     "But eventually, I slow to a crawl."
+    show vignette zorder 10 with dissolve 
     "My body can't take it."
     "But I must."
     "I must push on!"
@@ -1288,44 +1307,61 @@ label madden:
     "I can't feel my body."
     "I can't see the rope!"
     "The weight of the entire world is on me!"
-    "The pain!"
-    "The suffering!"
+    "The {color=#ff0000}pain!{/color}"
+    $ style.say_dialogue = style.edited
+    "{b}The suffering!{b}"
     "AAAAAAAAAAAAAAAAAAAAAAAAAA--{nw}"
-    show white onlayer master zorder 3:
+    $ style.say_dialogue = style.normal
+    show white onlayer front:
+        yoffset -1100
         alpha 0
         linear 1 alpha 1
     #flash of white light
     #blinking animation
     pause 1.5 
-    scene white 
+    scene white
+    hide white onlayer front  
     window hide 
-    hide white onlayer front 
+    #hide white onlayer front 
     scene black with close_eye 
     pause .15 
-    scene black 
+    scene blackzoom 
     show madden happ based at i11 
     with open_eyes 
-    "Wh-what…?"
+    "{i}Wh-what..?{/i}"
     "Where am I?"
     show madden at f11 
     jm "Hello, child."
     show madden at t11 
     mc "Who are you?"
     show madden at f11 
+    $ j_name = " Master of football strategy."
     jm "I am The Master of football strategy."
+    show black:
+        yoffset 720
     show layer master:
-        ease 3 zoom 1.15 rotate 25 
+        truecenter
+        subpixel True
+        ease 3 zoom 1.15 rotate 15 
+    $ j_name = "Arbiter of all things pigskin."
     jm "Arbiter of all things pigskin."
+    $ j_name = "John Madden"
+    jm "John Madden."
     jm "I see you have found my realm."
     show madden at t11 
     mc "Are you…"
     mc "Are you God?"
     show madden at f11 zorder 2 
     jm "Hahahaha!"
-    jm "So, child…"
+    jm "So, child..."
     jm "In the name of the hall of fame, would you like to join me in my never ending battle for all things football?"
     jm "Follow my teachings and you shall become a football man."
     mc "I'm honestly more of a soccer guy."
+    show layer master:
+        truecenter  
+        subpixel True
+        rotate 15 zoom 1.15  
+        ease 5 zoom 2.5 yoffset 300 xoffset -250
     show madden mad 
     pause 5.0
     window hide 
@@ -1432,11 +1468,11 @@ label dib:
     show natsuki anno cm at t31 
     s "That sounds racist."
     show natsuki doub om at f31 
-    n "It is racist. Have you seen Tiffa--{nw}"
+    n "It is racist. Have you seen Ti--{nw}"
     stop music 
     show yt onlayer front 
     pause 1  
-    #DMCA Copyright notice
+    #Copyright notice
     #snap back to reality
     hide yt onlayer front 
     mc "Okay then, DiB, why are you here?"
@@ -1529,6 +1565,7 @@ label dib:
 label rank:
     "I gently open the door."
     play sound opend 
+    play music t3 
     scene sroom 
     show sayori turned happ cm casual at t11 
     show natsuki cross nuet cm at t33  
@@ -1579,6 +1616,7 @@ label rank:
     s "So, at third place, we have..."
     show yuri shy n3
     show natsuki worr n3 
+    stop music fadeout 1 
     show layer master:
         truecenter 
         linear 4.201 zoom 1.35
@@ -1662,6 +1700,7 @@ label rank:
     show natsuki at thide 
     hide natsuki 
     show sayori happ at t11  
+    play music t9 fadein 2 
     "I limp over."
     "Huh. This is how rejection feels like."
 
@@ -1697,6 +1736,7 @@ label rank:
     mc "Well Sayori, I love y--{nw}"
     show monika forward om lpoint happ ce at l31 
     show sayori angr 
+    stop music 
     m "Hey guys, I heard you were doing a friend ranking competition!"
     show monika cm lsur 
     mc "OH MY GOD, FUCK OFF MONIKA!"
@@ -1997,6 +2037,7 @@ label immortal:
     play sound opend
     scene bg sroom 
     show s_kill at skillr 
+    play music t2 
     with wipeleft_door 
 
     show vignette with dissolve 
@@ -2007,6 +2048,7 @@ label immortal:
     hide s_kill 
     hide vignette 
     show sayori hang om oe at skillr 
+    stop music fadeout 1  
     s "[player], help me get down!"
     show sayori cm 
     mc "Huh!?!?"
@@ -2094,6 +2136,7 @@ label flying:
     scene bg sroom 
     show sayori hang neut om at skillr:
         yoffset 350 zoom .82
+    play music t8 
     with wipeleft_door 
     #sayori hanging by the noose
 
@@ -2106,6 +2149,7 @@ label flying:
     s neut om "We all die eventually."
     s anno "You’re just jealous I’m going to die flying."
     show sayori cm neut 
+    stop music 
     call dclose
     return 
 label higher:
@@ -2362,6 +2406,98 @@ label sayonara:
     pause .00005 
     hide text 
     return 
+label pinata:
+    "I gently open the door."
+    play sound opend 
+    scene bg sroom 
+    show s_killb:
+        zoom .82 
+        truecenter
+    show natsuki turned mib noshade happ cm oe at i11 #add tophat 
+    with wipeleft_door 
+
+    #open door
+    #show natsuki with ridiculous tophat
+    show natsuki om at f11 
+    n "Step right up, step right up and take a hit at our newest, most popular attraction…"
+
+    #sayori pinata drops from the top of the screen
+    show natsuki at f31 
+    show layer master:
+        subpixel True 
+        truecenter 
+        easein_elastic 2 zoom 1.4
+    n "'The Hanging Girl!'"
+    show natsuki cm at t31 
+    mc "What?"
+    show natsuki sedu om at f31 
+    n "C'mere and take a free shot at the candy-dispensing and oddly satisfying Hanging Girl!"
+    show natsuki cm at t31 
+    "I step up to the pinata and Natsuki hands me a bat that's covered in barbed wire."
+    show natsuki happ om: #at f31:
+        ease .7 zoom .84 xoffset 140 
+    n "Alright, time to put the blindfold on ya!"
+    show natsuki cm at t31 
+    scene black with close_eye
+    "She wraps a blindfold on top of my eyes."
+    "I start swinging my bat mindlessly, trying to get a hit on the pinata."
+
+    play sound "mod_assets/bat_swing_hit.ogg"
+    pause .15 
+    mc "Hey, I got it!"
+    n "Keep goin', sir!"
+    play sound "mod_assets/bat_swing_hit.ogg"
+    pause .4 
+    play sound "mod_assets/bat_swing_hit.ogg"
+    "I keep on beating on the pinata, trying to get it to dispense as much candy as possible."
+    play sound "mod_assets/bat_swing_hit.ogg"
+    #Impact, Impact
+    pause .6
+    play sound "mod_assets/bone_break_hit.ogg"
+    #mc "This is fun!"
+    mc "Oo, that sounded good!"
+    pause 1 
+    play sound "mod_assets/coup_de_grace.ogg"
+    window hide 
+    pause 1
+    #pause .7
+    #mc "Oo, that sounded good!"
+
+    #"I slowly take the blindfold off."
+    scene bg sroom 
+    show sayata1:
+        zoom .82
+        truecenter  
+    show sayata2:
+        zoom .82 
+        truecenter
+    show natsuki turned mib cm oe noshade curi at t31  
+    with open_eyes
+    #Natsuki and Yuri looking shocked with a hanging sayori doll next to her and a bloody hanging Sayori corpse
+    pause .5
+    show sayata2:
+        zoom .82 
+        truecenter 
+        block:
+            ease 1 yoffset 10 rotate 1 
+            ease 1 yoffset 25
+            ease .7 yoffset 900 rotate 10 
+         
+    pause 1 
+    show natsuki lsur 
+    pause 2 
+    show natsuki om at f31 
+    n "Wait a minute, that doesn't look like candy at all!"
+    show natsuki cm at t31 
+    show yuri turned mib noshade om neut om oe at l33 
+    y "Natsuki, I just finished preparing the pinata for th-{w=2.0}-{nw}"
+    show yuri shoc cm at s33 
+    y "..."
+
+    call dclose 
+    return 
+    #close door
+
 label ending:
     "I gently open the door."
     scene sroom 
@@ -2372,7 +2508,7 @@ label ending:
             ease 2 xoffset 46 
             repeat
     show natsuki turned mib neut cm at i11 
-    show yuri turned mib neut cm at i33
+    show yuri turned mib neut cm at r33
  
     show layer master:
         zoom 4 
@@ -2411,14 +2547,14 @@ label ending:
     show natsuki cm at t11 
     show yuri om at f33 
     y "Yes. One moment please."
-    "She… reaches down her pants?"
+    "She... reaches down her pants?"
     show yuri n3 at d33 
     y "Mmmmnnnhhh."
     y "Soahhry, the pen is lodged very deep."
     show yuri cm at t33 
     show natsuki doub om at f11 
     n "Uhh… Yuri, this wasn't part of the plan."
-    show yuri rdown at f33 
+    show yuri rdown om at f33 
     show natsuki cm ce at t11 
     y "S-sorry…"
     scene black with close_eyes 
@@ -2549,6 +2685,7 @@ label ending:
     show text "Eat a bag of dicks."
     pause 4
     hide text with fade 
+    $ persistent.finished = True 
     return 
     #Eat a bag of dicks
 
@@ -2589,4 +2726,153 @@ label skz:
 label sk:
     play music td 
 
+label extras:
+    stop music fadeout 1 
+    scene sroom 
+    with dissolve_scene_full
+    if persistent.fe = False:
+        "Hey, Crimfinity (A.K.A Crimsin) here. Thanks for playing our mod! I have a couple things to touch on about this extras menu."
+        "This menu allows you to replay skits from the mod on their own as well as view a few skits that didn't make the final cut."
+        "I plan on updating this menu to look luch better, contain all the prequel's skits, and share some of the best text conversations from the self defence noose hotline."
+        "We're a bit preoccupied with the 12 shitter shits of christmas, so expect a updated version sometime in January."
+        $ persistent.fe = True
+    window hide
+label em:
+    menu:
+        "IGotD 2 Skits":
+            jump ig2a
+        "Deleted Skits":
+            jump cuts 
+        "Back":
+            return 
+label cuts:
+    menu: 
+        "1 - NooseCorp":
+            call nc1  
+        "2 - Garapagalos Delivery":
+            call delivery 
+        "3 - Methods":
+            call method 
+        "4 - Baby":
+            call baby  
+        "5 - Ranking My Friends":
+            call rank 
+        "next":
+            jump cuts2 
+        "Back":
+            jump em
+label cuts2:
+        "6 - Monster":
+            call nc1  
+        if persistent.delivery == True: 
+            "7 - Garapagalos Delivery":
+                call delivery 
+        else:
+            "7 - ???":
+                jump cuts2 
+        "Last":
+            jump cuts
+        "Back":
+            jump em
+       
     
+label ig2a:
+    menu: 
+        "1 - Opening":
+            call neckrope 
+        "2 - Schizo":
+            call schizo 
+        "3 - lmao":
+            call lmao
+        "4 - GTA":
+            call gta 
+        "5 - Pen Return":
+            call nude 
+        "next":
+            jump ig2b 
+        "Return":
+            jump em
+
+        
+label ig2b:
+    menu: 
+        "6 - Dyslexia":
+            call dyslexia
+        "7 - Pregnant":
+            call pregnancy 
+        "8 - Sans":
+            call sans 
+        "9 - Dumb MC/Walls":
+            call dmc 
+        "10 - Diabetes Pt. 1"
+            call db1 
+        "Last":
+            jump igb2a 
+        "Next":
+            jump igb2c 
+        "Return":
+            jump em
+label ig2c:
+    menu: 
+        "11 - PSA":
+            call psa
+        "12 - Darkness":
+            call lights 
+        "13 - Dead Girls' Society":
+            call dg 
+        "14 - Sayonara":
+            call sayonara 
+        "15 - Baguette"
+            call bread  
+        "Last":
+            jump igb2b 
+        "Next":
+            jump igb2d 
+        "Return":
+            jump em 
+label ig2d:
+    menu: 
+        "16 - Higher":
+            call higher
+        "17 - Infinite Doors":
+            call infinity 
+        "18 - Drip":
+            call drip 
+        "19 - Totally inconsicuous conversation":
+            call ava 
+        "20 - Diabetes Pt. 2"
+            call db2
+        "Last":
+            jump igb2c 
+        "Next":
+            jump igb2e 
+        "Return":
+            jump em 
+label ig2e:
+    menu: 
+        "21 - Change of Heart":
+            call nvm
+        "22 - Football":
+            call madden  
+        "23 - Dreams of Flying":
+            call flying 
+        "24 - Dad Jokes":
+            call dad 
+        "25 - What's funny?"
+            call comedy   
+        "Last":
+            jump igb2d 
+        "Next":
+            jump igb2f 
+        "Return":
+            jump em 
+label ig2f:
+    menu: 
+        "26 - Pinata":
+            call nvm
+        "27 - Ending":
+            call madden          
+        "Last":
+            jump igb2d 
+        "Return":
+            jump em 

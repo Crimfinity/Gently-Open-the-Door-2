@@ -491,6 +491,7 @@ layeredimage yuri turned:
 
         attribute mib_shades default if_any(["mib"]):
             "mod_assets/MPT/yuri/yuri_turned_eyes_shades.png"
+        attribute noshade null 
 
 layeredimage yuri shy:
 

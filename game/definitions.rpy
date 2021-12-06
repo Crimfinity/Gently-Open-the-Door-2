@@ -3,7 +3,7 @@ init python:
     renpy.music.register_channel("ambient2", "sfx", True)
     renpy.music.register_channel("track1", "music", True)
     renpy.music.register_channel("track2", "music", True)
-
+default persistent.finished = False 
 define audio.sting = "mod_assets/sting.ogg"
 define audio.baby = "mod_assets/baby.mp3"
 define audio.sizzle = "mod_assets/sizzle.ogg"
@@ -12,7 +12,11 @@ define audio.phones = "mod_assets/phones.mp3"
 define audio.knock = "mod_assets/knock.ogg"
 define close_eye = ImageDissolve("mod_assets/close_eye.png", 0.15, ramplen=64)
 
-
+image sayata1 = "mod_assets/sayori/sayata.png"
+image sayata2 = "mod_assets/sayori/sayata2.png"
+image blackzoom:
+    "black"
+    zoom 20 
 image nbaby = "mod_assets/nbaby.png"
 image yt = "mod_assets/yt.png"
 image preg = "mod_assets/preg.png" 
