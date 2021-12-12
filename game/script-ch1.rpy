@@ -130,7 +130,7 @@ label ch1_main:
 
 
     $ nextscene = poemwinner[0] + "_exclusive_" + str(eval(poemwinner[0][0] + "_appeal"))
-    call expression nextscene
+    call expression nextscene from _call_expression_7
 
 
     show monika 1 zorder 2 at t21
@@ -331,11 +331,11 @@ label ch1_end:
     menu:
         "So, of course that's going to be...!"
         "Natsuki.":
-            call ch1_end_natsuki
+            call ch1_end_natsuki from _call_ch1_end_natsuki
         "Yuri.":
-            call ch1_end_yuri
+            call ch1_end_yuri from _call_ch1_end_yuri
         "Help me, Sayori!!":
-            call ch1_end_sayori
+            call ch1_end_sayori from _call_ch1_end_sayori
 
     scene bg club_day
     show monika 4b zorder 2 at t11

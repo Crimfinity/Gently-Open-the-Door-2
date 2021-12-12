@@ -301,7 +301,11 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            textbutton i.caption:
+                action i.action
+           
+       
+
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -324,9 +328,9 @@ style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
-    idle_background Frame("gui/button/choice_idle_background.png", gui.choice_button_borders)
-    hover_background Frame("gui/button/choice_hover_background.png", gui.choice_button_borders)
-
+    idle_background Frame("mod_assets/mb3.png", gui.choice_button_borders)
+    hover_background Frame("mod_assets/mb4.png", gui.choice_button_borders)
+    
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
     outlines []
@@ -369,8 +373,8 @@ style choice_button is default:
     properties gui.button_properties("choice_button")
     hover_sound gui.hover_sound
     activate_sound gui.activate_sound
-    idle_background Frame("gui/button/choice_idle_background.png", gui.choice_button_borders)
-    hover_background Frame("gui/button/choice_hover_background.png", gui.choice_button_borders)
+    idle_background Frame("mod_assets/mb3.png" , gui.choice_button_borders)
+    hover_background Frame("mod_assets/mb4.png" , gui.choice_button_borders)
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
@@ -584,7 +588,7 @@ screen main_menu():
                 yoffset 50 
                 idle "mod_assets/mb1.png"
                 hover "mod_assets/mb2.png"
-                action Call(label="extras")
+                action Start("extras")#Call(label="extras")
                 activate_sound gui.activate_sound
     hbox:
         xoffset 2
@@ -612,7 +616,7 @@ screen main_menu():
             yoffset 8
             xoffset 10
         if persistent.finished == False:
-            text "{font=mod_assets/minecraftia.ttf}{size=22}Help":
+            text "{font=mod_assets/minecraftia.ttf}{size=22}Hlep":
                 yoffset 16
                 xoffset -30
         else:

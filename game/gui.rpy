@@ -178,10 +178,10 @@ define gui.page_button_borders = Borders(10, 4, 10, 4)
 
 #define gui.quick_button_borders = Borders(10, 4, 10, 0)
 define gui.quick_button_text_size = 14
-define gui.quick_button_text_idle_color = "#522"
-define gui.quick_button_text_hover_color = "#fcc"
+define gui.quick_button_text_idle_color = "#1b0092"
+define gui.quick_button_text_hover_color = "#0099ff"
 define gui.quick_button_text_selected_color = gui.accent_color
-define gui.quick_button_text_insensitive_color = "#a66"
+define gui.quick_button_text_insensitive_color = "#3c55c3"
 
 ## You can also add your own customizations, by adding properly-named variables.
 ## For example, you can uncomment the following line to set the width of a
@@ -201,9 +201,9 @@ define gui.choice_button_text_font = gui.default_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = "#000"
-define gui.choice_button_text_hover_color = "#fa9"
+define gui.choice_button_text_hover_color = "#1a0fb6"
 
-# File Slot Buttons 
+# File Slot Buttons R
 
 ## A file slot button is a special kind of button. It contains a thumbnail
 ## image, and text describing the contents of the save slot. A save slot uses

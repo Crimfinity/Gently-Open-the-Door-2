@@ -3,15 +3,26 @@ init python:
     renpy.music.register_channel("ambient2", "sfx", True)
     renpy.music.register_channel("track1", "music", True)
     renpy.music.register_channel("track2", "music", True)
+
 default persistent.finished = False 
+default persistent.cutseven = "7 - ???" 
+define audio.mbass = "mod_assets/madden_bass.ogg"
+define audio.mbassb = "mod_assets/madden_bass_angry.ogg"
 define audio.sting = "mod_assets/sting.ogg"
 define audio.baby = "mod_assets/baby.mp3"
 define audio.sizzle = "mod_assets/sizzle.ogg"
 define audio.birds = "mod_assets/birds.ogg"
 define audio.phones = "mod_assets/phones.mp3"
 define audio.knock = "mod_assets/knock.ogg"
+define audio.static = "mod_assets/static.ogg"
+define audio.circus = "mod_assets/circus.mp3"
+define audio.panning = "mod_assets/panning.ogg"
 define close_eye = ImageDissolve("mod_assets/close_eye.png", 0.15, ramplen=64)
-
+default persistent.delivery = False 
+default persistent.fe = False 
+image scan = "mod_assets/sayori/s_can.png"
+image seyel = "mod_assets/sayori/s_can_l.png"
+image seyer = "mod_assets/sayori/s_can_r.png"
 image sayata1 = "mod_assets/sayori/sayata.png"
 image sayata2 = "mod_assets/sayori/sayata2.png"
 image blackzoom:
@@ -61,7 +72,35 @@ image moon = "mod_assets/moon.png"
 image windowcut = "mod_assets/windowcut.png"
 image closetc = "mod_assets/bodies_closed.png"
 image closeto = "mod_assets/monika_bodies.png"
-
+image purple:
+    "#c300ff"
+image blue: 
+    "#2558ff"
+image yellow: 
+    "#fbff00"
+image green:
+    "#06ac00"
+image red:
+    "#b30000"
+image rainbow:
+    zoom 7 
+    block:
+        "red" with Dissolve(1, alpha=True)
+        1
+        "purple" with Dissolve(1, alpha=True)
+        1
+        "blue" with Dissolve(1, alpha=True)
+        1
+        "yellow" with Dissolve(1, alpha=True)
+        1
+        "green" with Dissolve(1, alpha=True)
+        1
+        repeat 
+transform peek_left: #ripped from WC
+    subpixel True xanchor 0.5 yanchor 0.5 ypos 350 xpos -100 zoom 0.8 alpha .9
+    ease .25 rotate 50 xpos 100 
+    on hide:
+        ease .25 rotate 0 xpos -100
 #layeredimage ava:
 #    always "ava_ngelion"#
 
@@ -277,7 +316,6 @@ define audio.t3m = "<loop 4.618>bgm/3.ogg"
 define audio.t4 = "<loop 19.451>bgm/4.ogg" # Dreams of Love and Literature - Poem Game Theme
 define audio.t4g = "<loop 1.000>bgm/4g.ogg"
 define audio.t5 = "<loop 4.444>bgm/5.ogg" # Okay Everyone! - Sharing Poems Theme
-
 # Doki Poem Theme
 define audio.tmonika = "<loop 4.444>bgm/5_monika.ogg" # Okay Everyone! (Monika)
 define audio.tsayori = "<loop 4.444>bgm/5_sayori.ogg" # Okay Everyone! (Sayori)
@@ -700,11 +738,12 @@ define m = DynamicCharacter('m_name', image='monika', what_prefix='"', what_suff
 define n = DynamicCharacter('n_name', image='natsuki', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define y = DynamicCharacter('y_name', image='yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define ny = Character('Nat & Yuri', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
+define mcn = DynamicCharacter('mcnname', what_prefix='"', what_suffix='"', ctc="ctc", ctc_position="fixed")
 define a = DynamicCharacter('a_name', image ='ava', what_prefix='"{font=mod_assets/wingding.ttf}', what_suffix='{/font}"', ctc="ctc", ctc_position="fixed")
 image ava ngelion = "mod_assets/ava.png"
-define _dismiss_pause = config.developer
+default _dismiss_pause = True
 default a_name = "{font=mod_assets/wingding.ttf}Ava"
-
+default mcnname = "[player]&Natsuki"
 # Persistent Variables
 
 # These variables are load at game startup and exist on all saves.

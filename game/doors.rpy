@@ -1,5 +1,5 @@
 label neckrope:
-
+    $ _dismiss_pause = True
     stop music fadeout 3 
     scene black with fade  
     play ambient birds fadein 4 
@@ -93,7 +93,7 @@ label neckrope:
     pause .2 
 
     "She's still here."
-    "My heartbeat relaxes, the ringing in my ear disappears and my breath settles."
+    
  
     show sayori turned worr lup rdown om oe at f11 
 
@@ -172,7 +172,7 @@ label neckrope:
     pause .1 
     hide sayori 
     play music td 
-    call skz 
+    call skz from _call_skz 
     #*sayori hangs herself*
 
     pause 1 
@@ -275,7 +275,7 @@ label nc1:
         subpixel True 
         linear 60 zoom 3 yoffset 500 
     show sayori neut oe cm ldown rdown at t11
-    pause 60
+    $ renpy.pause (delay=60, hard=False)
     show layer master  
     #Sayori looks directly at the player for a second
 
@@ -362,6 +362,7 @@ label gta:
     scene bg sroom 
     show sayori turned cm oe neut at t11
     with wipeleft_door 
+    play music t5 fadein 1.5 
 
     #open door
 
@@ -385,7 +386,7 @@ label gta:
     #call updatecosole ("Barber shops are now available{fast}", "Visit a barber to get a new haircut{fast}")
     s vang"What-{w=.8}{nw}"
     show sayori cm at t11 
-    call updateconsole ("Barber shops are now available{fast}", "Visit a barber to get a new haircut{fast}")
+    call updateconsole ("Barber shops are now available{fast}", "Visit a barber to get a new haircut{fast}") from _call_updateconsole_18
 
     
     play sound closed
@@ -511,7 +512,9 @@ label delivery:
     s "Wait, come back here--{nw}"
     play sound closed 
     scene black with wipeleft_door
+    default persistent.cutseven = "7 - Dokis in Black" 
     #close door
+
     return
 label method: #still need the waving sayori 
     
@@ -544,7 +547,7 @@ label method: #still need the waving sayori
     pause .1 
     play sound sting  
     hide sayori 
-    call skz 
+    call skz from _call_skz_1 
     #show s_kill2 
     #s_kill
 
@@ -559,7 +562,7 @@ label method: #still need the waving sayori
     return 
 label db1:
     #"I gently open the door."
-    call dopen 
+    call dopen from _call_dopen 
     play music "bgm/5_sayori.ogg"
     mc "Hey, Sayori! Natsuki made cupcakes, do you want some?"
     show sayori anno om lup at f11 
@@ -570,7 +573,7 @@ label db1:
 
     "I leave the three trays of cupcakes and leave."
     stop music 
-    call dclose 
+    call dclose from _call_dclose 
     return 
 label schizo:
     #Schizophrenic Sayori
@@ -637,7 +640,7 @@ label schizo:
     m "..."
     m "I'll go."
     s "Please."
-    call dclose 
+    call dclose from _call_dclose_1 
     return 
 label bread:
     #Baguette
@@ -646,7 +649,7 @@ label bread:
     play sound opend 
     scene bg sroom with wipeleft_door 
     show baguette at floating with dissolve
-
+    play music "bgm/5_monika.ogg"
     mc "It's a baguette."
     "Baguette" "\"Baguette.\""
     mc "Baguette."
@@ -661,6 +664,7 @@ label bread:
     "Baguette" "\"Baguette.\""
     show monika forward happ ce om lpoint at l31
     show sayori vang ldown  
+    stop music 
     m "Baguette!"
     show layer master at vpunch 
     show monika cm lsur 
@@ -677,7 +681,7 @@ label bread:
     pause 3.5 
     show sayori neut 
     "Baguette" "\"Baguette.\""
-    call dclose 
+    call dclose from _call_dclose_2 
     return 
 
     #monika crying
@@ -747,7 +751,7 @@ label pregnancy:
     s "Yeah..."
     show sayori cm 
 
-    pause 10.0
+    pause 3.0
     show sayori oe -n4 at t11 
     mc "So, abortion or..?"
     show sayori happ om lup at f11 
@@ -757,11 +761,11 @@ label pregnancy:
     hide sayori 
     stop music 
     play sound sting 
-    call skz
+    call skz from _call_skz_2
     #show s_kill2 
     mc "..."
     mc "Phew, that was close!"
-    call dclose 
+    call dclose from _call_dclose_3 
     return 
 label psa:
 
@@ -851,14 +855,14 @@ label dyslexia:
 
     hide sayori 
     play sound sting 
-    call skz 
+    call skz from _call_skz_3 
     #s_kill
     pause 1 
     "..."
     "..."
     "I berkarwnodn otni treas."
 
-    call dclose 
+    call dclose from _call_dclose_4 
     return 
 label ava:
     stop music 
@@ -897,27 +901,105 @@ label ava:
     a "My only wish was to tell him-{nw}"
     a "Do not dread a horrible future, or it will become your fate.{w=.2}{nw}"
     show black onlayer front
-    pause 99999999999999999999999999999999999
+    #$ pause  
+    $ renpy.pause(delay=999999999999999999999999, hard=False) #99999999999999999999999999999999999
     show layer screens 
     hide black onlayer front
     scene bg sroom
     mc "Ahaha!"
     mc "Relatable."
-    call dclose  
+    call dclose from _call_dclose_5  
     
     return 
 
+label cannibal:
+    "I gently open the door."
+    play sound opend 
+    scene sroom 
+    show scan at i11 
+    show seyel at i11:
+        xoffset -10  
+    show seyer at i11:
+        xoffset -10 
+    with wipeleft_door
+    pause .5 
+    show layer master:
+        truecenter 
+        subpixel True 
+        ease 9 zoom 4 yoffset 350 rotate 40
+    play sound "mod_assets/munch.ogg" 
+    pause 9 
+    show seyel at i11:
+        xoffset -10 
+        ease .4 xoffset -0 yoffset 3   
+        yoffset 0
+    show seyer at i11:   
+        xoffset -10 
+        ease .4 xoffset -0 yoffset 3
+         
+        yoffset 0 
+    pause .35 
+
+    scene sroom 
+    show layer master 
+    show scan at i11 
+    #show sayori with blood on her mouth and crazed look
+    #show sayori corpses with bits off
+    #cannibal sayori's eyes slowly move to you
+    show seyel at i11:
+        block:
+            renpy.random.randint(0,200)*0.01
+            choice:
+                xoffset 1 
+                .05 
+                xoffset 0 
+            choice:
+                xoffset -1 
+                .05 
+                xoffset 0    
+            choice:
+                yoffset 1 
+                .05 
+                yoffset 0  
+            choice:
+                yoffset -1 
+                .05 
+                yoffset 0 
+            repeat
+    show seyer at i11:
+        block:
+            renpy.random.randint(0,200)*0.01
+            choice:
+                xoffset 1 
+                .05 
+                xoffset 0 
+            choice:
+                xoffset -1 
+                .05 
+                xoffset 0    
+            choice:
+                yoffset 1 
+                .05 
+                yoffset 0  
+            choice:
+                yoffset -1 
+                .05 
+                yoffset 0 
+            repeat
+    "I gently close the door."
+    call dclose from _call_dclose_6 
+    return 
 
 label db2:
 
     #Sayori has Diabetes 2
-    play music t8 
+
     "I gently open the door."
     play sound opend 
     scene bg sroom 
-    show sayori turned dist cm e0a n2 ldown rdown at t11 
+    show sayori turned dist cm e0a n2 ldown rdown b1c no_blink at t11 
     with wipeleft_door
-   
+    play music t8 
     mc "Hey Sayori, did you eat the cupcakes?"
 
     "I look to the ground and see three empty trays and crumbs all over the place."
@@ -959,7 +1041,7 @@ label db2:
     #"She should really clean herself up."
     stop music 
     #"What a slob."
-    call dclose 
+    call dclose from _call_dclose_7 
 
     return 
 label dg:
@@ -1045,8 +1127,17 @@ label dg:
         truecenter 
         xoffset -1015  
     hide yuri 
+    hide natsuki
+    show natsuki turned casual curi om rhip ldown at peek_left onlayer transient
+
     n "I am beyond confused."
+    show natsuki turned casual neut cm onlayer transient:
+        subpixel True xanchor 0.5 yanchor 0.5 ypos 350 xpos 100 zoom 0.8 alpha .9 rotate 50
+        ease .15 rotate 0 xpos -100 xoffset -125
+
+
     y "Isn't that the rope we glued a set of comedic eyes to, so that you could cope with your trauma better?"
+    hide natsuki
     s "I think???"
     scene bg sroom 
     show sayori turned casual lup cm oe worr at t11 #at face zorder 11 
@@ -1115,24 +1206,26 @@ label infinity:
     "I break my leg."
     "Ouchie. That hurtie my stumpy wumpy."
     "I crawl to the doorknob and open it."
-    window hide 
+    window hide  
     scene white with dissolve_scene_full 
     pause .3 
     show white onlayer front:
         .1
         linear 3 alpha 0 
     scene black 
+    show mask_2 
+    show mask_3 
     show noose at floating:
         yoffset -200
     #blinded by light
     #dark room with noose in it
-    play music mend fadein 1.5
+    play music m1 fadein 1.5
     mc "What the…?"
     show sayori turned om neut e3a at l41 
     s "You know what you must do."
     show sayori cm 
     mc "..."
-    mc "Yes."
+    mc "{b}Yes.{/b}"
 
     show layer master:
         truecenter 
@@ -1140,11 +1233,15 @@ label infinity:
     "I crawl up to the noose, barely standing on my two feet."
     "Looking through it, I see my future reflected within the noose."
     "I know what I must do."
-    scene black 
+    hide sayori 
     show noose at floating:
         truecenter 
         zoom 1.8
         yoffset -300
+    show mask_2:
+        zoom 1.3  
+    show mask_3: 
+        zoom 1.3 
     with dissolve
 
     "I take the noose and stare at it longingly."
@@ -1154,6 +1251,8 @@ label infinity:
     "I get it closer to my head."
     "Clearing my throat, time to make my move."
     stop music 
+    hide mask_2 
+    hide mask_3 
     play sound "mod_assets/kiss.wav" #its a small wav ok?
     "I make out with the noose."
     #pause 1.3 
@@ -1164,7 +1263,7 @@ label infinity:
     #s "The rope's a slut."
     #show sayori cm 
     #mc "..."
-    call dclose 
+    call dclose from _call_dclose_8 
     return
     #close door
 label madden:
@@ -1183,7 +1282,7 @@ label madden:
     play sound sting
     mc "Sayori!"
 
-    "No…"
+    "No..."
     "I approach the hanging body of my best friend."
     "I should've seen this coming..."
     "I look up to see Sayori's lifeless face."
@@ -1290,7 +1389,10 @@ label madden:
     "Every ounce of my strength is attributed to pulling myself up."
     "At first, I'm going at a decent pace."
     "But eventually, I slow to a crawl."
-    show vignette zorder 10 with dissolve 
+    show noise onlayer fucktransient:
+        alpha .35 
+    show vignette zorder 10 onlayer fucktransient 
+    with dissolve 
     "My body can't take it."
     "But I must."
     "I must push on!"
@@ -1299,9 +1401,12 @@ label madden:
     "Am I here?"
     "Is here even real?"
     "Am I real?"
-    "My surroundings warp around, shades of colour so extravagant, that we have no words for it."
+    hide s_kill 
+    show rainbow zorder 1 
+    with dissolve 
+    "My surroundings warp around, shades of color so extravagant, that we have no words for it."
     "It's like I can see a whole new spectrum of light!"
-    "The colours!"
+    "The colors!"
     show veins onlayer front 
     "My retinas bleed in, my eye sockets bulge out."
     "I can't feel my body."
@@ -1313,20 +1418,29 @@ label madden:
     "AAAAAAAAAAAAAAAAAAAAAAAAAA--{nw}"
     $ style.say_dialogue = style.normal
     show white onlayer front:
+        zoom 7
         yoffset -1100
         alpha 0
         linear 1 alpha 1
     #flash of white light
     #blinking animation
-    pause 1.5 
+    pause 1
+    hide noise onlayer fucktransient 
+    pause .5  
     scene white
     hide white onlayer front  
     window hide 
     #hide white onlayer front 
     scene black with close_eye 
-    pause .15 
-    scene blackzoom 
-    show madden happ based at i11 
+    pause .3  
+    $ renpy.music.set_volume(0,0,channel="track2")
+    $ renpy.music.set_volume(1,0,channel="track1")
+    play track1 mbass fadein 10 
+    play track2 mbassb  
+    scene blackzoom
+    show noise zorder 3:
+        zoom 1.5 alpha .35   
+    show madden happ based at i11 zorder 2  
     with open_eyes 
     "{i}Wh-what..?{/i}"
     "Where am I?"
@@ -1346,17 +1460,20 @@ label madden:
     $ j_name = "Arbiter of all things pigskin."
     jm "Arbiter of all things pigskin."
     $ j_name = "John Madden"
+    show madden zorder 4 
     jm "John Madden."
     jm "I see you have found my realm."
     show madden at t11 
     mc "Are you…"
     mc "Are you God?"
-    show madden at f11 zorder 2 
+    show madden at f11  
     jm "Hahahaha!"
     jm "So, child..."
     jm "In the name of the hall of fame, would you like to join me in my never ending battle for all things football?"
     jm "Follow my teachings and you shall become a football man."
     mc "I'm honestly more of a soccer guy."
+    $ renpy.music.set_volume(1,5,channel="track2")
+    $ renpy.music.set_volume(0,5,channel="track1")
     show layer master:
         truecenter  
         subpixel True
@@ -1364,6 +1481,7 @@ label madden:
         ease 5 zoom 2.5 yoffset 300 xoffset -250
     show madden mad 
     pause 5.0
+    play music static   
     window hide 
     show layer master at anxiety 
     show noise zorder 1 
@@ -1378,9 +1496,11 @@ label madden:
         dizzy(5,.01)
     pause 5 
     stop sound 
-    stop music 
+    stop track1  
+    stop track2 
     scene bg sroom 
     hide white onlayer front 
+    hide vignette onlayer fucktransient
     #madden shakes
     #mc disintegrates
     #screams of the damned
@@ -1399,7 +1519,7 @@ label madden:
     "Anyway..."
     hide veins onlayer front
     stop ambient 
-    call dclose 
+    call dclose from _call_dclose_9 
     return
 
     #transition to next skit
@@ -1409,7 +1529,7 @@ label dib:
     scene bg sroom 
     show yuri turned mib neut at t33 
     show natsuki turned mib doub cm at t31
-    show sayori turned casual lup cm oe ldown rdown at t11 
+    show sayori turned casual lup cm oe rdown at t11 
     with wipeleft_door 
     #DiB and Sayori
 
@@ -1481,7 +1601,7 @@ label dib:
     show natsuki cm at t31
     mc "A baby?"
     show yuri neut om at f33 
-    y "Yes. This baby is the centre of a time anomaly that needs to be fixed before the entire timestream collapses in on itself."
+    y "Yes. This baby is the center of a time anomaly that needs to be fixed before the entire timestream collapses in on itself."
     show yuri cm at t33 
     show sayori curi om lup at f11 
     s "I don't have a baby!"
@@ -1518,7 +1638,7 @@ label dib:
 
     mc "Why?"
     show yuri om at f33 
-    y "To seal the time loop that this baby is the centre off."
+    y "To seal the time loop that this baby is the center off."
     show yuri cm at t33 
     mc "Will you stop bothering us if I do it?"
     show yuri om at f33 
@@ -1546,7 +1666,7 @@ label dib:
     mc "What's Guam?"
     show yuri happ om at f33 
     show sayori lsur 
-    y "It's a sidespace dimensional city where DiB headquarters are centred at."
+    y "It's a sidespace dimensional city where DiB headquarters are centered at."
     show yuri cm at t33 
     mc "Sidespace dimensional city..?"
     show sayori om rup at f11 
@@ -1559,7 +1679,8 @@ label dib:
     show natsuki om at f31 
     n "Good enough."
     show natsuki cm at t31 
-    call dclose 
+    call dclose from _call_dclose_10 
+    $ persistent.cutseven = "7 - Dokis in Black"
     return
     #close door
 label rank:
@@ -1609,7 +1730,7 @@ label rank:
     s "Okay, buddies, are you ready?"
     show natsuki flus om ce lhip at f33 
     n "Just tell us the rankings."
-    show natsuki cm 
+    show natsuki cm oe
     show sayori nerv om at f11 
     s "Alright, alright."
     show sayori happ 
@@ -1654,8 +1775,9 @@ label rank:
     show sayori happ om ce rup at f21 
     show natsuki shoc 
     s "Mr. Cow!"
-    show natsuki angr om at f22 
+    show natsuki angr  om at f22 
     show sayori cm neut at t21  
+    $ mcnname = "[player]&Natsuki"
     mcn "Mr. Cow!?"
     show sayori happ om rup at f21
     show natsuki cm at t22 
@@ -1692,9 +1814,9 @@ label rank:
     n "HAHA EAT MY SHORTS, [player]!"
     show natsuki -e3a cm at t22 
     mc "I thought..."
-    show natsuki at t21 zorder 1 
+    show natsuki at t21 zorder -1 
     show sayori happ 
-    pause .3 
+    pause 1.5  
     show natsuki at t22 
     "Natsuki goes over and hugs Sayori super tightly."
     show natsuki at thide 
@@ -1747,8 +1869,8 @@ label rank:
     show sayori vang om lup at f11 
     s "LIKE WOW, I DIDN'T INVITE YOU FOR A REASON!"
     s ce "YOU'RE NOT EVEN MY FRIEND!"
-    show monika cry om at l31 
-    show sayori cm at t11 
+    show monika cry om at s31 
+    show sayori cm oe at t11 
     m "I thought..."
     show monika cm 
     show sayori om at f11 
@@ -1759,7 +1881,7 @@ label rank:
     pause .5 
     show monika at lhide 
     hide monika 
-    call dclose 
+    call dclose from _call_dclose_11 
     return 
     #monika crying
 
@@ -1770,7 +1892,7 @@ label rank:
     #close door
 label baby:
     "I gently open the door."
-    "Were you worried I was going to try and call you out again FiT?"
+    #"Were you worried I was going to try and call you out again FiT?"
     play sound opend 
     scene bg sroom 
     show sayori turned casual vsur cm oe at t22:
@@ -1844,7 +1966,7 @@ label baby:
     mc "Did you order a baby in a package?"
     show sayori ce om rdown at f11 
     s "No, [player], I did not order a baby in a package."
-    show sayori cm att11 
+    show sayori cm at t11 
     mc "Then why is there a baby inside this package?"
     show sayori angr om oe at hf11 
     s "I don't know!"
@@ -1926,7 +2048,7 @@ label baby:
         alpha 1 
         yoffset 0
         parallel:
-            ease 1 rotate 1000 zoom 0 yoffest -400 
+            ease 1 rotate 1000 zoom 0 yoffset -400 
         parallel:
             .6
             linear .4 alpha 0 
@@ -1944,13 +2066,15 @@ label baby:
     #pause 15
 
     #mc "Cool."
-    call dclose 
+    call dclose from _call_dclose_12 
+    return
     #close door
 label nvm:
-    call dopen 
+    call dopen from _call_dopen_1 
     "On second thought, I'd rather not."
     "I gently close the door."
-    call dclose 
+    call dclose from _call_dclose_13 
+    return 
 label sdrip:
     "I gently open the door."
     play sound opend 
@@ -1978,10 +2102,10 @@ label lights:
 
     #nighttime sayori bg with her hanging.
     "Phew. That's better."
-    call dclose 
+    call dclose from _call_dclose_14 
     return
 label comedy:
-    call dopen 
+    call dopen from _call_dopen_2 
     mc "Hi."
     show sayori happ om oe lup rdown at f11 
     s "Heyaaa!"
@@ -2003,14 +2127,14 @@ label comedy:
     show sayori cm at h11 
     pause .15 
     hide sayori 
-    call skz 
+    call skz from _call_skz_4 
     play sound sting 
 
     mc "Oh yeah! That should be funny!"
     mc "..."
     mc "Eh, it was funnier the first time around."
 
-    call dclose 
+    call dclose from _call_dclose_15 
     return 
 label dad:
     "I gently open the door."
@@ -2030,24 +2154,23 @@ label dad:
     s "I…hate…you…"
     show sayori cm 
     mc "I’ll pass the message onto 'you' when I see him."
-    call dclose 
+    call dclose from _call_dclose_16 
     return 
 label immortal:
     "I gently open the door."
     play sound opend
     scene bg sroom 
-    show s_kill at skillr 
-    play music t2 
+    show sayori hang dead at skillr:
+        yoffset 350 zoom .82
     with wipeleft_door 
-
+    play music td
     show vignette with dissolve 
     "Oh no!"
     "Sayori…"
     "She's…"
     "She's dead--{nw}"
-    hide s_kill 
     hide vignette 
-    show sayori hang om oe at skillr 
+    show sayori hang om oe alive 
     stop music fadeout 1  
     s "[player], help me get down!"
     show sayori cm 
@@ -2071,10 +2194,36 @@ label immortal:
     mc "You'll live."
     s om "I-"
     show sayori cm 
-    call dclose 
+    call dclose from _call_dclose_17 
+    return
+label immortalb:
+    "I gently open the door."
+    play sound opend
+    scene bg sroom 
+    show sayori hang neut cm oe at skillr:
+        yoffset 350 zoom .82
+    with wipeleft_door 
+    show sayori om 
+    s "Hey [player], mind helping me get down?"
+    show sayori cm 
+    mc "So uh... how are you alive?"
+    s dist om "Well I tried to kill myself..."
+    s lsur "But I guess I'm immortal?"
+    show sayori cm 
+    mc "Huh. Neat."
+    s neut om "So, will you help me get down?"
+    show sayori anno cm 
+    mc "I don't know, I kinda have some eggs to attend to..."
+    mc "I'll go check up on that and I'll come back."
+    s pout om "I'm literally suffocating."
+    show sayori cm 
+    mc "You'll live."
+    s om "I-"
+    show sayori cm 
+    call dclose from _call_dclose_23 
     return
 label lmao:
-    call dopen 
+    call dopen from _call_dopen_3 
     play music t9 
     show sayori om dist at f11 
     s "I’m depressed."
@@ -2129,7 +2278,19 @@ label lmao:
     window hide 
     pause 2 
     return 
-
+label chekhov:
+    "I gently open the door."
+    play sound opend 
+    scene sroom 
+    show sayori turned casual happ cm oe lup lgun at i11 
+    with wipeleft_door
+    mc "Why do you have a gun in your hand?"
+    show sayori om ce at f11 
+    s "Oh, it’s a Chekhov’s gun!"
+    show sayori cm oe neut at t11 
+    mc "I feel like someone else would appreciate that more than I would."
+    call dclose from _call_dclose_22 
+    return
 label flying:
     "I gently open the door."
     play sound opend 
@@ -2150,7 +2311,7 @@ label flying:
     s anno "You’re just jealous I’m going to die flying."
     show sayori cm neut 
     stop music 
-    call dclose
+    call dclose from _call_dclose_18
     return 
 label higher:
     
@@ -2200,6 +2361,7 @@ label higher:
         truecenter  
         zoom .16 yoffset 120  xoffset -320 alpha 0 
         ease 1 zoom .192 yoffset 142-300  xoffset -359 alpha 1 
+    play sound panning
     pause 1 
     "I gently leave the house."
     hide windowcut 
@@ -2222,6 +2384,7 @@ label higher:
     show sayori cm 
     mc "*sigh*"
     window hide
+    play sound panning
     show mooncrawl:
         truecenter 
         zoom 1.07 yoffset -1746 xoffset 0  
@@ -2246,13 +2409,18 @@ label higher:
     "...I gently go to the moon."
     #sayori hanging from the moon.
     #{wait for 2 seconds}
-
-    s "..."
+    show layer master:
+        truecenter 
+        ease 3 zoom 4 yoffset -400
+    pause 5 
     s om "Higher."
+    play sound panning
     show black zorder -1:
         zoom 10
     show layer master:
-        ease 1 xoffset 2000
+        zoom 4 yoffset -400 
+        truecenter 
+        ease 1 xoffset 5000
     pause 1 
     scene black  
     pause .5 
@@ -2297,7 +2465,7 @@ label closet:
     pause 3.0
 
     m "You guys suck."
-    call dclose 
+    call dclose from _call_dclose_19 
     return 
 label sayonara:
     "I gently open the door."
@@ -2401,13 +2569,14 @@ label sayonara:
     mc "Wanna be alive when we have sex!?"
     mc "Boner gone."
 
-    call dclose 
+    call dclose from _call_dclose_20 
     show text "Sorry for any flashbacks to those of you who read the scrolling text in the first door mod"
     pause .00005 
     hide text 
     return 
 label pinata:
     "I gently open the door."
+    
     play sound opend 
     scene bg sroom 
     show s_killb:
@@ -2415,7 +2584,7 @@ label pinata:
         truecenter
     show natsuki turned mib noshade happ cm oe at i11 #add tophat 
     with wipeleft_door 
-
+    play music circus
     #open door
     #show natsuki with ridiculous tophat
     show natsuki om at f11 
@@ -2441,6 +2610,7 @@ label pinata:
     scene black with close_eye
     "She wraps a blindfold on top of my eyes."
     "I start swinging my bat mindlessly, trying to get a hit on the pinata."
+    stop music fadeout 10 
 
     play sound "mod_assets/bat_swing_hit.ogg"
     pause .15 
@@ -2494,7 +2664,7 @@ label pinata:
     show yuri shoc cm at s33 
     y "..."
 
-    call dclose 
+    call dclose from _call_dclose_21 
     return 
     #close door
 
@@ -2526,6 +2696,7 @@ label ending:
         ease 1.2 zoom 1 xoffset 0 yoffset 0 
     window hide 
     pause 1 
+    play music t4 
     mc "Oh, it's you two."
     show natsuki curi om at f11 
     n "Sup?"
@@ -2547,10 +2718,12 @@ label ending:
     show natsuki cm at t11 
     show yuri om at f33 
     y "Yes. One moment please."
+    stop music fadeout 5 
+    show yuri cm at t33 
     "She... reaches down her pants?"
     show yuri n3 at d33 
     y "Mmmmnnnhhh."
-    y "Soahhry, the pen is lodged very deep."
+    y om "Soahhry, the pen is lodged very deep."
     show yuri cm at t33 
     show natsuki doub om at f11 
     n "Uhh… Yuri, this wasn't part of the plan."
@@ -2648,32 +2821,32 @@ label ending:
     window hide 
     pause 1     
     play sound "mod_assets/boom.mp3"
-    show text "A mod by the Various Artists"
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}A mod by the Various Artists"
     pause 3 
     hide text 
     pause 1 
     play sound "mod_assets/boom.mp3"
-    show text "Writing\n FiT, Crim, cemsthetic, and Rose"
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}Writing\n FiT, Crim, cemsthetic, and Rose"
     pause 3 
     hide text 
     pause 1 
     play sound "mod_assets/boom.mp3"
-    show text "Coding\n Crim"
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}Coding\n Crim"
     pause 3 
     hide text 
     pause 1 
     play sound "mod_assets/boom.mp3"
-    show text "Art\n FiT"
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}ArT\n FiT"
     pause 3 
     hide text 
     pause 1 
     play sound "mod_assets/boom.mp3"
-    show text "Music\n Flasium"
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}Music\n Flasium"
     pause 3 
     hide text 
     pause 1 
     play sound "mod_assets/boom.mp3"
-    show text "Thanks for playing" with dissolve 
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}Thanks for playing" with dissolve 
     pause 5 
     hide text with dissolve  
     #post credit scene
@@ -2682,7 +2855,7 @@ label ending:
     mc "Damn it!"
     window hide 
     play sound "mod_assets/boom.mp3"
-    show text "Eat a bag of dicks."
+    show text "{font=mod_assets/minecraftia.ttf}{size=22}Eat a bag of dicks."
     pause 4
     hide text with fade 
     $ persistent.finished = True 
@@ -2730,14 +2903,15 @@ label extras:
     stop music fadeout 1 
     scene sroom 
     with dissolve_scene_full
-    if persistent.fe = False:
+    if persistent.fe == False:
         "Hey, Crimfinity (A.K.A Crimsin) here. Thanks for playing our mod! I have a couple things to touch on about this extras menu."
         "This menu allows you to replay skits from the mod on their own as well as view a few skits that didn't make the final cut."
-        "I plan on updating this menu to look luch better, contain all the prequel's skits, and share some of the best text conversations from the self defence noose hotline."
+        "I plan on updating this menu to look much better, contain all the prequel's skits, and share some of the best text conversations from the self defence noose hotline."
         "We're a bit preoccupied with the 12 shitter shits of christmas, so expect a updated version sometime in January."
         $ persistent.fe = True
     window hide
 label em:
+    scene sroom
     menu:
         "IGotD 2 Skits":
             jump ig2a
@@ -2746,133 +2920,193 @@ label em:
         "Back":
             return 
 label cuts:
+    scene sroom
     menu: 
         "1 - NooseCorp":
-            call nc1  
+            scene black
+            call nc1 from _call_nc1  
         "2 - Garapagalos Delivery":
-            call delivery 
+            scene black
+            call delivery from _call_delivery 
         "3 - Methods":
-            call method 
+            scene black
+            call method from _call_method 
         "4 - Baby":
-            call baby  
+            scene black
+            call baby from _call_baby  
         "5 - Ranking My Friends":
-            call rank 
-        "next":
+            scene black
+            call rank from _call_rank 
+        "Next":
             jump cuts2 
         "Back":
             jump em
+    jump cuts
 label cuts2:
+    scene sroom
+    menu:
         "6 - Monster":
-            call nc1  
-        if persistent.delivery == True: 
-            "7 - Garapagalos Delivery":
-                call delivery 
-        else:
-            "7 - ???":
-                jump cuts2 
+            scene black
+            call closet from _call_closet 
+        "7 - Immortal(Old ver.)":
+            scene black
+            call immortal from _call_immortal_1  
+        "8 - Dokis in Black":
+            scene black
+            jump dib 
         "Last":
             jump cuts
         "Back":
             jump em
+    jump cuts2
        
-    
+
 label ig2a:
+    scene sroom
     menu: 
         "1 - Opening":
-            call neckrope 
-        "2 - Schizo":
-            call schizo 
-        "3 - lmao":
-            call lmao
-        "4 - GTA":
-            call gta 
-        "5 - Pen Return":
-            call nude 
-        "next":
+            scene black
+            call neckrope from _call_neckrope_1 
+        "2 - Pinata":
+            scene black
+            call pinata from _call_pinata_2 
+        "3 - GTA":
+            scene black
+            call gta from _call_gta_1
+        "4 - Pen Return":
+            scene black
+            call nude from _call_nude_1 
+        "5 - Pregnant":
+            scene black
+            call pregnancy from _call_pregnancy_1 
+        "Next":
             jump ig2b 
         "Return":
             jump em
+    jump ig2a 
 
         
 label ig2b:
+    scene sroom
     menu: 
-        "6 - Dyslexia":
-            call dyslexia
-        "7 - Pregnant":
-            call pregnancy 
+        "6 - Pills":
+            scene black
+            call schizo from _call_schizo_1
+        "7 - Sayonara":
+            scene black
+            call sayonara from _call_sayonara_1 
         "8 - Sans":
-            call sans 
-        "9 - Dumb MC/Walls":
-            call dmc 
-        "10 - Diabetes Pt. 1"
-            call db1 
+            scene black
+            call sans from _call_sans_1 
+        "9 - PSA":
+            scene black
+            call psa from _call_psa_1
+        "10 - Baguette":
+            scene black
+            call bread from _call_bread_1  
         "Last":
-            jump igb2a 
+            jump ig2a 
         "Next":
-            jump igb2c 
+            jump ig2c 
         "Return":
             jump em
+    jump ig2b 
 label ig2c:
+    scene sroom
     menu: 
-        "11 - PSA":
-            call psa
+        "11 - Dad Jokes":
+            scene black
+            call dad from _call_dad_1 
         "12 - Darkness":
-            call lights 
-        "13 - Dead Girls' Society":
-            call dg 
-        "14 - Sayonara":
-            call sayonara 
-        "15 - Baguette"
-            call bread  
+            scene black
+            call lights from _call_lights_1 
+        "13 - Chekhov":
+            scene black 
+            call chekhov from _call_chekhov_1 
+        "14 - Immortal":
+            scene black 
+            call immortalb from _call_immortalb_1 
+        "15 - Diabetes Pt. 1":
+            scene black
+            call db1 from _call_db1_1   
         "Last":
-            jump igb2b 
+            jump ig2b 
         "Next":
-            jump igb2d 
+            jump ig2d 
         "Return":
             jump em 
+    jump ig2c 
 label ig2d:
+    scene sroom
     menu: 
-        "16 - Higher":
-            call higher
-        "17 - Infinite Doors":
-            call infinity 
-        "18 - Drip":
-            call drip 
-        "19 - Totally inconsicuous conversation":
-            call ava 
-        "20 - Diabetes Pt. 2"
-            call db2
+        "16 - Ropu-Kun's Return":
+            scene black
+            call dg from _call_dg_1 
+        "17 - Drip":
+            scene black
+            call sdrip from _call_sdrip_1 
+        "18 - Diabetes Pt. 2":
+            scene black
+            call db2 from _call_db2_1 
+        "19 - Normal Conversation":
+            scene black
+            call ava from _call_ava_1 
+        "20 - Change of Heart":
+            scene black
+            call nvm from _call_nvm_1
+       
         "Last":
-            jump igb2c 
+            jump ig2c 
         "Next":
-            jump igb2e 
+            jump ig2e 
         "Return":
             jump em 
+    jump ig2d 
 label ig2e:
+    scene sroom
     menu: 
-        "21 - Change of Heart":
-            call nvm
-        "22 - Football":
-            call madden  
-        "23 - Dreams of Flying":
-            call flying 
-        "24 - Dad Jokes":
-            call dad 
-        "25 - What's funny?"
-            call comedy   
+        "21 - Dreams of Flying":
+            scene black
+            call flying from _call_flying_1 
+        "22 - Bumpy Wall":
+            scene black
+            call dmc from _call_dmc_1  
+        "23 - Cannibal":
+            scene black
+            call cannibal from _call_cannibal_1  
+        "24 - Lmao":
+            scene black
+            call lmao from _call_lmao_1 
+        "25 - Madden":
+            scene black
+            call madden from _call_madden_1 
         "Last":
-            jump igb2d 
+            jump ig2d 
         "Next":
-            jump igb2f 
+            jump ig2f 
         "Return":
             jump em 
+    jump ig2e 
 label ig2f:
+    scene sroom
     menu: 
-        "26 - Pinata":
-            call nvm
-        "27 - Ending":
-            call madden          
+        "26 - Higher":
+            scene black
+            call higher from _call_higher_1    
+        "27 - Infinite Doors":
+            scene black
+            call infinity from _call_infinity_1  
+        "28 - Dyslexia":
+            scene black
+            call dyslexia from _call_dyslexia_1 
+        "29 - What's funny?":
+            scene black
+            call comedy from _call_comedy_1  
+        "30 -  Ending":
+            scene black
+            call ending from _call_ending             
         "Last":
-            jump igb2d 
+            jump ig2d 
         "Return":
             jump em 
+    jump ig2f

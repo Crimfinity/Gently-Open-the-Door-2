@@ -87,7 +87,7 @@ label ch21_main:
 
 
     $ nextscene = poemwinner[0] + "_exclusive2_" + str(eval(poemwinner[0][0] + "_appeal"))
-    call expression nextscene
+    call expression nextscene from _call_expression_21
 
     return
 

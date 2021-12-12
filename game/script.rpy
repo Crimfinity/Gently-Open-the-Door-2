@@ -46,39 +46,36 @@ label start:
     
     
     
-    call neckrope
+    call neckrope from _call_neckrope
     #call nc1 
-    call schizo 
-    call lmao
-    call gta 
-    call nude 
-    call dyslexia 
-    call pregnancy      
-    call sans 
-    call dmc  
-    call db1
-    call psa 
-    #call delivery
-    call lights 
-    #call method 
-    call dg
-    call sayonara 
-    call bread 
-    call higher 
-    call infinity 
-    call sdrip
-    call ava 
-    call db2 
-    #call baby 
-    #call rank 
-    #call dib
-    call nvm 
-    call madden 
-    call flying   
-    call dad 
-    call comedy
-    call pinata
-    #call closet 
+    call pinata from _call_pinata 
+    call gta from _call_gta 
+    call nude from _call_nude
+    call pregnancy from _call_pregnancy  
+    call schizo from _call_schizo 
+    call sayonara from _call_sayonara 
+    call sans from _call_sans 
+    call psa from _call_psa 
+    call bread from _call_bread 
+    call dad from _call_dad 
+    call lights from _call_lights 
+    call chekhov from _call_chekhov 
+    call immortalb from _call_immortalb 
+    call db1 from _call_db1 
+    call dg from _call_dg 
+    call sdrip from _call_sdrip 
+    call db2 from _call_db2
+    call ava from _call_ava 
+    call nvm from _call_nvm 
+    call flying from _call_flying
+    call dmc from _call_dmc
+    call cannibal from _call_cannibal 
+    call lmao from _call_lmao
+    call madden from _call_madden
+    call higher from _call_higher
+    call infinity from _call_infinity
+    call dyslexia from _call_dyslexia
+    call comedy from _call_comedy 
     jump ending 
     return 
     # Start of the script
@@ -89,33 +86,33 @@ label start:
         # Make sure to change this when coding your mod, else your player will face a script error
 
         $ chapter = 0
-        call ch0_main
+        call ch0_main from _call_ch0_main
 
         # 'call poem' calls the poemgame
-        call poem
-       # Day 1
+        call poem from _call_poem_1
+        # Day 1
         $ chapter = 1
-        call ch1_main
+        call ch1_main from _call_ch1_main
         # 'call poemresponse_start' calls the poem response game
-        call poemresponse_start
-        call ch1_end
+        call poemresponse_start from _call_poemresponse_start
+        call ch1_end from _call_ch1_end
 
-        call poem
+        call poem from _call_poem_2
 
         $ chapter = 2
-        call ch2_main
-        call poemresponse_start
-        call ch2_end
+        call ch2_main from _call_ch2_main
+        call poemresponse_start from _call_poemresponse_start_1
+        call ch2_end from _call_ch2_end
 
-        call poem
+        call poem from _call_poem_3
 
         $ chapter = 3
-        call ch3_main
-        call poemresponse_start
-        call ch3_end
+        call ch3_main from _call_ch3_main
+        call poemresponse_start from _call_poemresponse_start_2
+        call ch3_end from _call_ch3_end
 
         $ chapter = 4
-        call ch4_main
+        call ch4_main from _call_ch4_main
 
         ## try: renpy.file(config.basedir + "/hxppy thxughts.png") checks if there is a file
         # where DDLC.exe (.app/.sh for MacOS/Linux) called 'hxppy thxughts.png'
@@ -133,16 +130,16 @@ label start:
                 try: renpy.file(config.basedir + "/hxppy thxughts.png")
                 except: open(config.basedir + "/hxppy thxughts.png", "wb").write(renpy.file("hxppy thxughts.png").read())
         $ chapter = 5
-        call ch5_main
+        call ch5_main from _call_ch5_main
 
         #ends the game (not credits)
-        call endgame
+        call endgame from _call_endgame
 
         return
 
     elif persistent.playthrough == 1:
         $ chapter = 0
-        call ch10_main
+        call ch10_main from _call_ch10_main
         # jump calls upon a label. like call but won't ever return
         # back here.
         jump playthrough2
@@ -150,41 +147,41 @@ label start:
 
     elif persistent.playthrough == 2:
         $ chapter = 0
-        call ch20_main
+        call ch20_main from _call_ch20_main
 
         label playthrough2:
 
-            call poem
+            call poem from _call_poem_4
             python:
                 try: file(os.path.realpath("/sdcard/Android/data/"+package_name+"/CAN YOU HEAR ME.txt"))
                 except: open(os.path.realpath("/sdcard/Android/data/"+package_name+"/CAN YOU HEAR ME.txt"), "wb").write(renpy.file("CAN YOU HEAR ME.txt").read())
 
             $ chapter = 1
-            call ch21_main
-            call poemresponse_start
-            call ch21_end
+            call ch21_main from _call_ch21_main
+            call poemresponse_start from _call_poemresponse_start_3
+            call ch21_end from _call_ch21_end
 
-            call poem(False)
+            call poem(False) from _call_poem_5
             python:
                 try: file(os.path.realpath("/sdcard/Android/data/"+package_name+"/iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.txt"))
                 except: open(os.path.realpath("/sdcard/Android/data/"+package_name+"/iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.txt"), "wb").write(renpy.file("iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii.txt").read())
 
             $ chapter = 2
-            call ch22_main
-            call poemresponse_start
-            call ch22_end
+            call ch22_main from _call_ch22_main
+            call poemresponse_start from _call_poemresponse_start_4
+            call ch22_end from _call_ch22_end
 
             # 'call poem(False)' calls the poemgame but with no fancy transitions
-            call poem(False)
+            call poem(False) from _call_poem_6
 
             $ chapter = 3
-            call ch23_main
+            call ch23_main from _call_ch23_main
             # if y_appeal >= 3: checks if our appeal with Yuri is > or = to 3
             # if yes then it calls a special poem response game, else normal.
             if y_appeal >= 3:
-                call poemresponse_start2
+                call poemresponse_start2 from _call_poemresponse_start2
             else:
-                call poemresponse_start
+                call poemresponse_start from _call_poemresponse_start_5
             # this is old Dan leftover code when DDLC was a demo.
             # if you wanted to you can re-use it as a demo showcase of your own mod.
             if persistent.demo:
@@ -193,7 +190,7 @@ label start:
                 "End of demo"
                 return
 
-            call ch23_end
+            call ch23_end from _call_ch23_end
 
             return
 
@@ -203,7 +200,7 @@ label start:
     elif persistent.playthrough == 4:
 
         $ chapter = 0
-        call ch40_main
+        call ch40_main from _call_ch40_main
         jump credits
 
 # the end label of the game. Not the credits.    

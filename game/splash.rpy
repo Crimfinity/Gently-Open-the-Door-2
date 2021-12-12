@@ -366,7 +366,7 @@ label splashscreen:
         menu:
             "By playing [config.name] you agree that you read what was just shown to you."
             "I agree.":
-                 pass
+                pass
         $ persistent.first_run = True
         scene tos2
         with Dissolve(1.5)

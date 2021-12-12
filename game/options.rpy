@@ -98,7 +98,7 @@ default preferences.sfx_volume = 0.75
 # Windows Directory for Saves: %AppData%/RenPy/
 # macOS Directory for Saves: $HOME/Library/RenPy/ (Un-hide the Library Folder)
 # Linux Directory for Saves $HOME/.renpy/
-define config.save_directory = "gotd"
+define config.save_directory = "gotd2v2"
 
 # This controls the window logo of your mod.
 # By default this defaults to the DDLC Icon PNG.
@@ -118,7 +118,7 @@ define config.autosave_slots = 0
 
 # This controls the layers of screens, images, and more. 
 # Best not to leave this alone.
-define config.layers = [ 'master', 'transient', 'screens', 'overlay', 'front' ]
+define config.layers = [ 'master', 'transient', 'fucktransient', 'screens', 'overlay', 'front' ]
 
 # Stuff to leave alone also.
 define config.image_cache_size = 64
@@ -191,6 +191,8 @@ init python:
     # Example: build.classify("game/**.pdf", "scripts all")
     
     build.classify("game/mod_assets/**", "mod_assets all")
+    build.classify("game/gui/**", "mod_assets all")
+    build.classify("game/images/**", "mod_assets all")
     build.classify("game/**.rpyc", "scripts all")
     build.classify("game/README.txt", None)
     build.classify("game/**.txt", "scripts all")
