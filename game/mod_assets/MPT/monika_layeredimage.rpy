@@ -108,7 +108,7 @@ layeredimage monika forward: #All definitions are for her facing forward.
 
         attribute uniform default null
         attribute casual null
-
+        attribute censored null
 
 
     group mood: #Mood determines what the defaults images are for the following attributes:
@@ -159,7 +159,8 @@ layeredimage monika forward: #All definitions are for her facing forward.
             "mod_assets/MPT/monika/monika_forward_uniform_left_point.png"
         attribute lpoint if_any(["casual"]):
             "mod_assets/MPT/monika/monika_forward_casual_left_point.png"
-
+        attribute ldown default if_any(["censored"]):
+            "mod_assets/MPT/monika/monika_forward_censored_left_down.png"
 
 
     group right:
@@ -173,6 +174,8 @@ layeredimage monika forward: #All definitions are for her facing forward.
             "mod_assets/MPT/monika/monika_forward_uniform_right_hip.png"
         attribute rhip if_any(["casual"]):
             "mod_assets/MPT/monika/monika_forward_casual_right_hip.png"
+        attribute rdown default if_any(["censored"]):
+            "mod_assets/MPT/monika/monika_forward_censored_right_down.png"
 
 
 

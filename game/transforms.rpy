@@ -530,3 +530,192 @@ init python:
 transform malpha(a=1.00):
     i11
     alpha a
+#door 1 transforms 
+
+
+
+init python:
+    renpy.register_shader("example.vhs_like", variables="""
+    uniform sampler2D tex0;
+    attribute vec2 a_tex_coord;
+    varying vec2 v_tex_coord;
+    uniform float u_time;
+    """, vertex_300="""
+        v_tex_coord = a_tex_coord;
+    """, fragment_300="""
+        const float range = 0.05;
+        const float noiseQuality = 64.0;
+        const float noiseIntensity = 0.003;
+        const float offsetIntensity = 0.02;
+        const float colorOffsetIntensity = 1.3;
+
+        #define rand(co) fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453)
+
+        vec2 uv = v_tex_coord;
+
+        for (float i = 0.0; i < 0.71; i += 0.1313)
+        {
+            float d = mod(u_time * i, 1.7);
+            float o = sin(1.0 - tan(u_time * 0.24 * i));
+            o *= offsetIntensity;
+            float edge0 = (d - range);
+            float edge1 = (d + range);
+
+            float x = smoothstep(edge0, d, uv.y) * o;
+            x -= smoothstep(d, edge1, uv.y) * o;
+
+            uv.x += x;
+        }
+
+        float uvY = uv.y;
+        uvY *= noiseQuality;
+        uvY = float(int(uvY)) * (1.0 / noiseQuality);
+        float noise = rand(vec2(u_time * 0.0001, uvY));
+        uv.x += noise * noiseIntensity;
+
+        vec2 offsetR = vec2(0.006 * sin(u_time), 0.0) * colorOffsetIntensity;
+        vec2 offsetG = vec2(0.0073 * (cos(u_time * 0.97)), 0.0) * colorOffsetIntensity;
+
+        float r = texture2D(tex0, uv + offsetR).r;
+        float g = texture2D(tex0, uv + offsetG).g;
+        float b = texture2D(tex0, uv).b;
+
+        vec4 tex = vec4(r, g, b, texture2D(tex0, uv).a);
+        gl_FragColor = tex;
+    """)
+
+transform test_shader:
+    mesh True
+    shader "example.vhs_like"
+
+
+
+
+
+
+
+
+
+transform master_camera(x_1=640, y_1=360, z_1=1.0, x_2=640, y_2=600, z_2=2.0, t=1.0):
+    subpixel True zoom z_1 xcenter x_1 ycenter y_1
+    ease t zoom z_2 xcenter x_2 ypos y_2
+
+transform night_filter:
+    matrixcolor SaturationMatrix(0.8) * BrightnessMatrix(-0.1) * TintMatrix((115, 115, 165))
+
+
+transform t(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .65 alpha 0.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 400
+        easein .25 zoom .8 alpha 1.0 ycenter 360 rotate 0
+    on replace:
+        ease .25 zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        easeout .25 zoom .65 alpha 0.0 ycenter 400
+
+transform f(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .65 alpha 0.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 400
+        easein .25 zoom .875 alpha 1.0 ycenter 360 rotate 0
+    on replace:
+        ease .25 zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        easeout .25 zoom .65 alpha 0.0 ycenter 400
+
+transform i(t=1, p=1):
+    on show:
+        subpixel True
+        zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on replace:
+        zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        alpha 0.0
+
+transform fi(t=1, p=1):
+    on show:
+        subpixel True
+        zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on replace:
+        zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        alpha 0.0
+
+transform h(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+        ease .125 yoffset -25
+        ease .125 yoffset 0
+    on replace:
+        ease .125 yoffset -25 zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+        ease .125 yoffset 0
+    on hide:
+        easeout .25 zoom .65 alpha 0.0 ycenter 400
+
+transform hf(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+        ease .125 yoffset -25
+        ease .125 yoffset 0
+    on replace:
+        ease .125 yoffset -25 zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+        ease .125 yoffset 0
+    on hide:
+        easeout .25 zoom .65 alpha 0.0 ycenter 400
+
+transform l(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .8 alpha 1.0 xcenter -300 ycenter 360
+        easein .25 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) rotate 0
+    on replace:
+        ease .25 zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        easeout .25 xcenter -300
+
+transform lf(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .875 alpha 1.0 xcenter -300 ycenter 360
+        easein .25 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) rotate 0
+    on replace:
+        ease .25 zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        easeout .25 xcenter -300
+
+transform r(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .8 alpha 1.0 xcenter 1580 ycenter 360
+        easein .25 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) rotate 0
+    on replace:
+        ease .25 zoom .8 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        easeout .25 xcenter 1580
+
+transform rf(t=1, p=1):
+    on show:
+        subpixel True xanchor .5 yanchor .5
+        zoom .875 alpha 1.0 xcenter 1580 ycenter 360
+        easein .25 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) rotate 0
+    on replace:
+        ease .25 zoom .875 alpha 1.0 xcenter math.ceil(((1280/t)*p) - (1280/(2*t))) ycenter 360 rotate 0
+    on hide:
+        easeout .25 xcenter 1580
+
+transform f_:
+    ease .25 zoom .875
+
+transform t_:
+    ease .25 zoom .8
+
+transform h_:
+    ease .125 yoffset -25
+    ease .125 yoffset 0
+
+define dream = ImageDissolve("mod_assets/transitions/dream.png", 3.0, ramplen=64)
+
+define tpause = Pause(0.25)

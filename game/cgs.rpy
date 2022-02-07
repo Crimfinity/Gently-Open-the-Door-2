@@ -285,6 +285,7 @@ image s_kill:
     zoom 1.1 rotate -7 xcenter 640
     yoffset -1700
     yanchor 0
+
 image s_killb:
     subpixel True
     truecenter
@@ -294,6 +295,10 @@ image s_killb:
     zoom .8 xcenter 360
 
     yanchor 0
+image s_killc:
+    subpixel True
+    "images/cg/s_kill.png"
+
 transform skillr:
     subpixel True
     truecenter
@@ -343,8 +348,8 @@ transform s_kill_bg_start:
 
 transform s_kill_start:
     truecenter
-    xalign 0.3 yalign 0.25 zoom 0.8
-    linear 4 zoom 0.75 xalign 0.315 yoffset 10
+    xalign 0.3 yalign 0.25 zoom 0.8 xoffset -40 yoffset -13
+    linear 4 zoom 0.75 xalign 0.315 yoffset -3
 
 image s_kill_bg_zoom:
     contains:

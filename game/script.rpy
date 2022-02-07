@@ -133,7 +133,7 @@ label start:
         call ch5_main from _call_ch5_main
 
         #ends the game (not credits)
-        call endgame from _call_endgame
+      
 
         return
 

@@ -108,7 +108,7 @@ layeredimage yuri turned:
         attribute uniform default null
         attribute casual null
         attribute mib null
-
+        attribute censored null
 
     group mood: #Mood determines what the defaults images are for the following attributes:
         #"oe", "ce", "om", "cm", "brow".
@@ -166,6 +166,8 @@ layeredimage yuri turned:
             "mod_assets/MPT/yuri/yuri_turned_casual_left_up.png"
         attribute ldown default if_any(["mib"]):
             "mod_assets/MPT/yuri/yuri_turned_mib.png"
+        attribute ldown default if_any(["censored"]):
+            "mod_assets/MPT/yuri/yuri_turned_censored_left_down.png"
 
 
 
@@ -186,6 +188,8 @@ layeredimage yuri turned:
         attribute rup if_any(["casual"]):
             "mod_assets/MPT/yuri/yuri_turned_casual_right_up.png"
         attribute rdown default if_any(["mib"]) null
+        attribute rdown default if_any(["censored"]):
+            "mod_assets/MPT/yuri/yuri_turned_censored_right_down.png"
 
 
 

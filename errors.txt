@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/doors.rpy", line 2364: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    play sound panning
-               ^
+File "game/mod_assets/MPT/sayori_layeredimage.rpy", line 276: end of line expected.
+    group right if_any(["melons", "yuri"]) null
+                                           ^
 
-Ren'Py Version: Ren'Py 7.3.5.606
-Sat Dec 11 21:20:43 2021
+Ren'Py Version: Ren'Py 7.4.5.1648
+Sun Feb  6 17:18:20 2022

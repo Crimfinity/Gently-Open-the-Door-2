@@ -294,7 +294,8 @@ layeredimage natsuki turned:
         attribute uniform default null
         attribute casual null
         attribute mib null
-
+        attribute towel null
+        attribute censored null
 
     group mood: #Mood determines what the defaults images are for the following attributes:
         #"oe", "ce", "om", "cm", "brow".
@@ -341,16 +342,20 @@ layeredimage natsuki turned:
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_left_down.png"
         attribute ldown default if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_left_down.png"
+        attribute ldown default if_any(["towel"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_towel_left_down.png"
+        attribute ldown default if_any(["censored"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_censored_left_down.png"
+        attribute ldown default if_any(["mib"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_mib_left_down.png"
         attribute lhip if_any(["uniform"]):
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_left_hip.png"
         attribute lhip if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_left_hip.png"
-        attribute lpoint if_any(["uniform"]):
-            "mod_assets/MPT/natsuki/natsuki_turned_uniform_left_point.png"
-        attribute lpoint if_any(["casual"]):
-            "mod_assets/MPT/natsuki/natsuki_turned_casual_left_point.png"
-        attribute ldown default if_any(["mib"]):
-            "mod_assets/MPT/natsuki/natsuki_turned_mib_left_down.png"
+        attribute lhip if_any(["towel"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_towel_left_hip.png"
+        attribute lhip if_any(["censored"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_censored_left_hip.png"
 
 
 
@@ -361,12 +366,20 @@ layeredimage natsuki turned:
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_right_down.png"
         attribute rdown default if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_right_down.png"
+        attribute rdown default if_any(["towel"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_towel_right_down.png"
+        attribute rdown default if_any(["censored"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_censored_right_down.png"
+        attribute rdown default if_any(["mib"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_mib_right_down.png"
         attribute rhip if_any(["uniform"]):
             "mod_assets/MPT/natsuki/natsuki_turned_uniform_right_hip.png"
         attribute rhip if_any(["casual"]):
             "mod_assets/MPT/natsuki/natsuki_turned_casual_right_hip.png"
-        attribute rdown default if_any(["mib"]):
-            "mod_assets/MPT/natsuki/natsuki_turned_mib_right_down.png"
+        attribute rhip if_any(["towel"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_towel_right_hip.png"
+        attribute rhip if_any(["censored"]):
+            "mod_assets/MPT/natsuki/natsuki_turned_censored_right_hip.png"
 
 
     group head: #This needs to render above her body for her "turned" pose.
