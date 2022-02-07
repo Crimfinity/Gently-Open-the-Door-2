@@ -3160,19 +3160,19 @@ label ig1a:
     menu: 
         "1 - Opening":
             scene black
-            call skit_beginning
+            call skit_beginning from _call_skit_beginning_1
         "2 - Melons":
             scene black
-            call skit_melons
+            call skit_melons from _call_skit_melons_1
         "3 - Harder":
             scene black
-            call skit_uwu_slam
+            call skit_uwu_slam from _call_skit_uwu_slam_1
         "4 - Walk in":
             scene black
-            call skit_towel
+            call skit_towel from _call_skit_towel_1
         "5 - Vibrator":
             scene black
-            call skit_vibrator
+            call skit_vibrator from _call_skit_vibrator_1
         "Next":
             jump ig1b 
         "Return":
@@ -3183,19 +3183,19 @@ label ig1b:
     menu: 
         "6 - Sitcom":
             scene black
-            call skit_sitcom
+            call skit_sitcom from _call_skit_sitcom_1
         "7 - Loli":
             scene black
-            call skit_loli
+            call skit_loli from _call_skit_loli_1
         "8 - Madden":
             scene black
-            call skit_football
+            call skit_football from _call_skit_football_1
         "9 - Self-Defence Noose":
             scene black
-            call skit_self_defence_noose
+            call skit_self_defence_noose from _call_skit_self_defence_noose_1
         "10 - Detroit":
             scene black
-            call skit_airplane 
+            call skit_airplane from _call_skit_airplane_1 
         "Last":
             jump ig1a 
         "Next":
@@ -3208,19 +3208,19 @@ label ig1c:
     menu: 
         "11 - Pussy":
             scene black
-            call skit_pussy 
+            call skit_pussy from _call_skit_pussy_1 
         "12 - Wrong word":
             scene black
-            call skit_synonyms
+            call skit_synonyms from _call_skit_synonyms_1
         "13 - Who asked?":
             scene black 
-            call skit_speech
+            call skit_speech from _call_skit_speech_1
         "14 - Spanish Sayori":
             scene black
-            call skit_spanish
+            call skit_spanish from _call_skit_spanish_1
         "15 - Yuri's Clothes":
             scene black
-            call skit_yuri_clothes
+            call skit_yuri_clothes from _call_skit_yuri_clothes_1
         "Last":
             jump ig1b 
         "Next":
@@ -3233,19 +3233,19 @@ label ig1d:
     menu: 
         "16 - Nat's Clothes":
             scene black
-            call skit_nat_clothes
+            call skit_nat_clothes from _call_skit_nat_clothes_1
         "17 - Sayori's Clothes":
             scene black
-            call skit_sayo_clothes
+            call skit_sayo_clothes from _call_skit_sayo_clothes_1
         "18 - Horde":
             scene black
-            call skit_in_a_row
+            call skit_in_a_row from _call_skit_in_a_row_1
         "19 - Chair":
             scene black
-            call skit_chair
+            call skit_chair from _call_skit_chair_1
         "20 - Ropu-kun":
             scene black
-            call skit_ropu_kun
+            call skit_ropu_kun from _call_skit_ropu_kun_1
         "Last":
             jump ig1c 
         "Next":
@@ -3258,19 +3258,19 @@ label ig1e:
     menu: 
         "21 - Annie":
             scene black
-            call skit_annie
+            call skit_annie from _call_skit_annie_1
         "22 - Wrong Room":
             scene black
-            call skit_wrong_suicide
+            call skit_wrong_suicide from _call_skit_wrong_suicide_1
         "23 - Closet":
             scene black
-            call skit_closet
+            call skit_closet from _call_skit_closet_1
         "24 - Clean up":
             scene black
-            call skit_clean_up_crew
+            call skit_clean_up_crew from _call_skit_clean_up_crew_1
         "25 - Doll":
             scene black
-            call skit_arabic_doll 
+            call skit_arabic_doll from _call_skit_arabic_doll_1 
         "Last":
             jump ig1d 
         "Next":
@@ -3283,14 +3283,14 @@ label ig1f:
     menu:   
         "26 - Jojoyori":
             scene black
-            call skit_jojo
+            call skit_jojo from _call_skit_jojo_1
         "27 - Rainclouds":
             scene black
-            call skit_rainclouds
+            call skit_rainclouds from _call_skit_rainclouds_1
         "28 -  Ending":
             scene black
-            call finale 
-            call endgame    
+            call finale from _call_finale_1 
+            call endgame from _call_endgame_1    
         "Last":
             jump ig1d 
         "Return":

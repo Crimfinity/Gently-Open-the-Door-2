@@ -1,16 +1,136 @@
-﻿Below are the credits for various assets used.
-To see the people who worked on the mod, play to the end or check the reddit post you downloaded this from.
+﻿==================================================
+
+    I Gently Open the Door(Now with more door!)
+       a Various Artists Project
+
+==================================================
+
+A mod of Doki Doki Literature Club by Team Salvato.
+Download the Original Game at: ddlc.moe
 
 
-residential afternoon - noah.rpy
-MPT - Chronos and Yagamirai
-sayori room night - Patrax
 
-Sounds: 
-jazzy.junggle.net
-https://freesound.org/people/InspectorJ/sounds/422051/
-https://freesound.org/people/snapssound/sounds/528112/
-Silver(fish)Mansounds
+=== GENERAL CREDITS:
+
+FitMarshmellow - u/FitMarshmellow
+:: Writing (1+2)
+:: Sayori Melons
+:: Jojo-yori
+:: Alive Sayori
+:: Kid Sayori
+:: Retro Sayori
+:: Intestine Sayori
+:: Ava 
+
+Crimsin - u/Crimfinity#1229
+:: Writing (1+2)
+:: Coding (2)
+
+Flasium - https://www.twitch.tv/papaflasium
+:: Writing (1+2)
+:: Sound Effects (1+2)
+
+
+Emma - ItsJust_EmmaBro#5824
+:: Sayori in Yuri's Clothes
+
+Wilinisian - https://www.wilinisian.ca
+:: Coding (1)
+:: Image/Sprite Edits (1)
+:: Writing (1)
+
+Rose - Femsus (Rose)#6909
+:: Writing (1+2)
+
+cemsthetic - u/cemsthetic
+:: Writing(2)
+
+Chronos, Yagamirai - u/chronoshag, u/yagamirai10
+:: The Mood Pose Tool v1.1.1
+
+Hanaka - https://github.com/GanstaKingofSA
+:: The Mod Template v2.4.2
+
+
+=== CODING CREDITS:
+
+Ryzek - RyzekNoavek#0624
+:: VHS Filter (Used on the Annie CG)
+
+
+
+=== IMAGE CREDITS:
+
+Uncle Mugen - https://lemmasoft.renai.us/forums/viewtopic.php?t=17302
+:: Bathroom
+
+Madelonetjj - https://www.instagram.com/Madelonetjj/
+:: Natsuki Pipe CG (Taken from Pink Eyes with permission)
+:: Yuri Bathtub CG (Taken from Fallen Angel with permission)
+
+AzaikiSan - https://www.deviantart.com/azaikisan
+:: Monika Boxcutter CG (Taken from The Good Ending with permission)
+
+Oliver Norton - u/jambojaweli
+:: Natsuki Towel Sprites
+:: Yuri Funeal Sprite
+
+Malukah Maker - https://www.deviantart.com/malukah-maker
+:: Sayori Pajama Sprites
+
+iStockPhoto - https://www.istockphoto.com/
+:: Noose
+
+Clipart Library - http://clipart-library.com/
+:: Chair
+
+Larue, Ezfi, and Zeus - u/15LarueA, u/ezfi, u/Zeus_KrAZy
+:: Doki Bases (Used to create censored sprites)
+
+noah.rpy - Noah.rpy#1267
+:: Residential bg afternoon
+
+PatTraX - PatTraX#0747
+:: Sayori bedroom night edit
+
+=== MUSIC CREDITS:
+
+Kevin MacLeod - https://incompetech.filmmusic.io
+:: Lobby Time
+
+JoJo's Bizzare Adventure
+:: Awaken - Pillar Men Theme (Cover by Flasium)
+
+C418 - https://www.youtube.com/channel/UCnsbQM9ZgyCvYdHVRlRr8dg
+:: Sweeden (Cover by Flasium)
+
+
+=== SOUND CREDITS:
+
+ZapSplat - https://www.zapsplat.com
+:: General SFX
+
+StevesRealWorld - https://www.youtube.com/c/StevesRealWorld
+:: Laugh Tracks
+
+I don't remember the specific sounds, but rest assured, these people made some of them:
+::jazzy.junggle.net
+::https://freesound.org/people/InspectorJ/sounds/422051/
+:::https://freesound.org/people/snapssound/sounds/528112/
+::Silver(fish)Mansounds
+
+
+==================================================
+
+    "Every second with you is a gift, Sayori. 
+      I'm not wasting anymore of them."
+       
+
+==================================================
+
+
+
+
 
 
 

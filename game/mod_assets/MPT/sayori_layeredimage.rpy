@@ -143,7 +143,7 @@ layeredimage sayori turned: #turned definitions.
     #This fixes certain problems like alpha fadein/fadeout looking strange, at the cost of some performance.
     at Flatten
 
-    always "mod_assets/MPT/sayori/sayori_turned_facebase.png" #Always need this face.
+    #always "mod_assets/MPT/sayori/sayori_turned_facebase.png" #Always need this face.
 
   
 
@@ -282,6 +282,7 @@ layeredimage sayori turned: #turned definitions.
     group right if_any(["yuri"]):
          
         attribute a default null
+    always "mod_assets/MPT/sayori/sayori_turned_facebase.png"
     group nose:
 
         #Default nose/blush.
@@ -578,7 +579,7 @@ layeredimage sayori tap: #tapping definitions.
         attribute bful null #full face blush.
 
 
-
+    always "mod_assets/MPT/sayori/sayori_turned_facebase.png"
     group nose:
 
         #Default nose/blush.
@@ -758,7 +759,7 @@ layeredimage sayori kid: #turned definitions.
 
 
     always "mod_assets/MPT/sayori/sayori_turned_kid_facebase.png"
-
+    
     group nose:
 
         #Default nose/blush.

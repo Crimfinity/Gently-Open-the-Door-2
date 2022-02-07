@@ -717,6 +717,7 @@ label pregnancy:
     s "I'm pregnant."
     show sayori cm 
     mc "B-but how!?"
+    show layer master
     scene bg sroom 
     show sayori turned nerv om rup n3 ldown at i11 
     with dissolve
@@ -812,6 +813,7 @@ label psa:
     #stop music 
     play sound closed 
     scene black
+    show layer master
     with wipeleft_scene  
     return 
 
@@ -904,6 +906,7 @@ label ava:
     #$ pause  
     $ renpy.pause(delay=999999999999999999999999, hard=False) #99999999999999999999999999999999999
     show layer screens 
+    show layer master
     hide black onlayer front
     scene bg sroom
     mc "Ahaha!"
@@ -1140,6 +1143,7 @@ label dg:
     hide natsuki
     s "I think???"
     scene bg sroom 
+    show layer master 
     show sayori turned casual lup cm oe worr at t11 #at face zorder 11 
     show natsuki turned casual curi lhip rdown cm oe at t31 
     show yuri turned casual lup rdown curi oe cm at t33 
@@ -1264,6 +1268,7 @@ label infinity:
     #show sayori cm 
     #mc "..."
     call dclose from _call_dclose_8 
+    show layer master
     return
     #close door
 label madden:
@@ -1417,7 +1422,7 @@ label madden:
     "{b}The suffering!{b}"
     "AAAAAAAAAAAAAAAAAAAAAAAAAA--{nw}"
     $ style.say_dialogue = style.normal
-    show white onlayer front:
+    show white onlayer front as white2:
         zoom 7
         yoffset -1100
         alpha 0
@@ -1427,11 +1432,15 @@ label madden:
     pause 1
     hide noise onlayer fucktransient 
     pause .5  
-    scene white
-    hide white onlayer front  
+    scene whitezoom
+    pause .1 
+    show white2 onlayer front:
+        alpha 1 
+        ease .5 alpha 0
+
     window hide 
     #hide white onlayer front 
-    scene black with close_eye 
+    scene blackzoom 
     pause .3  
     $ renpy.music.set_volume(0,0,channel="track2")
     $ renpy.music.set_volume(1,0,channel="track1")
@@ -1441,7 +1450,8 @@ label madden:
     show noise zorder 3:
         zoom 1.5 alpha .35   
     show madden happ based at i11 zorder 2  
-    with open_eyes 
+    with open_eyes
+    hide white2 onlayer front 
     "{i}Wh-what..?{/i}"
     "Where am I?"
     show madden at f11 
@@ -1501,6 +1511,7 @@ label madden:
     scene bg sroom 
     hide white onlayer front 
     hide vignette onlayer fucktransient
+    hide veins onlayer front
     #madden shakes
     #mc disintegrates
     #screams of the damned
@@ -1517,9 +1528,10 @@ label madden:
     "For some reason, I want to play some Madden 08."
     "Vince Young is calling to me."
     "Anyway..."
-    hide veins onlayer front
+    
     stop ambient 
     call dclose from _call_dclose_9 
+    show layer master
     return
 
     #transition to next skit
@@ -2220,7 +2232,7 @@ label immortalb:
     mc "You'll live."
     s om "I-"
     show sayori cm 
-    call dclose 
+    call dclose from _call_dclose_23 
     return
 label lmao:
     call dopen from _call_dopen_3 
@@ -2423,6 +2435,7 @@ label higher:
         ease 1 xoffset 5000
     pause 1 
     scene black  
+    show layer master
     pause .5 
     return  
 label closet:
@@ -2632,7 +2645,7 @@ label pinata:
     pause 1
     #pause .7
     #mc "Oo, that sounded good!"
-
+    show layer master
     #"I slowly take the blindfold off."
     scene bg sroom 
     show sayata1:
@@ -2903,16 +2916,47 @@ label extras:
     stop music fadeout 1 
     scene sroom 
     with dissolve_scene_full
-    if persistent.fe == False:
-        "Hey, Crimfinity (A.K.A Crimsin) here. Thanks for playing our mod! I have a couple things to touch on about this extras menu."
-        "This menu allows you to replay skits from the mod on their own as well as view a few skits that didn't make the final cut."
-        "I plan on updating this menu to look much better, contain all the prequel's skits, and share some of the best text conversations from the self defence noose hotline."
-        "We're a bit preoccupied with the 12 shitter shits of christmas, so expect a updated version sometime in January."
-        $ persistent.fe = True
-    window hide
+    
+        
+  
 label em:
     scene sroom
     menu:
+        "IGotD 1 Skits":
+            jump ig1a
+        "Play IGotD 1":
+            call skit_beginning from _call_skit_beginning
+            call skit_melons from _call_skit_melons
+            call skit_uwu_slam from _call_skit_uwu_slam
+            call skit_towel from _call_skit_towel
+            call skit_vibrator from _call_skit_vibrator
+            call skit_sitcom from _call_skit_sitcom
+            call skit_loli from _call_skit_loli
+            call skit_football from _call_skit_football
+            call skit_self_defence_noose from _call_skit_self_defence_noose
+            call skit_airplane from _call_skit_airplane
+            call skit_pussy from _call_skit_pussy
+            call skit_synonyms from _call_skit_synonyms
+            call skit_speech from _call_skit_speech
+            call skit_spanish from _call_skit_spanish
+            call skit_orgy from _call_skit_orgy
+            call skit_yuri_clothes from _call_skit_yuri_clothes
+            call skit_nat_clothes from _call_skit_nat_clothes
+            call skit_sayo_clothes from _call_skit_sayo_clothes
+            call skit_in_a_row from _call_skit_in_a_row
+            call skit_chair from _call_skit_chair
+            call skit_ropu_kun from _call_skit_ropu_kun
+            call skit_annie from _call_skit_annie
+            call skit_wrong_suicide from _call_skit_wrong_suicide
+            call skit_closet from _call_skit_closet
+            call skit_clean_up_crew from _call_skit_clean_up_crew
+            call skit_arabic_doll from _call_skit_arabic_doll
+            call skit_jojo from _call_skit_jojo
+            call skit_rainclouds from _call_skit_rainclouds
+            call finale from _call_finale
+            call endgame from _call_endgame
+            jump em
+
         "IGotD 2 Skits":
             jump ig2a
         "Deleted Skits":
@@ -3022,10 +3066,10 @@ label ig2c:
             call lights from _call_lights_1 
         "13 - Chekhov":
             scene black 
-            call chekhov 
+            call chekhov from _call_chekhov_1 
         "14 - Immortal":
             scene black 
-            call immortalb 
+            call immortalb from _call_immortalb_1 
         "15 - Diabetes Pt. 1":
             scene black
             call db1 from _call_db1_1   
@@ -3088,6 +3132,7 @@ label ig2e:
             jump em 
     jump ig2e 
 label ig2f:
+
     scene sroom
     menu: 
         "26 - Higher":
@@ -3110,3 +3155,144 @@ label ig2f:
         "Return":
             jump em 
     jump ig2f
+label ig1a:
+    scene sroom
+    menu: 
+        "1 - Opening":
+            scene black
+            call skit_beginning
+        "2 - Melons":
+            scene black
+            call skit_melons
+        "3 - Harder":
+            scene black
+            call skit_uwu_slam
+        "4 - Walk in":
+            scene black
+            call skit_towel
+        "5 - Vibrator":
+            scene black
+            call skit_vibrator
+        "Next":
+            jump ig1b 
+        "Return":
+            jump em
+    jump ig1a 
+label ig1b:
+    scene sroom
+    menu: 
+        "6 - Sitcom":
+            scene black
+            call skit_sitcom
+        "7 - Loli":
+            scene black
+            call skit_loli
+        "8 - Madden":
+            scene black
+            call skit_football
+        "9 - Self-Defence Noose":
+            scene black
+            call skit_self_defence_noose
+        "10 - Detroit":
+            scene black
+            call skit_airplane 
+        "Last":
+            jump ig1a 
+        "Next":
+            jump ig1c 
+        "Return":
+            jump em
+    jump ig1b 
+label ig1c:
+    scene sroom
+    menu: 
+        "11 - Pussy":
+            scene black
+            call skit_pussy 
+        "12 - Wrong word":
+            scene black
+            call skit_synonyms
+        "13 - Who asked?":
+            scene black 
+            call skit_speech
+        "14 - Spanish Sayori":
+            scene black
+            call skit_spanish
+        "15 - Yuri's Clothes":
+            scene black
+            call skit_yuri_clothes
+        "Last":
+            jump ig1b 
+        "Next":
+            jump ig1d 
+        "Return":
+            jump em 
+    jump ig1c 
+label ig1d:
+    scene sroom
+    menu: 
+        "16 - Nat's Clothes":
+            scene black
+            call skit_nat_clothes
+        "17 - Sayori's Clothes":
+            scene black
+            call skit_sayo_clothes
+        "18 - Horde":
+            scene black
+            call skit_in_a_row
+        "19 - Chair":
+            scene black
+            call skit_chair
+        "20 - Ropu-kun":
+            scene black
+            call skit_ropu_kun
+        "Last":
+            jump ig1c 
+        "Next":
+            jump ig1e 
+        "Return":
+            jump em 
+    jump ig1d 
+label ig1e:
+    scene sroom
+    menu: 
+        "21 - Annie":
+            scene black
+            call skit_annie
+        "22 - Wrong Room":
+            scene black
+            call skit_wrong_suicide
+        "23 - Closet":
+            scene black
+            call skit_closet
+        "24 - Clean up":
+            scene black
+            call skit_clean_up_crew
+        "25 - Doll":
+            scene black
+            call skit_arabic_doll 
+        "Last":
+            jump ig1d 
+        "Next":
+            jump ig1f 
+        "Return":
+            jump em 
+    jump ig1e 
+label ig1f:
+    scene sroom
+    menu:   
+        "26 - Jojoyori":
+            scene black
+            call skit_jojo
+        "27 - Rainclouds":
+            scene black
+            call skit_rainclouds
+        "28 -  Ending":
+            scene black
+            call finale 
+            call endgame    
+        "Last":
+            jump ig1d 
+        "Return":
+            jump em 
+    jump ig1f

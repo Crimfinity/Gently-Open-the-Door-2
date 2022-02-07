@@ -322,7 +322,7 @@ image sayori 4by = im.Composite((960, 960), (0, 0), "sayori/2bl.png", (0, 0), "s
 define persistent.demo = False
 define persistent.steam = ("steamapps" in config.basedir.lower())
 # Change this to True to enable Developer Mode
-define config.developer = True
+define config.developer = False
 
 python early:
     import singleton

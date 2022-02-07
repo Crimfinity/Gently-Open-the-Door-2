@@ -204,13 +204,32 @@ label start:
         jump credits
 
 # the end label of the game. Not the credits.    
-label endgame(pause_length=4.0):
+
+label endgame(pause_length=10.0):
     $ quick_menu = False
-    stop music fadeout 2.0
-    scene black
-    show end
-    with dissolve_scene_full
-    pause pause_length
+    scene white
+    with Dissolve(3.0)
+    show text "Thank you for playing.":
+        alpha 0.0
+        easein 1.0 alpha 1.0
+        2.0
+        easeout 1.0 alpha 0.0
+    pause 4.5
+    show text "Created by Fit, Crimsin, Flasium, and Wilinisian\nof the Various Artists.":
+        alpha 0.0
+        easein 1.0 alpha 1.0
+        2.0
+        easeout 1.0 alpha 0.0
+    pause 4.5
+    show mod_end:
+        truecenter
+        zoom .8
+        alpha 0.0
+        easein 1.0 alpha 1.0
+        15.0
+        easeout 1.0 alpha 0.0
+    pause 20.0
+
     $ quick_menu = True
     return
 
